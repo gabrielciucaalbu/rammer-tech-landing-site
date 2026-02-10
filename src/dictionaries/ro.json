@@ -1,0 +1,65 @@
+{
+  "navigation": {
+    "home": "Acasa",
+    "services": "Servicii",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Solutii Digitale pentru Afaceri Performante",
+    "subtitle": "Dezvoltam aplicatii web si mobile de ultima generatie, sisteme enterprise si solutii de achizitii publice SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
+    "cta": "Descopera Serviciile Noastre"
+  },
+  "services": {
+    "title": "Serviciile Noastre",
+    "items": [
+      {
+        "title": "Dezvoltare Web & Mobile",
+        "description": "Aplicatii web responsive si aplicatii mobile native si cross-platform, construite cu cele mai moderne tehnologii. De la MVP la platforme la scara larga.",
+        "icon": "code"
+      },
+      {
+        "title": "Solutii Enterprise",
+        "description": "Sisteme ERP, CRM si platforme de business intelligence personalizate pentru optimizarea proceselor si cresterea eficientei operationale.",
+        "icon": "building"
+      },
+      {
+        "title": "Consultanta IT",
+        "description": "Analiza tehnica, arhitectura software si strategie de digitalizare. Va ghidam in alegerea solutiilor potrivite pentru obiectivele dumneavoastra.",
+        "icon": "lightbulb"
+      },
+      {
+        "title": "Achizitii Publice SEAP",
+        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice. Asistenta pentru depunerea ofertelor, documentatie si conformitate SICAP.",
+        "icon": "shield"
+      }
+    ]
+  },
+  "seap_section": {
+    "title": "Expertiza SEAP/SICAP",
+    "description": "Suntem specializati in navigarea complexitatii Sistemului Electronic de Achizitii Publice (SEAP) si a platformei SICAP. Oferim suport complet pentru autoritati contractante si operatori economici.",
+    "features": [
+      "Pregatirea si depunerea documentatiei de licitatie",
+      "Asistenta tehnica pentru conformitatea SICAP",
+      "Monitorizarea oportunitatilor de achizitii publice",
+      "Consultanta pentru strategii de ofertare castigatoare",
+      "Dezvoltare platforme integrate cu API-ul SEAP",
+      "Training si formare profesionala SEAP/SICAP"
+    ]
+  },
+  "contact": {
+    "title": "Contacteaza-ne",
+    "description": "Hai sa discutam despre proiectul tau. Completeaza formularul si te contactam in cel mai scurt timp.",
+    "form": {
+      "name": "Nume complet",
+      "email": "Adresa de email",
+      "company": "Companie",
+      "message": "Mesajul tau",
+      "submit": "Trimite Mesajul"
+    }
+  },
+  "footer": {
+    "company": "Rammer Tech",
+    "rights": "Toate drepturile rezervate.",
+    "tagline": "Inovatie. Performanta. Incredere."
+  }
+}

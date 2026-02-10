@@ -1,0 +1,65 @@
+{
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Digital Solutions for High-Performance Business",
+    "subtitle": "We build cutting-edge web and mobile applications, enterprise systems, and SEAP/SICAP public procurement solutions. Your trusted partner in digital transformation.",
+    "cta": "Discover Our Services"
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      {
+        "title": "Web & Mobile Development",
+        "description": "Responsive web applications and native/cross-platform mobile apps built with the latest technologies. From MVP to large-scale platforms.",
+        "icon": "code"
+      },
+      {
+        "title": "Enterprise Solutions",
+        "description": "Custom ERP, CRM, and business intelligence platforms designed to streamline processes and boost operational efficiency.",
+        "icon": "building"
+      },
+      {
+        "title": "IT Consulting",
+        "description": "Technical analysis, software architecture, and digitalization strategy. We guide you in choosing the right solutions for your goals.",
+        "icon": "lightbulb"
+      },
+      {
+        "title": "Public Procurement (SEAP)",
+        "description": "Full expertise in Romania's Electronic Public Procurement System (SEAP/SICAP). Bid submission assistance, documentation, and compliance support.",
+        "icon": "shield"
+      }
+    ]
+  },
+  "seap_section": {
+    "title": "Public Procurement Solutions (SEAP/SICAP)",
+    "description": "SEAP (Sistemul Electronic de Achizitii Publice) is Romania's official electronic public procurement platform, equivalent to TED/eSender in the EU. We specialize in navigating its complexity, providing full support for contracting authorities and economic operators.",
+    "features": [
+      "Tender documentation preparation and submission",
+      "Technical assistance for SICAP compliance",
+      "Public procurement opportunity monitoring",
+      "Winning bid strategy consulting",
+      "Platform development integrated with SEAP APIs",
+      "SEAP/SICAP professional training and onboarding"
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "description": "Let's talk about your project. Fill out the form and we'll get back to you as soon as possible.",
+    "form": {
+      "name": "Full name",
+      "email": "Email address",
+      "company": "Company",
+      "message": "Your message",
+      "submit": "Send Message"
+    }
+  },
+  "footer": {
+    "company": "Rammer Tech",
+    "rights": "All rights reserved.",
+    "tagline": "Innovation. Performance. Trust."
+  }
+}

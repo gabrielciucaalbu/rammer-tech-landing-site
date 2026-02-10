@@ -1,0 +1,69 @@
+---
+description: Cursor rules for rammer-tech-landing-site
+alwaysApply: false
+---
+
+# Cursor rules for rammer-tech-landing-site
+
+Purpose
+
+- Guide Cursor to follow this repository's architecture and project conventions.
+- Prefer small, scoped edits. Keep PRs focused and readable.
+
+Project overview
+
+- **Rammer Tech landing / marketing site** built with Next.js 16, React 19, and TypeScript.
+- Supports two locales: Romanian (`ro`) and English (`en`).
+
+Architecture
+
+- **Next.js App Router** with a `[lang]` dynamic segment for i18n (`src/app/[lang]/`).
+- **Server Components by default** — only add `"use client"` when the component genuinely needs browser APIs, event handlers, or hooks.
+- Pages are thin orchestrators: fetch data / dictionary, compose sections, pass props down.
+
+i18n pattern
+
+- Locale detection runs in `src/middleware.ts` (uses `negotiator` + `@formatjs/intl-localematcher`).
+- Translation strings live in `src/dictionaries/ro.json` and `src/dictionaries/en.json`.
+- Use `getDictionary(lang)` from `src/dictionaries/get-dictionary.ts` to load translations in Server Components.
+- Always propagate the `lang` param from layout / page down to child components that need translated text.
+
+Styling
+
+- **Tailwind CSS v4** utility-first approach.
+- **shadcn/ui** components installed in `@/components/ui` (new-york style, Radix UI primitives, Lucide icons).
+- Use `class-variance-authority` (CVA) for component variant definitions.
+- Use `cn()` from `@/lib/utils` (clsx + tailwind-merge) to merge class names.
+
+Animations
+
+- Use **Framer Motion** for entrance animations, scroll-triggered effects, and interactive transitions.
+- Keep motion values and variants co-located with the component that uses them.
+
+File structure
+
+- `src/app/[lang]/` — pages and layouts (App Router)
+- `src/components/` — shared / reusable components
+- `src/components/ui/` — shadcn/ui primitives (auto-generated, avoid manual edits)
+- `src/dictionaries/` — i18n JSON files and helper
+- `src/lib/` — utility functions (`utils.ts`, etc.)
+- `public/` — static assets (images, SVGs)
+
+Component conventions
+
+- Co-locate components near their usage when they are page-specific.
+- Extract to `src/components/` only when reused across multiple pages / sections.
+- Prefer composition over prop-heavy monolith components.
+- Name files in kebab-case (`hero-section.tsx`), export components in PascalCase (`HeroSection`).
+
+Coding practices
+
+- Use `@/` path aliases for all imports (configured in `tsconfig.json`).
+- Prefer React Server Components; mark `"use client"` only when necessary.
+- Avoid `any`; use proper TypeScript types and interfaces.
+- Keep images optimized; use `next/image` for automatic optimization where applicable.
+
+Operating constraints
+
+- This is a landing / marketing site. There is no backend API or database in this repo.
+- Follow project conventions and team standards. If a rule here conflicts with an existing pattern in this repo, prefer repo patterns.

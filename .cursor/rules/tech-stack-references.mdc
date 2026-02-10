@@ -1,0 +1,37 @@
+---
+description: Official documentation and reference URLs for the project tech stack
+globs: src/**/*.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+
+# Tech Stack & References
+
+The following resources are the official sources of truth for this project. Use them to verify API usage, component patterns, and library features.
+
+### 1. Next.js (v16)
+*   **Docs:** https://nextjs.org/docs
+*   **API Reference:** https://nextjs.org/docs/app
+*   *Note: Project uses Next.js 16 with App Router and React Server Components.*
+
+### 2. React (v19)
+*   **Main Docs:** https://react.dev/
+*   **API Reference:** https://react.dev/reference/react
+
+### 3. Tailwind CSS (v4)
+*   **Docs:** https://tailwindcss.com/docs
+*   *Note: Project uses Tailwind CSS v4 (`^4`).*
+
+### 4. shadcn/ui
+*   **Docs:** https://ui.shadcn.com/docs
+*   *Note: Uses the `new-york` style with CSS variables and Radix UI primitives.*
+
+### 5. Radix UI
+*   **Docs:** https://www.radix-ui.com/primitives/docs
+
+### 6. Framer Motion
+*   **Docs:** https://www.framer.com/motion/
+*   *Note: Used for entrance animations, scroll effects, and interactive transitions.*
+
+### 7. Lucide React
+*   **Docs:** https://lucide.dev/guide/packages/lucide-react
+*   **Icon Search:** https://lucide.dev/icons/

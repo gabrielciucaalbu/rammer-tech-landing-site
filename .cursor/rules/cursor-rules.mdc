@@ -65,5 +65,5 @@ Coding practices
 
 Operating constraints
 
-- This is a landing / marketing site. There is no backend API or database in this repo.
+- This is a landing / marketing site. There is no database. Server actions are used for form processing (Resend email API).
 - Follow project conventions and team standards. If a rule here conflicts with an existing pattern in this repo, prefer repo patterns.

@@ -76,10 +76,25 @@ export function ContactForm({ dict, lang }: ContactFormProps) {
 
     setSending(true);
     try {
-      // Placeholder: In production, submit to Formspree / Resend / etc.
-      await new Promise((resolve) => setTimeout(resolve, 1500));
-      toast.success(formDict.success);
-      reset();
+      const { sendMessage } = await import("../_actions/send-message");
+      const result = await sendMessage({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        service: data.service,
+        budget: data.budget,
+        message: data.message,
+        gdpr: data.gdpr,
+        website: data.website,
+      });
+
+      if (result.success) {
+        toast.success(formDict.success);
+        reset();
+      } else {
+        toast.error(result.error || formDict.error);
+      }
     } catch {
       toast.error(formDict.error);
     } finally {

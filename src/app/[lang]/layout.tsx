@@ -1,7 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
+import { Toaster } from "@/components/ui/sonner";
 import { i18n, type Locale } from "@/i18n-config";
+import { getDictionary } from "@/dictionaries/get-dictionary";
+import { Header } from "@/components/header";
+import { Footer } from "@/components/footer";
+import { CookieBanner } from "@/components/cookie-banner";
 import "../globals.css";
 
 const inter = Inter({
@@ -10,7 +15,10 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Rammer Tech | Solutii Digitale & Achizitii Publice SEAP",
+  title: {
+    default: "Rammer Tech | Solutii Digitale & Achizitii Publice SEAP",
+    template: "%s | Rammer Tech",
+  },
   description:
     "Dezvoltam aplicatii web si mobile, sisteme enterprise si solutii SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
 };
@@ -28,17 +36,22 @@ export default async function RootLayout({
 }>) {
   const { lang } = await params;
 
-  // Validate the locale — return 404 for unsupported values
   if (!i18n.locales.includes(lang as Locale)) {
     notFound();
   }
 
+  const dict = await getDictionary(lang as Locale);
+
   return (
     <html lang={lang} className="scroll-smooth">
       <body
-        className={`${inter.variable} font-sans antialiased bg-slate-950 text-slate-50`}
+        className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
-        {children}
+        <Header lang={lang} dict={dict} />
+        <main className="min-h-screen pt-16">{children}</main>
+        <Footer lang={lang} dict={dict} />
+        <CookieBanner lang={lang} dict={dict} />
+        <Toaster />
       </body>
     </html>
   );

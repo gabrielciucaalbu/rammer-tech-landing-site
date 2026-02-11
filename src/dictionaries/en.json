@@ -1,65 +1,716 @@
 {
+  "meta": {
+    "siteName": "Rammer Tech",
+    "titleSuffix": " | Rammer Tech"
+  },
   "navigation": {
     "home": "Home",
     "services": "Services",
+    "about": "About Us",
+    "portfolio": "Portfolio",
+    "seap": "SEAP/SICAP",
+    "products": "Products",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
     "title": "Digital Solutions for High-Performance Business",
     "subtitle": "We build cutting-edge web and mobile applications, enterprise systems, and SEAP/SICAP public procurement solutions. Your trusted partner in digital transformation.",
-    "cta": "Discover Our Services"
+    "cta": "Discover Our Services",
+    "ctaSecondary": "Get in Touch"
   },
-  "services": {
+  "trustBar": {
+    "projects": "Projects Delivered",
+    "experience": "Years of Experience",
+    "clients": "Happy Clients",
+    "tenders": "SEAP Tenders Won"
+  },
+  "servicesPreview": {
     "title": "Our Services",
+    "viewAll": "View all services",
+    "learnMore": "Learn more",
     "items": [
       {
         "title": "Web & Mobile Development",
-        "description": "Responsive web applications and native/cross-platform mobile apps built with the latest technologies. From MVP to large-scale platforms.",
+        "description": "Responsive web applications and cross-platform mobile apps built with cutting-edge technologies.",
         "icon": "code"
       },
       {
         "title": "Enterprise Solutions",
-        "description": "Custom ERP, CRM, and business intelligence platforms designed to streamline processes and boost operational efficiency.",
+        "description": "Custom ERP, CRM, and business intelligence platforms tailored to your needs.",
         "icon": "building"
       },
       {
         "title": "IT Consulting",
-        "description": "Technical analysis, software architecture, and digitalization strategy. We guide you in choosing the right solutions for your goals.",
+        "description": "Technical analysis, software architecture, and digitalization strategy.",
         "icon": "lightbulb"
       },
       {
         "title": "Public Procurement (SEAP)",
-        "description": "Full expertise in Romania's Electronic Public Procurement System (SEAP/SICAP). Bid submission assistance, documentation, and compliance support.",
+        "description": "Full expertise in Romania's Electronic Public Procurement System.",
         "icon": "shield"
       }
     ]
   },
-  "seap_section": {
-    "title": "Public Procurement Solutions (SEAP/SICAP)",
-    "description": "SEAP (Sistemul Electronic de Achizitii Publice) is Romania's official electronic public procurement platform, equivalent to TED/eSender in the EU. We specialize in navigating its complexity, providing full support for contracting authorities and economic operators.",
+  "seapHighlight": {
+    "title": "We Navigate Public Procurement Complexity",
+    "description": "We provide full support for contracting authorities and economic operators in the SEAP/SICAP system.",
     "features": [
       "Tender documentation preparation and submission",
       "Technical assistance for SICAP compliance",
       "Public procurement opportunity monitoring",
-      "Winning bid strategy consulting",
-      "Platform development integrated with SEAP APIs",
-      "SEAP/SICAP professional training and onboarding"
+      "Winning bid strategy consulting"
+    ],
+    "cta": "Learn more about SEAP/SICAP"
+  },
+  "valueProposition": {
+    "title": "Why Rammer Tech?",
+    "items": [
+      {
+        "title": "Client-Focused",
+        "description": "We understand the unique needs of each project and deliver tailored solutions.",
+        "icon": "users"
+      },
+      {
+        "title": "Technical Expertise",
+        "description": "Modern stack, quality code, and best practices in every line we write.",
+        "icon": "cpu"
+      },
+      {
+        "title": "Measurable Results",
+        "description": "On-time delivery, demonstrable ROI, and real impact on your business.",
+        "icon": "trending-up"
+      }
     ]
   },
+  "portfolioPreview": {
+    "title": "Recent Projects",
+    "viewAll": "View full portfolio"
+  },
+  "ctaBanner": {
+    "home": {
+      "title": "Have a project in mind?",
+      "subtitle": "Let's talk about how we can turn your idea into reality.",
+      "cta": "Request a free consultation"
+    }
+  },
+  "services": {
+    "pageTitle": "Complete Software Services for Your Business",
+    "pageSubtitle": "From concept to delivery and maintenance, we offer end-to-end solutions for every digital need.",
+    "metaTitle": "Software Services -- Web, Mobile, Enterprise Development | Rammer Tech",
+    "metaDescription": "Complete software development services: web and mobile applications, enterprise solutions, IT consulting, and SEAP/SICAP public procurement expertise.",
+    "items": [
+      {
+        "title": "Web & Mobile Development",
+        "description": "We build responsive web applications, SPAs, PWAs, and cross-platform mobile apps. From requirements analysis to deployment and maintenance.",
+        "icon": "code",
+        "features": [
+          "Corporate websites and landing pages",
+          "Complex web applications (dashboards, platforms)",
+          "Cross-platform mobile applications",
+          "APIs and third-party integrations",
+          "MVPs and rapid prototypes"
+        ],
+        "cta": "Discuss your project",
+        "ctaParam": "web-mobile"
+      },
+      {
+        "title": "Enterprise Solutions",
+        "description": "We develop custom ERP systems, business-adapted CRM, Business Intelligence platforms, and internal process automation.",
+        "icon": "building",
+        "features": [
+          "Modular ERP systems",
+          "CRM with sales pipeline",
+          "BI dashboards and reports",
+          "Workflow automation",
+          "Integration with existing systems"
+        ],
+        "cta": "Request a free analysis",
+        "ctaParam": "enterprise"
+      },
+      {
+        "title": "IT Consulting & Digital Strategy",
+        "description": "We offer technical audits of existing solutions, software architecture, digitalization strategy, and technology selection guidance.",
+        "icon": "lightbulb",
+        "features": [
+          "Technical audit and evaluation",
+          "Solution architecture",
+          "Cloud migration strategy",
+          "Performance optimization",
+          "Technical training and knowledge transfer"
+        ],
+        "cta": "Schedule a consultation",
+        "ctaParam": "consultanta"
+      },
+      {
+        "title": "Public Procurement SEAP/SICAP",
+        "description": "Full expertise in Romania's Electronic Public Procurement System. Support for both contracting authorities and economic operators.",
+        "icon": "shield",
+        "features": [
+          "Tender documentation preparation",
+          "Bid submission in SEAP",
+          "Procurement opportunity monitoring",
+          "SICAP compliance",
+          "Platform development integrated with SEAP API",
+          "SEAP/SICAP training"
+        ],
+        "cta": "Learn more about SEAP/SICAP",
+        "ctaParam": "seap",
+        "isSeap": true
+      }
+    ],
+    "workflow": {
+      "title": "Our Working Process",
+      "steps": [
+        {
+          "title": "Discovery",
+          "description": "We understand your project's needs and objectives."
+        },
+        {
+          "title": "Planning",
+          "description": "We define the architecture, timeline, and budget."
+        },
+        {
+          "title": "Development",
+          "description": "Agile iterations with constant feedback."
+        },
+        {
+          "title": "Testing",
+          "description": "Rigorous QA and automated tests."
+        },
+        {
+          "title": "Launch",
+          "description": "Deployment and go-live."
+        },
+        {
+          "title": "Support",
+          "description": "Ongoing maintenance and improvements."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Ready to get started?",
+      "subtitle": "Let's discuss your project.",
+      "cta": "Request a quote"
+    }
+  },
+  "about": {
+    "metaTitle": "About Us -- Team and Story | Rammer Tech",
+    "metaDescription": "Meet the Rammer Tech team -- passionate software developers specializing in custom solutions and SEAP/SICAP public procurement.",
+    "hero": {
+      "title": "Your Technology Team",
+      "subtitle": "We are a small, agile, and passionate team that transforms ideas into impactful software solutions."
+    },
+    "story": {
+      "title": "Our Story",
+      "content": "Rammer Tech was born from the desire to bring quality technology where it matters most -- in Romanian businesses. We started with a simple vision: to build software that actually works, that solves real problems, and that makes a difference in our clients' daily lives. From our first projects to today, we have remained true to our fundamental principle: quality is non-negotiable."
+    },
+    "mission": {
+      "title": "Our Mission",
+      "content": "We deliver software solutions that transform businesses and simplify complex processes."
+    },
+    "vision": {
+      "title": "Our Vision",
+      "content": "To become the go-to partner for digitalization of SMEs in Romania."
+    },
+    "values": {
+      "title": "Our Values",
+      "items": [
+        {
+          "title": "Quality",
+          "description": "Our code reflects our standards. Every line matters.",
+          "icon": "star"
+        },
+        {
+          "title": "Transparency",
+          "description": "Open communication, no surprises. You always know where your project stands.",
+          "icon": "eye"
+        },
+        {
+          "title": "Results-Driven",
+          "description": "We measure success by the real impact on your business.",
+          "icon": "target"
+        },
+        {
+          "title": "Pragmatic Innovation",
+          "description": "Cutting-edge technology with feet on the ground.",
+          "icon": "rocket"
+        },
+        {
+          "title": "Partnership",
+          "description": "Your success is our success. We're on the same team.",
+          "icon": "handshake"
+        }
+      ]
+    },
+    "team": {
+      "title": "Our Team",
+      "members": []
+    },
+    "milestones": {
+      "title": "Our Journey",
+      "items": []
+    },
+    "differentiators": {
+      "title": "Why Work With Us?",
+      "items": [
+        {
+          "title": "Dedicated Team",
+          "description": "We don't outsource. Every project gets our full attention."
+        },
+        {
+          "title": "Constant Communication",
+          "description": "Regular updates, no ghosting. You always know the project status."
+        },
+        {
+          "title": "Flexibility",
+          "description": "We adapt to your needs and budget. No rigid packages."
+        },
+        {
+          "title": "Niche Expertise",
+          "description": "SEAP/SICAP + custom software = a rare combination on the market."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Want to know us better?",
+      "subtitle": "Schedule a meeting and discover how we can collaborate.",
+      "cta": "Contact us"
+    }
+  },
+  "portfolio": {
+    "metaTitle": "Portfolio -- Software Projects & Case Studies | Rammer Tech",
+    "metaDescription": "Explore Rammer Tech projects and case studies: web applications, enterprise solutions, and SEAP/SICAP platforms delivered successfully.",
+    "hero": {
+      "title": "Our Projects",
+      "subtitle": "Every project is a success story. Here are some of them."
+    },
+    "filters": {
+      "all": "All",
+      "web": "Web & Mobile",
+      "enterprise": "Enterprise",
+      "seap": "SEAP/SICAP",
+      "product": "Own Product"
+    },
+    "viewDetails": "View details",
+    "ctaBanner": {
+      "title": "The next project in our portfolio could be yours.",
+      "subtitle": "Tell us about your idea and let's make it happen.",
+      "cta": "Start a project"
+    }
+  },
+  "seap": {
+    "metaTitle": "Public Procurement SEAP/SICAP -- Assistance & Software | Rammer Tech",
+    "metaDescription": "Complete public procurement services: SEAP assistance, SICAP compliance, tender monitoring, and software solutions for economic operators and contracting authorities.",
+    "hero": {
+      "title": "Complete Public Procurement Expertise",
+      "subtitle": "We navigate the complexity of SEAP and SICAP for you -- from documentation to winning tenders.",
+      "cta": "Request SEAP assistance"
+    },
+    "explainer": {
+      "title": "What is SEAP/SICAP?",
+      "seapTitle": "SEAP",
+      "seapDescription": "The Electronic Public Procurement System -- Romania's national platform where public tenders take place.",
+      "sicapTitle": "SICAP",
+      "sicapDescription": "The Collaborative Information System for Public Procurement -- the compliance and reporting component.",
+      "whyMatters": "Public procurement in Romania is worth billions of euros annually. Correctly navigating this system means immense opportunities for your business."
+    },
+    "operatorServices": {
+      "title": "Services for Economic Operators",
+      "subtitle": "Want to win tenders? We help you.",
+      "items": [
+        {
+          "title": "Documentation Preparation",
+          "description": "Technical and financial proposals compliant with requirements."
+        },
+        {
+          "title": "Bid Submission",
+          "description": "Assistance with uploading bids to SEAP."
+        },
+        {
+          "title": "Opportunity Monitoring",
+          "description": "We identify relevant tenders for your profile."
+        },
+        {
+          "title": "Bidding Strategy",
+          "description": "Consulting for formulating winning bids."
+        },
+        {
+          "title": "Appeals",
+          "description": "Assistance with appeals, in partnership with specialist lawyers."
+        },
+        {
+          "title": "Training",
+          "description": "Professional training for your team."
+        }
+      ]
+    },
+    "authorityServices": {
+      "title": "Services for Contracting Authorities",
+      "subtitle": "We simplify the public procurement process.",
+      "items": [
+        {
+          "title": "Award Documentation",
+          "description": "Terms of reference, data sheets."
+        },
+        {
+          "title": "Procedure Publication",
+          "description": "Assistance with publishing in SEAP."
+        },
+        {
+          "title": "Bid Evaluation",
+          "description": "Technical support in the evaluation process."
+        },
+        {
+          "title": "SICAP Compliance",
+          "description": "Reporting and legal compliance."
+        },
+        {
+          "title": "Online Platform",
+          "description": "Development of digital tools for procurement management."
+        }
+      ]
+    },
+    "software": {
+      "title": "Software Solutions for SEAP",
+      "subtitle": "We automate and optimize the procurement process.",
+      "items": [
+        {
+          "title": "Automatic Monitoring",
+          "description": "Software that scans SEAP and alerts you to relevant tenders."
+        },
+        {
+          "title": "Document Generator",
+          "description": "Automation of standard documentation creation."
+        },
+        {
+          "title": "SEAP Dashboard",
+          "description": "Visualization and tracking of active tenders."
+        },
+        {
+          "title": "SEAP API Integration",
+          "description": "Connection with internal systems (ERP, CRM)."
+        }
+      ]
+    },
+    "stats": {
+      "tendersWon": "Tenders Won",
+      "contractValue": "Contract Value (mil. RON)",
+      "successRate": "Success Rate",
+      "clientsAssisted": "Clients Assisted"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How much do SEAP assistance services cost?",
+          "answer": "Costs vary depending on the complexity of the tender and requested services. Contact us for a personalized quote."
+        },
+        {
+          "question": "How long does it take to prepare a bid?",
+          "answer": "Generally, preparation takes between 5 and 15 business days, depending on complexity and submission deadlines."
+        },
+        {
+          "question": "Can you guarantee winning the tender?",
+          "answer": "We cannot guarantee winning, but we maximize chances through impeccable documentation, optimal pricing strategy, and full compliance."
+        },
+        {
+          "question": "Do you work with micro-enterprises?",
+          "answer": "Yes, we work with companies of any size. Many micro-enterprises have access to relevant tenders in SEAP."
+        },
+        {
+          "question": "What platforms do you monitor besides SEAP?",
+          "answer": "We focus on SEAP and SICAP, but can extend monitoring to TED (Tenders Electronic Daily) for European tenders."
+        },
+        {
+          "question": "What does SICAP compliance mean?",
+          "answer": "SICAP requires specific reporting and documentation throughout the execution of public contracts. We ensure full compliance with legal requirements."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Need SEAP/SICAP assistance?",
+      "subtitle": "Schedule a free consultation and discover how we can help.",
+      "cta": "Contact us"
+    }
+  },
+  "products": {
+    "metaTitle": "Software Products | Rammer Tech",
+    "metaDescription": "Discover the software products developed by Rammer Tech -- innovative solutions for real problems.",
+    "hero": {
+      "title": "Our Software",
+      "subtitle": "We don't just build software for others -- we also create our own solutions for real problems."
+    },
+    "comingSoon": "In development",
+    "requestDemo": "Request demo",
+    "earlyAccess": "Be the first to know",
+    "features": "Key Features",
+    "techStack": "Technologies Used",
+    "problem": {
+      "title": "The Problem",
+      "solutionTitle": "Our Solution"
+    },
+    "howItWorks": {
+      "title": "How It Works",
+      "steps": [
+        {
+          "title": "Configure",
+          "description": "Create an account and set your preferences."
+        },
+        {
+          "title": "Connect",
+          "description": "Import your data or connect your sources."
+        },
+        {
+          "title": "Automate",
+          "description": "Let the platform do the work for you."
+        },
+        {
+          "title": "Analyze",
+          "description": "Get actionable insights in real time."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Want to be notified at launch?",
+      "subtitle": "Sign up to receive updates about our products.",
+      "cta": "Contact us"
+    }
+  },
+  "blog": {
+    "metaTitle": "Blog -- Articles about Software and Public Procurement | Rammer Tech",
+    "metaDescription": "Articles, guides, and insights from the world of software and public procurement from the Rammer Tech team.",
+    "hero": {
+      "title": "Blog & Resources",
+      "subtitle": "Articles, guides, and insights from the world of software and public procurement."
+    },
+    "featured": "Featured Article",
+    "readArticle": "Read article",
+    "readMore": "Read",
+    "allArticles": "View all articles",
+    "minRead": "min read",
+    "categories": {
+      "all": "All",
+      "software": "Software Development",
+      "seap": "SEAP/SICAP",
+      "consulting": "IT Consulting",
+      "products": "Products",
+      "news": "Company News"
+    },
+    "noArticles": "No articles in this category.",
+    "ctaBanner": {
+      "title": "Need help with your project?",
+      "subtitle": "Contact us and let's discuss how we can help.",
+      "cta": "Request a consultation"
+    }
+  },
   "contact": {
-    "title": "Get in Touch",
-    "description": "Let's talk about your project. Fill out the form and we'll get back to you as soon as possible.",
+    "metaTitle": "Contact -- Rammer Tech | Software Solutions & SEAP",
+    "metaDescription": "Contact Rammer Tech for custom software solutions and SEAP/SICAP public procurement assistance. We respond within 24 hours.",
+    "hero": {
+      "title": "Let's Talk",
+      "subtitle": "We have an answer for every question. Write to us and we'll get back to you as soon as possible."
+    },
     "form": {
       "name": "Full name",
       "email": "Email address",
+      "phone": "Phone",
       "company": "Company",
+      "service": "Service of interest",
+      "servicePlaceholder": "Select a service",
+      "serviceOptions": [
+        { "value": "web-mobile", "label": "Web & Mobile Development" },
+        { "value": "enterprise", "label": "Enterprise Solutions" },
+        { "value": "consultanta", "label": "IT Consulting" },
+        { "value": "seap", "label": "Public Procurement SEAP/SICAP" },
+        { "value": "produs", "label": "Software Product" },
+        { "value": "altceva", "label": "Something else" }
+      ],
+      "budget": "Estimated budget",
+      "budgetPlaceholder": "Select a range",
+      "budgetOptions": [
+        { "value": "sub-5000", "label": "Under 5,000 EUR" },
+        { "value": "5000-15000", "label": "5,000 - 15,000 EUR" },
+        { "value": "15000-50000", "label": "15,000 - 50,000 EUR" },
+        { "value": "peste-50000", "label": "Over 50,000 EUR" },
+        { "value": "nu-stiu", "label": "I don't know yet" }
+      ],
       "message": "Your message",
-      "submit": "Send Message"
+      "gdpr": "I agree with the",
+      "gdprLink": "Privacy Policy",
+      "submit": "Send Message",
+      "sending": "Sending...",
+      "success": "Thank you! We'll get back to you within 24 hours.",
+      "error": "An error occurred. Please try again.",
+      "required": "This field is required",
+      "invalidEmail": "Invalid email address"
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "contact@rammer.tech",
+      "phone": "+40 XXX XXX XXX",
+      "schedule": "Monday - Friday, 09:00 - 18:00",
+      "location": "Romania",
+      "scheduleLabel": "Schedule",
+      "locationLabel": "Location"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "How long until I receive a quote?",
+          "answer": "Usually, we get back with a quote within 2-5 business days after the initial discussion, depending on project complexity."
+        },
+        {
+          "question": "Do you have a minimum project size?",
+          "answer": "We don't have a strict minimum, but our projects usually start from a few thousand euros. We discuss budget openly in the first meeting."
+        },
+        {
+          "question": "How does remote collaboration work?",
+          "answer": "We use modern communication and project management tools. We have regular status meetings and transparent progress reporting."
+        }
+      ]
     }
+  },
+  "legal": {
+    "privacy": {
+      "metaTitle": "Privacy Policy | Rammer Tech",
+      "title": "Privacy Policy",
+      "lastUpdated": "Last updated: February 2026",
+      "sections": [
+        {
+          "title": "Data Controller Identity",
+          "content": "Rammer Tech SRL, headquartered in Romania, is the controller of your personal data collected through this website."
+        },
+        {
+          "title": "What Data We Collect",
+          "content": "We collect the following categories of data: data provided through the contact form (name, email, phone, company, message), browsing data (IP address, browser type, pages visited), and technical cookies necessary for the site's operation."
+        },
+        {
+          "title": "Purpose of Collection",
+          "content": "Data is collected for: responding to contact requests received through the form, improving the site experience through traffic analysis, and ensuring the security and proper functioning of the site."
+        },
+        {
+          "title": "Legal Basis",
+          "content": "We process data based on your consent (contact form) and our legitimate interest (analytics, security)."
+        },
+        {
+          "title": "Data Retention Period",
+          "content": "Contact form data is retained for 2 years from the last interaction. Analytical data is anonymized and aggregated."
+        },
+        {
+          "title": "Your Rights",
+          "content": "You have the right to access, rectify, delete, port, and object to the processing of your personal data. To exercise these rights, contact us at the email address indicated in the contact section."
+        },
+        {
+          "title": "Cookies",
+          "content": "The site uses essential cookies for operation and analytical cookies (with consent). You can manage cookie preferences from the banner displayed on your first visit."
+        },
+        {
+          "title": "Data Security",
+          "content": "We implement appropriate technical and organizational measures to protect your data against unauthorized access, loss, or destruction."
+        },
+        {
+          "title": "Policy Changes",
+          "content": "We reserve the right to update this policy. Any changes will be published on this page with the update date."
+        }
+      ]
+    },
+    "terms": {
+      "metaTitle": "Terms & Conditions | Rammer Tech",
+      "title": "Terms & Conditions",
+      "lastUpdated": "Last updated: February 2026",
+      "sections": [
+        {
+          "title": "Acceptance of Terms",
+          "content": "By accessing and using the Rammer Tech website, you accept these terms and conditions in full. If you disagree with any of the terms, please do not use the site."
+        },
+        {
+          "title": "Service Description",
+          "content": "The site provides information about the software development and consulting services of Rammer Tech SRL. The site content is informational and does not constitute a firm commercial offer."
+        },
+        {
+          "title": "Intellectual Property",
+          "content": "All site content (texts, images, logo, design, source code) is the property of Rammer Tech SRL and is protected by copyright law. Reproduction without written consent is prohibited."
+        },
+        {
+          "title": "Limitation of Liability",
+          "content": "Information on the site is provided 'as is'. We do not guarantee uninterrupted availability of the site and are not responsible for any losses resulting from the use of the information presented."
+        },
+        {
+          "title": "External Links",
+          "content": "The site may contain links to third-party websites. We are not responsible for the content or privacy policies of these sites."
+        },
+        {
+          "title": "Electronic Communications",
+          "content": "By using the contact form, you agree to receive electronic communications from us regarding your request."
+        },
+        {
+          "title": "Applicable Law",
+          "content": "These terms are governed by Romanian law. Any dispute will be settled by the competent courts in Romania."
+        },
+        {
+          "title": "Changes",
+          "content": "We reserve the right to modify these terms at any time. Changes take effect from the date of publication on the site."
+        }
+      ]
+    }
+  },
+  "cookieBanner": {
+    "message": "We use cookies to improve your experience on our website.",
+    "learnMore": "Learn more",
+    "acceptAll": "Accept all",
+    "necessaryOnly": "Necessary only"
+  },
+  "common": {
+    "home": "Home",
+    "backToHome": "Back to Home",
+    "loading": "Loading...",
+    "error": "Error",
+    "readMore": "Read more"
   },
   "footer": {
     "company": "Rammer Tech",
+    "tagline": "Innovation. Performance. Trust.",
     "rights": "All rights reserved.",
-    "tagline": "Innovation. Performance. Trust."
+    "columns": {
+      "company": {
+        "title": "Company",
+        "links": [
+          { "label": "About Us", "href": "/despre-noi" },
+          { "label": "Team", "href": "/despre-noi#echipa" },
+          { "label": "Careers", "href": "#", "badge": "Soon" }
+        ]
+      },
+      "services": {
+        "title": "Services",
+        "links": [
+          { "label": "Web & Mobile Development", "href": "/servicii" },
+          { "label": "Enterprise Solutions", "href": "/servicii" },
+          { "label": "IT Consulting", "href": "/servicii" },
+          { "label": "SEAP/SICAP", "href": "/seap-sicap" }
+        ]
+      },
+      "resources": {
+        "title": "Resources",
+        "links": [
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Portfolio", "href": "/portofoliu" },
+          { "label": "Products", "href": "/produse" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          { "label": "Privacy Policy", "href": "/politica-confidentialitate" },
+          { "label": "Terms & Conditions", "href": "/termeni-si-conditii" }
+        ]
+      }
+    },
+    "contact": {
+      "email": "contact@rammer.tech",
+      "phone": "+40 XXX XXX XXX",
+      "location": "Romania"
+    }
   }
 }

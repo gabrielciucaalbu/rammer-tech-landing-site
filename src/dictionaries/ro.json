@@ -1,65 +1,716 @@
 {
+  "meta": {
+    "siteName": "Rammer Tech",
+    "titleSuffix": " | Rammer Tech"
+  },
   "navigation": {
     "home": "Acasa",
     "services": "Servicii",
+    "about": "Despre Noi",
+    "portfolio": "Portofoliu",
+    "seap": "SEAP/SICAP",
+    "products": "Produse",
+    "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
     "title": "Solutii Digitale pentru Afaceri Performante",
     "subtitle": "Dezvoltam aplicatii web si mobile de ultima generatie, sisteme enterprise si solutii de achizitii publice SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
-    "cta": "Descopera Serviciile Noastre"
+    "cta": "Descopera Serviciile Noastre",
+    "ctaSecondary": "Contacteaza-ne"
   },
-  "services": {
+  "trustBar": {
+    "projects": "Proiecte Livrate",
+    "experience": "Ani Experienta",
+    "clients": "Clienti Multumiti",
+    "tenders": "Licitatii SEAP Castigate"
+  },
+  "servicesPreview": {
     "title": "Serviciile Noastre",
+    "viewAll": "Vezi toate serviciile",
+    "learnMore": "Afla mai mult",
     "items": [
       {
         "title": "Dezvoltare Web & Mobile",
-        "description": "Aplicatii web responsive si aplicatii mobile native si cross-platform, construite cu cele mai moderne tehnologii. De la MVP la platforme la scara larga.",
+        "description": "Aplicatii web responsive si mobile cross-platform, construite cu cele mai moderne tehnologii.",
         "icon": "code"
       },
       {
         "title": "Solutii Enterprise",
-        "description": "Sisteme ERP, CRM si platforme de business intelligence personalizate pentru optimizarea proceselor si cresterea eficientei operationale.",
+        "description": "Sisteme ERP, CRM si platforme de business intelligence personalizate.",
         "icon": "building"
       },
       {
         "title": "Consultanta IT",
-        "description": "Analiza tehnica, arhitectura software si strategie de digitalizare. Va ghidam in alegerea solutiilor potrivite pentru obiectivele dumneavoastra.",
+        "description": "Analiza tehnica, arhitectura software si strategie de digitalizare.",
         "icon": "lightbulb"
       },
       {
         "title": "Achizitii Publice SEAP",
-        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice. Asistenta pentru depunerea ofertelor, documentatie si conformitate SICAP.",
+        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice.",
         "icon": "shield"
       }
     ]
   },
-  "seap_section": {
-    "title": "Expertiza SEAP/SICAP",
-    "description": "Suntem specializati in navigarea complexitatii Sistemului Electronic de Achizitii Publice (SEAP) si a platformei SICAP. Oferim suport complet pentru autoritati contractante si operatori economici.",
+  "seapHighlight": {
+    "title": "Navigam Complexitatea Achizitiilor Publice",
+    "description": "Oferim suport complet pentru autoritati contractante si operatori economici in sistemul SEAP/SICAP.",
     "features": [
       "Pregatirea si depunerea documentatiei de licitatie",
       "Asistenta tehnica pentru conformitatea SICAP",
       "Monitorizarea oportunitatilor de achizitii publice",
-      "Consultanta pentru strategii de ofertare castigatoare",
-      "Dezvoltare platforme integrate cu API-ul SEAP",
-      "Training si formare profesionala SEAP/SICAP"
+      "Consultanta pentru strategii de ofertare castigatoare"
+    ],
+    "cta": "Afla mai multe despre SEAP/SICAP"
+  },
+  "valueProposition": {
+    "title": "De ce Rammer Tech?",
+    "items": [
+      {
+        "title": "Orientare pe Client",
+        "description": "Intelegem nevoile unice ale fiecarui proiect si livram solutii personalizate.",
+        "icon": "users"
+      },
+      {
+        "title": "Expertiza Tehnica",
+        "description": "Stack modern, cod de calitate si best practices in fiecare linie de cod.",
+        "icon": "cpu"
+      },
+      {
+        "title": "Rezultate Masurabile",
+        "description": "Livrare la timp, ROI demonstrabil si impact real in afacerea ta.",
+        "icon": "trending-up"
+      }
     ]
   },
+  "portfolioPreview": {
+    "title": "Proiecte Recente",
+    "viewAll": "Vezi portofoliul complet"
+  },
+  "ctaBanner": {
+    "home": {
+      "title": "Ai un proiect in minte?",
+      "subtitle": "Hai sa vorbim despre cum putem transforma ideea ta in realitate.",
+      "cta": "Solicita o consultatie gratuita"
+    }
+  },
+  "services": {
+    "pageTitle": "Servicii Software Complete pentru Afacerea Ta",
+    "pageSubtitle": "De la conceptie la livrare si mentenanta, oferim solutii end-to-end pentru fiecare nevoie digitala.",
+    "metaTitle": "Servicii Software -- Dezvoltare Web, Mobile, Enterprise | Rammer Tech",
+    "metaDescription": "Servicii complete de dezvoltare software: aplicatii web si mobile, solutii enterprise, consultanta IT si expertiza achizitii publice SEAP/SICAP.",
+    "items": [
+      {
+        "title": "Dezvoltare Web & Mobile",
+        "description": "Construim aplicatii web responsive, SPA, PWA si aplicatii mobile cross-platform. De la analiza de requirements la deployment si mentenanta.",
+        "icon": "code",
+        "features": [
+          "Website-uri corporative si landing pages",
+          "Aplicatii web complexe (dashboards, platforme)",
+          "Aplicatii mobile cross-platform",
+          "API-uri si integrari third-party",
+          "MVP-uri si prototipuri rapide"
+        ],
+        "cta": "Discuta proiectul tau",
+        "ctaParam": "web-mobile"
+      },
+      {
+        "title": "Solutii Enterprise",
+        "description": "Dezvoltam sisteme ERP personalizate, CRM adaptat pe nevoile business-ului, platforme de Business Intelligence si automatizarea proceselor interne.",
+        "icon": "building",
+        "features": [
+          "Sisteme ERP modulare",
+          "CRM cu pipeline de vanzari",
+          "Dashboards si rapoarte BI",
+          "Automatizari workflow",
+          "Integrare cu sisteme existente"
+        ],
+        "cta": "Solicita o analiza gratuita",
+        "ctaParam": "enterprise"
+      },
+      {
+        "title": "Consultanta IT & Strategie Digitala",
+        "description": "Oferim audit tehnic al solutiilor existente, arhitectura software, strategie de digitalizare si selectia tehnologiilor potrivite.",
+        "icon": "lightbulb",
+        "features": [
+          "Audit si evaluare tehnica",
+          "Arhitectura de solutie",
+          "Strategie de migrare cloud",
+          "Optimizare performanta",
+          "Formare tehnica si transfer de cunostinte"
+        ],
+        "cta": "Programeaza o consultatie",
+        "ctaParam": "consultanta"
+      },
+      {
+        "title": "Achizitii Publice SEAP/SICAP",
+        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice. Suport atat pentru autoritati contractante cat si operatori economici.",
+        "icon": "shield",
+        "features": [
+          "Pregatirea documentatiei de licitatie",
+          "Depunerea ofertelor in SEAP",
+          "Monitorizare oportunitati de achizitii",
+          "Conformitate SICAP",
+          "Dezvoltare platforme integrate cu API-ul SEAP",
+          "Training SEAP/SICAP"
+        ],
+        "cta": "Afla mai multe despre SEAP/SICAP",
+        "ctaParam": "seap",
+        "isSeap": true
+      }
+    ],
+    "workflow": {
+      "title": "Procesul Nostru de Lucru",
+      "steps": [
+        {
+          "title": "Descoperire",
+          "description": "Intelegem nevoile si obiectivele proiectului tau."
+        },
+        {
+          "title": "Planificare",
+          "description": "Definim arhitectura, timeline-ul si bugetul."
+        },
+        {
+          "title": "Dezvoltare",
+          "description": "Iteratii agile cu feedback constant."
+        },
+        {
+          "title": "Testare",
+          "description": "QA riguros si teste automate."
+        },
+        {
+          "title": "Lansare",
+          "description": "Deployment si go-live."
+        },
+        {
+          "title": "Suport",
+          "description": "Mentenanta si imbunatatiri continue."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Pregatit sa incepi?",
+      "subtitle": "Hai sa discutam despre proiectul tau.",
+      "cta": "Solicita o oferta"
+    }
+  },
+  "about": {
+    "metaTitle": "Despre Noi -- Echipa si Povestea Rammer Tech",
+    "metaDescription": "Cunoaste echipa Rammer Tech -- dezvoltatori pasionati de software, specializati in solutii custom si achizitii publice SEAP/SICAP.",
+    "hero": {
+      "title": "Echipa Ta de Tehnologie",
+      "subtitle": "Suntem o echipa mica, agila si pasionata care transforma idei in solutii software de impact."
+    },
+    "story": {
+      "title": "Povestea Noastra",
+      "content": "Rammer Tech s-a nascut din dorinta de a aduce tehnologie de calitate acolo unde conteaza cel mai mult -- in afacerile romanesti. Am pornit cu o viziune simpla: sa construim software care chiar functioneaza, care rezolva probleme reale si care face diferenta in viata de zi cu zi a clientilor nostri. De la primele proiecte si pana astazi, am ramas fideli principiului nostru fundamental: calitatea nu e negociabila."
+    },
+    "mission": {
+      "title": "Misiunea Noastra",
+      "content": "Livram solutii software care transforma afaceri si simplifica procese complexe."
+    },
+    "vision": {
+      "title": "Viziunea Noastra",
+      "content": "Sa devenim partenerul de referinta pentru digitalizarea IMM-urilor din Romania."
+    },
+    "values": {
+      "title": "Valorile Noastre",
+      "items": [
+        {
+          "title": "Calitate",
+          "description": "Codul nostru reflecta standardele noastre. Fiecare linie conteaza.",
+          "icon": "star"
+        },
+        {
+          "title": "Transparenta",
+          "description": "Comunicare deschisa, fara surprize. Stii mereu unde e proiectul tau.",
+          "icon": "eye"
+        },
+        {
+          "title": "Orientare pe Rezultat",
+          "description": "Masuram succesul prin impactul real in afacerea ta.",
+          "icon": "target"
+        },
+        {
+          "title": "Inovatie Pragmatica",
+          "description": "Tehnologie de varf cu picioarele pe pamant.",
+          "icon": "rocket"
+        },
+        {
+          "title": "Parteneriat",
+          "description": "Succesul tau este succesul nostru. Suntem in aceeasi echipa.",
+          "icon": "handshake"
+        }
+      ]
+    },
+    "team": {
+      "title": "Echipa Noastra",
+      "members": []
+    },
+    "milestones": {
+      "title": "Parcursul Nostru",
+      "items": []
+    },
+    "differentiators": {
+      "title": "De Ce Sa Lucrezi Cu Noi?",
+      "items": [
+        {
+          "title": "Echipa Dedicata",
+          "description": "Nu subcontractam. Fiecare proiect primeste atentia noastra completa."
+        },
+        {
+          "title": "Comunicare Constanta",
+          "description": "Update-uri regulate, fara ghosting. Stii mereu statusul proiectului."
+        },
+        {
+          "title": "Flexibilitate",
+          "description": "Ne adaptam la nevoile si bugetul tau. Fara pachete rigide."
+        },
+        {
+          "title": "Expertiza de Nisa",
+          "description": "SEAP/SICAP + software custom = o combinatie rara pe piata."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Vrei sa ne cunosti mai bine?",
+      "subtitle": "Programeaza o discutie si descopera cum putem colabora.",
+      "cta": "Contacteaza-ne"
+    }
+  },
+  "portfolio": {
+    "metaTitle": "Portofoliu -- Proiecte Software & Studii de Caz | Rammer Tech",
+    "metaDescription": "Exploreaza proiectele si studiile de caz Rammer Tech: aplicatii web, solutii enterprise si platforme SEAP/SICAP livrate cu succes.",
+    "hero": {
+      "title": "Proiectele Noastre",
+      "subtitle": "Fiecare proiect este o poveste de succes. Iata cateva dintre ele."
+    },
+    "filters": {
+      "all": "Toate",
+      "web": "Web & Mobile",
+      "enterprise": "Enterprise",
+      "seap": "SEAP/SICAP",
+      "product": "Produs Propriu"
+    },
+    "viewDetails": "Vezi detalii",
+    "ctaBanner": {
+      "title": "Urmatorul proiect din portofoliu ar putea fi al tau.",
+      "subtitle": "Spune-ne despre ideea ta si hai sa o facem realitate.",
+      "cta": "Incepe un proiect"
+    }
+  },
+  "seap": {
+    "metaTitle": "Achizitii Publice SEAP/SICAP -- Asistenta si Software | Rammer Tech",
+    "metaDescription": "Servicii complete pentru achizitii publice: asistenta SEAP, conformitate SICAP, monitorizare licitatii si solutii software pentru operatori economici si autoritati contractante.",
+    "hero": {
+      "title": "Expertiza Completa in Achizitii Publice",
+      "subtitle": "Navigam complexitatea SEAP si SICAP pentru tine -- de la documentatie la castigarea licitatiilor.",
+      "cta": "Solicita asistenta SEAP"
+    },
+    "explainer": {
+      "title": "Ce este SEAP/SICAP?",
+      "seapTitle": "SEAP",
+      "seapDescription": "Sistemul Electronic de Achizitii Publice -- platforma nationala unde se desfasoara licitatiile publice din Romania.",
+      "sicapTitle": "SICAP",
+      "sicapDescription": "Sistemul Informatic Colaborativ pentru Mediul de Achizitii Publice -- componenta de conformitate si raportare.",
+      "whyMatters": "Achizitiile publice din Romania au o valoare anuala de miliarde de euro. Navigarea corecta a acestui sistem inseamna oportunitati imense pentru afacerea ta."
+    },
+    "operatorServices": {
+      "title": "Servicii pentru Operatori Economici",
+      "subtitle": "Vrei sa castigi licitatii? Te ajutam.",
+      "items": [
+        {
+          "title": "Pregatire Documentatie",
+          "description": "Propunere tehnica si financiara conforma cu cerintele."
+        },
+        {
+          "title": "Depunere Oferte",
+          "description": "Asistenta la incarcarea ofertelor in SEAP."
+        },
+        {
+          "title": "Monitorizare Oportunitati",
+          "description": "Identificam licitatii relevante pentru profilul tau."
+        },
+        {
+          "title": "Strategie de Ofertare",
+          "description": "Consultanta pentru formularea ofertelor castigatoare."
+        },
+        {
+          "title": "Contestatii",
+          "description": "Asistenta in cazul contestatiilor, in parteneriat cu avocati specialisti."
+        },
+        {
+          "title": "Training",
+          "description": "Formare profesionala pentru echipa ta."
+        }
+      ]
+    },
+    "authorityServices": {
+      "title": "Servicii pentru Autoritati Contractante",
+      "subtitle": "Simplificam procesul de achizitie publica.",
+      "items": [
+        {
+          "title": "Documentatie de Atribuire",
+          "description": "Caiet de sarcini, fisa de date."
+        },
+        {
+          "title": "Publicare Proceduri",
+          "description": "Asistenta in publicarea in SEAP."
+        },
+        {
+          "title": "Evaluare Oferte",
+          "description": "Suport tehnic in procesul de evaluare."
+        },
+        {
+          "title": "Conformitate SICAP",
+          "description": "Raportari si conformitate legala."
+        },
+        {
+          "title": "Platforma Online",
+          "description": "Dezvoltare de instrumente digitale pentru gestionarea achizitiilor."
+        }
+      ]
+    },
+    "software": {
+      "title": "Solutii Software pentru SEAP",
+      "subtitle": "Automatizam si optimizam procesul de achizitii.",
+      "items": [
+        {
+          "title": "Monitorizare Automata",
+          "description": "Software care scaneaza SEAP si alerteaza pentru licitatii relevante."
+        },
+        {
+          "title": "Generator Documente",
+          "description": "Automatizarea crearii documentatiei standard."
+        },
+        {
+          "title": "Dashboard SEAP",
+          "description": "Vizualizare si tracking al licitatiilor active."
+        },
+        {
+          "title": "Integrare API SEAP",
+          "description": "Conectare cu sisteme interne (ERP, CRM)."
+        }
+      ]
+    },
+    "stats": {
+      "tendersWon": "Licitatii Castigate",
+      "contractValue": "Valoare Contracte (mil. RON)",
+      "successRate": "Rata de Succes",
+      "clientsAssisted": "Clienti Asistati"
+    },
+    "faq": {
+      "title": "Intrebari Frecvente",
+      "items": [
+        {
+          "question": "Cat costa serviciile de asistenta SEAP?",
+          "answer": "Costurile variaza in functie de complexitatea licitatiei si serviciile solicitate. Contacteaza-ne pentru o oferta personalizata."
+        },
+        {
+          "question": "Cat dureaza pregatirea unei oferte?",
+          "answer": "In general, pregatirea dureaza intre 5 si 15 zile lucratoare, in functie de complexitate si termenele de depunere."
+        },
+        {
+          "question": "Puteti garanta castigarea licitatiei?",
+          "answer": "Nu putem garanta castigarea, dar maximizam sansele prin documentatie impecabila, strategie de pret optima si conformitate deplina."
+        },
+        {
+          "question": "Lucrati si cu microintreprinderi?",
+          "answer": "Da, lucram cu companii de orice dimensiune. Multe microintreprinderi au acces la licitatii relevante in SEAP."
+        },
+        {
+          "question": "Ce platforme monitorizati in afara de SEAP?",
+          "answer": "Ne concentram pe SEAP si SICAP, dar putem extinde monitorizarea si la TED (Tenders Electronic Daily) pentru licitatii europene."
+        },
+        {
+          "question": "Ce inseamna conformitatea SICAP?",
+          "answer": "SICAP impune raportari si documentatie specifica pe parcursul derularii contractelor publice. Asiguram conformitatea completa cu cerintele legale."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Ai nevoie de asistenta SEAP/SICAP?",
+      "subtitle": "Programeaza o consultatie gratuita si descopera cum te putem ajuta.",
+      "cta": "Contacteaza-ne"
+    }
+  },
+  "products": {
+    "metaTitle": "Produse Software | Rammer Tech",
+    "metaDescription": "Descopera produsele software dezvoltate de Rammer Tech -- solutii inovatoare pentru probleme reale.",
+    "hero": {
+      "title": "Software-ul Nostru",
+      "subtitle": "Nu doar construim software pentru altii -- cream si propriile solutii pentru probleme reale."
+    },
+    "comingSoon": "In dezvoltare",
+    "requestDemo": "Solicita demo",
+    "earlyAccess": "Fii primul care afla",
+    "features": "Functionalitati Cheie",
+    "techStack": "Tehnologii Utilizate",
+    "problem": {
+      "title": "Problema",
+      "solutionTitle": "Solutia Noastra"
+    },
+    "howItWorks": {
+      "title": "Cum Functioneaza",
+      "steps": [
+        {
+          "title": "Configureaza",
+          "description": "Creezi cont si setezi preferintele."
+        },
+        {
+          "title": "Conecteaza",
+          "description": "Importi datele sau conectezi sursele."
+        },
+        {
+          "title": "Automatizeaza",
+          "description": "Lasa platforma sa lucreze pentru tine."
+        },
+        {
+          "title": "Analizeaza",
+          "description": "Obtii insights actionabile in timp real."
+        }
+      ]
+    },
+    "ctaBanner": {
+      "title": "Vrei sa fii notificat la lansare?",
+      "subtitle": "Inscrie-te pentru a primi actualizari despre produsele noastre.",
+      "cta": "Contacteaza-ne"
+    }
+  },
+  "blog": {
+    "metaTitle": "Blog -- Articole despre Software si Achizitii Publice | Rammer Tech",
+    "metaDescription": "Articole, ghiduri si perspective din lumea software-ului si a achizitiilor publice de la echipa Rammer Tech.",
+    "hero": {
+      "title": "Blog & Resurse",
+      "subtitle": "Articole, ghiduri si perspective din lumea software-ului si a achizitiilor publice."
+    },
+    "featured": "Articol Recomandat",
+    "readArticle": "Citeste articolul",
+    "readMore": "Citeste",
+    "allArticles": "Vezi toate articolele",
+    "minRead": "min citire",
+    "categories": {
+      "all": "Toate",
+      "software": "Dezvoltare Software",
+      "seap": "SEAP/SICAP",
+      "consulting": "Consultanta IT",
+      "products": "Produse",
+      "news": "Stiri Companie"
+    },
+    "noArticles": "Niciun articol in aceasta categorie.",
+    "ctaBanner": {
+      "title": "Ai nevoie de ajutor cu proiectul tau?",
+      "subtitle": "Contacteaza-ne si discutam despre cum te putem ajuta.",
+      "cta": "Solicita o consultatie"
+    }
+  },
   "contact": {
-    "title": "Contacteaza-ne",
-    "description": "Hai sa discutam despre proiectul tau. Completeaza formularul si te contactam in cel mai scurt timp.",
+    "metaTitle": "Contact -- Rammer Tech | Solutii Software si SEAP",
+    "metaDescription": "Contacteaza Rammer Tech pentru solutii software personalizate si asistenta achizitii publice SEAP/SICAP. Raspundem in maximum 24 de ore.",
+    "hero": {
+      "title": "Hai sa Vorbim",
+      "subtitle": "Avem un raspuns pentru fiecare intrebare. Scrie-ne si te contactam in cel mai scurt timp."
+    },
     "form": {
       "name": "Nume complet",
       "email": "Adresa de email",
+      "phone": "Telefon",
       "company": "Companie",
+      "service": "Serviciu de interes",
+      "servicePlaceholder": "Selecteaza un serviciu",
+      "serviceOptions": [
+        { "value": "web-mobile", "label": "Dezvoltare Web & Mobile" },
+        { "value": "enterprise", "label": "Solutii Enterprise" },
+        { "value": "consultanta", "label": "Consultanta IT" },
+        { "value": "seap", "label": "Achizitii Publice SEAP/SICAP" },
+        { "value": "produs", "label": "Produs Software" },
+        { "value": "altceva", "label": "Altceva" }
+      ],
+      "budget": "Buget estimat",
+      "budgetPlaceholder": "Selecteaza un interval",
+      "budgetOptions": [
+        { "value": "sub-5000", "label": "Sub 5.000 EUR" },
+        { "value": "5000-15000", "label": "5.000 - 15.000 EUR" },
+        { "value": "15000-50000", "label": "15.000 - 50.000 EUR" },
+        { "value": "peste-50000", "label": "Peste 50.000 EUR" },
+        { "value": "nu-stiu", "label": "Nu stiu inca" }
+      ],
       "message": "Mesajul tau",
-      "submit": "Trimite Mesajul"
+      "gdpr": "Sunt de acord cu",
+      "gdprLink": "Politica de Confidentialitate",
+      "submit": "Trimite Mesajul",
+      "sending": "Se trimite...",
+      "success": "Multumim! Te contactam in maximum 24 de ore.",
+      "error": "A aparut o eroare. Te rugam sa incerci din nou.",
+      "required": "Acest camp este obligatoriu",
+      "invalidEmail": "Adresa de email nu este valida"
+    },
+    "info": {
+      "title": "Informatii de Contact",
+      "email": "contact@rammer.tech",
+      "phone": "+40 XXX XXX XXX",
+      "schedule": "Luni - Vineri, 09:00 - 18:00",
+      "location": "Romania",
+      "scheduleLabel": "Program",
+      "locationLabel": "Locatie"
+    },
+    "faq": {
+      "title": "Intrebari Frecvente",
+      "items": [
+        {
+          "question": "Cat dureaza pana primesc o oferta?",
+          "answer": "De obicei, revenim cu o oferta in 2-5 zile lucratoare dupa discutia initiala, in functie de complexitatea proiectului."
+        },
+        {
+          "question": "Aveti un minim de proiect?",
+          "answer": "Nu avem un minim strict, dar proiectele noastre incep de obicei de la cateva mii de euro. Discutam deschis despre buget in prima intalnire."
+        },
+        {
+          "question": "Cum functioneaza colaborarea la distanta?",
+          "answer": "Folosim instrumente moderne de comunicare si project management. Avem sedinte regulate de status si raportare transparenta a progresului."
+        }
+      ]
     }
+  },
+  "legal": {
+    "privacy": {
+      "metaTitle": "Politica de Confidentialitate | Rammer Tech",
+      "title": "Politica de Confidentialitate",
+      "lastUpdated": "Ultima actualizare: Februarie 2026",
+      "sections": [
+        {
+          "title": "Identitatea Operatorului de Date",
+          "content": "Rammer Tech SRL, cu sediul in Romania, este operatorul datelor dumneavoastra cu caracter personal colectate prin intermediul acestui site web."
+        },
+        {
+          "title": "Ce Date Colectam",
+          "content": "Colectam urmatoarele categorii de date: date furnizate prin formularul de contact (nume, email, telefon, companie, mesaj), date de navigare (adresa IP, tipul browserului, paginile vizitate) si cookies tehnice necesare functionarii site-ului."
+        },
+        {
+          "title": "Scopul Colectarii",
+          "content": "Datele sunt colectate pentru: raspunsul la cererile de contact primite prin formular, imbunatatirea experientei pe site prin analiza traficului si asigurarea securitatii si functionarii corecte a site-ului."
+        },
+        {
+          "title": "Baza Legala",
+          "content": "Prelucram datele pe baza consimtamantului dumneavoastra (formularul de contact) si a interesului nostru legitim (analytics, securitate)."
+        },
+        {
+          "title": "Durata Pastrarii",
+          "content": "Datele din formularele de contact sunt pastrate timp de 2 ani de la ultima interactiune. Datele analitice sunt anonimizate si agregate."
+        },
+        {
+          "title": "Drepturile Dumneavoastra",
+          "content": "Aveti dreptul de acces, rectificare, stergere, portabilitate si opozitie cu privire la datele dumneavoastra personale. Pentru exercitarea acestor drepturi, contactati-ne la adresa de email indicata in sectiunea de contact."
+        },
+        {
+          "title": "Cookies",
+          "content": "Site-ul utilizeaza cookies esentiale pentru functionare si cookies analitice (cu consimtamant). Puteti gestiona preferintele de cookies din banner-ul afisat la prima vizita."
+        },
+        {
+          "title": "Securitatea Datelor",
+          "content": "Implementam masuri tehnice si organizatorice adecvate pentru protejarea datelor dumneavoastra impotriva accesului neautorizat, pierderii sau distrugerii."
+        },
+        {
+          "title": "Modificari ale Politicii",
+          "content": "Ne rezervam dreptul de a actualiza aceasta politica. Orice modificare va fi publicata pe aceasta pagina cu data actualizarii."
+        }
+      ]
+    },
+    "terms": {
+      "metaTitle": "Termeni si Conditii | Rammer Tech",
+      "title": "Termeni si Conditii",
+      "lastUpdated": "Ultima actualizare: Februarie 2026",
+      "sections": [
+        {
+          "title": "Acceptarea Termenilor",
+          "content": "Prin accesarea si utilizarea site-ului web Rammer Tech, acceptati acesti termeni si conditii in totalitate. Daca nu sunteti de acord cu oricare dintre termeni, va rugam sa nu utilizati site-ul."
+        },
+        {
+          "title": "Descrierea Serviciilor",
+          "content": "Site-ul ofera informatii despre serviciile de dezvoltare software si consultanta ale Rammer Tech SRL. Continutul site-ului este informativ si nu constituie o oferta comerciala ferma."
+        },
+        {
+          "title": "Proprietate Intelectuala",
+          "content": "Tot continutul site-ului (texte, imagini, logo, design, cod sursa) este proprietatea Rammer Tech SRL si este protejat de legislatia privind drepturile de autor. Reproducerea fara acord scris este interzisa."
+        },
+        {
+          "title": "Limitarea Raspunderii",
+          "content": "Informatiile de pe site sunt oferite 'as is'. Nu garantam disponibilitatea neintrerupta a site-ului si nu suntem responsabili pentru eventualele pierderi rezultate din utilizarea informatiilor prezentate."
+        },
+        {
+          "title": "Link-uri Externe",
+          "content": "Site-ul poate contine link-uri catre site-uri terte. Nu suntem responsabili pentru continutul sau politicile de confidentialitate ale acestor site-uri."
+        },
+        {
+          "title": "Comunicari Electronice",
+          "content": "Prin utilizarea formularului de contact, acceptati sa primiti comunicari electronice de la noi in legatura cu cererea dumneavoastra."
+        },
+        {
+          "title": "Legea Aplicabila",
+          "content": "Acesti termeni sunt guvernati de legislatia romana. Orice disputa va fi solutionata de instantele competente din Romania."
+        },
+        {
+          "title": "Modificari",
+          "content": "Ne rezervam dreptul de a modifica acesti termeni in orice moment. Modificarile intra in vigoare de la data publicarii pe site."
+        }
+      ]
+    }
+  },
+  "cookieBanner": {
+    "message": "Folosim cookies pentru a-ti imbunatati experienta pe site-ul nostru.",
+    "learnMore": "Afla mai mult",
+    "acceptAll": "Accepta toate",
+    "necessaryOnly": "Doar necesare"
+  },
+  "common": {
+    "home": "Acasa",
+    "backToHome": "Inapoi la Acasa",
+    "loading": "Se incarca...",
+    "error": "Eroare",
+    "readMore": "Citeste mai mult"
   },
   "footer": {
     "company": "Rammer Tech",
+    "tagline": "Inovatie. Performanta. Incredere.",
     "rights": "Toate drepturile rezervate.",
-    "tagline": "Inovatie. Performanta. Incredere."
+    "columns": {
+      "company": {
+        "title": "Companie",
+        "links": [
+          { "label": "Despre Noi", "href": "/despre-noi" },
+          { "label": "Echipa", "href": "/despre-noi#echipa" },
+          { "label": "Cariere", "href": "#", "badge": "Curand" }
+        ]
+      },
+      "services": {
+        "title": "Servicii",
+        "links": [
+          { "label": "Dezvoltare Web & Mobile", "href": "/servicii" },
+          { "label": "Solutii Enterprise", "href": "/servicii" },
+          { "label": "Consultanta IT", "href": "/servicii" },
+          { "label": "SEAP/SICAP", "href": "/seap-sicap" }
+        ]
+      },
+      "resources": {
+        "title": "Resurse",
+        "links": [
+          { "label": "Blog", "href": "/blog" },
+          { "label": "Portofoliu", "href": "/portofoliu" },
+          { "label": "Produse", "href": "/produse" }
+        ]
+      },
+      "legal": {
+        "title": "Legal",
+        "links": [
+          { "label": "Politica de Confidentialitate", "href": "/politica-confidentialitate" },
+          { "label": "Termeni si Conditii", "href": "/termeni-si-conditii" }
+        ]
+      }
+    },
+    "contact": {
+      "email": "contact@rammer.tech",
+      "phone": "+40 XXX XXX XXX",
+      "location": "Romania"
+    }
   }
 }

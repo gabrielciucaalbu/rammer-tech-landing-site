@@ -142,7 +142,7 @@ export function buildContactEmailHtml(data: {
           <tr>
             <td style="padding: 24px 32px; background-color: #fafaf9; border-radius: 0 0 8px 8px; border-top: 1px solid #e7e5e4;">
               <p style="margin: 0; font-size: 12px; color: #a8a29e; text-align: center;">
-                Acest email a fost generat automat de formularul de contact de pe <a href="https://rammer.tech" style="color: #8B1A1A; text-decoration: none;">rammer.tech</a>
+                Acest email a fost generat automat de formularul de contact de pe <a href="https://rammertech.ro" style="color: #8B1A1A; text-decoration: none;">rammertech.ro</a>
               </p>
             </td>
           </tr>

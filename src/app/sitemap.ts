@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { i18n } from "@/i18n-config";
 import { blogPosts } from "@/data/blog-posts";
 
-const BASE_URL = "https://rammer.tech";
+const BASE_URL = "https://rammertech.ro";
 
 const staticPages = [
   "",

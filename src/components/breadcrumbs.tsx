@@ -18,7 +18,7 @@ export function Breadcrumbs({ items, lang }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: idx + 1,
       name: item.label,
-      ...(item.href ? { item: `https://rammer.tech/${lang}${item.href}` } : {}),
+      ...(item.href ? { item: `https://rammertech.ro/${lang}${item.href}` } : {}),
     })),
   };
 

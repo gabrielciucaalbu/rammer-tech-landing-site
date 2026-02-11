@@ -86,8 +86,8 @@ export async function sendMessage(
 
     // 5. Send email via Resend
     const { error: resendError } = await resend.emails.send({
-      from: "Rammer Tech <onboarding@resend.dev>", // Change to "Rammer Tech <noreply@rammer.tech>" after domain verification
-      to: process.env.CONTACT_EMAIL_TO || "contact@rammer.tech",
+      from: "Rammer Tech <office@rammertech.ro>",
+      to: process.env.CONTACT_EMAIL_TO || "office@rammertech.ro",
       replyTo: validData.email,
       subject,
       html: emailHtml,

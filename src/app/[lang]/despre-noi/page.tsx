@@ -168,7 +168,7 @@ export default async function AboutPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Rammer Tech",
-            url: "https://rammer.tech",
+            url: "https://rammertech.ro",
             description: about.hero.subtitle,
           }),
         }}

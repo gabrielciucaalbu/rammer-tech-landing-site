@@ -9,6 +9,6 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ["/api/"],
       },
     ],
-    sitemap: "https://rammer.tech/sitemap.xml",
+    sitemap: "https://rammertech.ro/sitemap.xml",
   };
 }

@@ -32,7 +32,7 @@ All code has been successfully implemented and the build passes without errors.
 ### 2. Add and Verify Domain
 
 1. In Resend dashboard, go to **Domains** → **Add Domain**
-2. Add `rammer.tech` (or a subdomain like `send.rammer.tech`)
+2. Add `rammertech.ro` (or a subdomain like `send.rammertech.ro`)
 3. Resend will provide DNS records (SPF and DKIM)
 4. Add these records to your DNS provider:
    - **SPF record** (TXT): Authorizes Resend to send emails
@@ -54,7 +54,7 @@ Create a `.env.local` file in the project root:
 RESEND_API_KEY=re_your_actual_api_key_here
 
 # Where contact form emails should be sent
-CONTACT_EMAIL_TO=contact@rammer.tech
+CONTACT_EMAIL_TO=office@rammertech.ro
 \`\`\`
 
 **Important:** Never commit `.env.local` to git (already in `.gitignore`).
@@ -70,7 +70,7 @@ Once your domain is verified, update the sender address in:
 from: "Rammer Tech <onboarding@resend.dev>",
 
 // To:
-from: "Rammer Tech <noreply@rammer.tech>",
+from: "Rammer Tech <office@rammertech.ro>",
 \`\`\`
 
 **Note:** Before domain verification, you can test with `onboarding@resend.dev` (emails will only go to your Resend account email).

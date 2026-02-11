@@ -77,12 +77,12 @@ export default async function Home({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Rammer Tech",
-            url: "https://rammer.tech",
+            url: "https://rammertech.ro",
             description: dict.hero.subtitle,
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer service",
-              email: "contact@rammer.tech",
+              email: "office@rammertech.ro",
             },
           }),
         }}

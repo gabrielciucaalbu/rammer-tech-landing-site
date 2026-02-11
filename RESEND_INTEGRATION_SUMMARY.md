@@ -70,7 +70,7 @@ Once your domain is verified, update the sender address in:
 from: "Rammer Tech <onboarding@resend.dev>",
 
 // To:
-from: "Rammer Tech <office@rammertech.ro>",
+from: "Rammer Tech <office@mail.rammertech.ro>",
 \`\`\`
 
 **Note:** Before domain verification, you can test with `onboarding@resend.dev` (emails will only go to your Resend account email).

@@ -58,7 +58,7 @@ Formularul este centrul paginii. Campuri:
 
 Alaturi de formular (pe desktop) sau sub formular (pe mobile):
 
-- **Email**: office@rammertech.ro
+- **Email**: office@mail.rammertech.ro
 - **Telefon**: +40 736 459 926
 - **Program**: Luni - Vineri, 09:00 - 18:00
 - **Locatie**: Oras, Romania (fara adresa exacta daca nu e nevoie)

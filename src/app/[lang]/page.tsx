@@ -82,7 +82,7 @@ export default async function Home({ params }: Props) {
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer service",
-              email: "office@rammertech.ro",
+              email: "office@mail.rammertech.ro",
             },
           }),
         }}

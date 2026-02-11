@@ -87,7 +87,7 @@ export async function sendMessage(
     // 5. Send email via Resend
     const { error: resendError } = await resend.emails.send({
       from: "Rammer Tech <office@mail.rammertech.ro>",
-      to: process.env.CONTACT_EMAIL_TO || "office@mail.rammertech.ro",
+      to: process.env.CONTACT_EMAIL_TO || "office@rammertech.ro",
       replyTo: validData.email,
       subject,
       html: emailHtml,

@@ -84,6 +84,7 @@ export async function sendMessage(
 
     const subject = `[Rammer Tech] Mesaj nou de la ${validData.name}`;
 
+    
     // 5. Send email via Resend
     const { error: resendError } = await resend.emails.send({
       from: "Rammer Tech <office@mail.rammertech.ro>",

@@ -8,22 +8,20 @@
     "services": "Servicii",
     "about": "Despre Noi",
     "portfolio": "Portofoliu",
-    "seap": "SEAP/SICAP",
     "products": "Produse",
     "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
     "title": "Solutii Digitale pentru Afaceri Performante",
-    "subtitle": "Dezvoltam aplicatii web si mobile de ultima generatie, sisteme enterprise si solutii de achizitii publice SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
+    "subtitle": "Dezvoltam aplicatii web si mobile de ultima generatie si sisteme enterprise personalizate. Partenerul tau de incredere in transformarea digitala.",
     "cta": "Descopera Serviciile Noastre",
     "ctaSecondary": "Contacteaza-ne"
   },
   "trustBar": {
     "projects": "Proiecte Livrate",
     "experience": "Ani Experienta",
-    "clients": "Clienti Multumiti",
-    "tenders": "Licitatii SEAP Castigate"
+    "clients": "Clienti Multumiti"
   },
   "servicesPreview": {
     "title": "Serviciile Noastre",
@@ -44,24 +42,8 @@
         "title": "Consultanta IT",
         "description": "Analiza tehnica, arhitectura software si strategie de digitalizare.",
         "icon": "lightbulb"
-      },
-      {
-        "title": "Achizitii Publice SEAP",
-        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice.",
-        "icon": "shield"
       }
     ]
-  },
-  "seapHighlight": {
-    "title": "Navigam Complexitatea Achizitiilor Publice",
-    "description": "Oferim suport complet pentru autoritati contractante si operatori economici in sistemul SEAP/SICAP.",
-    "features": [
-      "Pregatirea si depunerea documentatiei de licitatie",
-      "Asistenta tehnica pentru conformitatea SICAP",
-      "Monitorizarea oportunitatilor de achizitii publice",
-      "Consultanta pentru strategii de ofertare castigatoare"
-    ],
-    "cta": "Afla mai multe despre SEAP/SICAP"
   },
   "valueProposition": {
     "title": "De ce Rammer Tech?",
@@ -98,7 +80,7 @@
     "pageTitle": "Servicii Software Complete pentru Afacerea Ta",
     "pageSubtitle": "De la conceptie la livrare si mentenanta, oferim solutii end-to-end pentru fiecare nevoie digitala.",
     "metaTitle": "Servicii Software -- Dezvoltare Web, Mobile, Enterprise | Rammer Tech",
-    "metaDescription": "Servicii complete de dezvoltare software: aplicatii web si mobile, solutii enterprise, consultanta IT si expertiza achizitii publice SEAP/SICAP.",
+    "metaDescription": "Servicii complete de dezvoltare software: aplicatii web si mobile, solutii enterprise si consultanta IT personalizata.",
     "items": [
       {
         "title": "Dezvoltare Web & Mobile",
@@ -141,22 +123,6 @@
         ],
         "cta": "Programeaza o consultatie",
         "ctaParam": "consultanta"
-      },
-      {
-        "title": "Achizitii Publice SEAP/SICAP",
-        "description": "Expertiza completa in Sistemul Electronic de Achizitii Publice. Suport atat pentru autoritati contractante cat si operatori economici.",
-        "icon": "shield",
-        "features": [
-          "Pregatirea documentatiei de licitatie",
-          "Depunerea ofertelor in SEAP",
-          "Monitorizare oportunitati de achizitii",
-          "Conformitate SICAP",
-          "Dezvoltare platforme integrate cu API-ul SEAP",
-          "Training SEAP/SICAP"
-        ],
-        "cta": "Afla mai multe despre SEAP/SICAP",
-        "ctaParam": "seap",
-        "isSeap": true
       }
     ],
     "workflow": {
@@ -196,7 +162,7 @@
   },
   "about": {
     "metaTitle": "Despre Noi -- Echipa si Povestea Rammer Tech",
-    "metaDescription": "Cunoaste echipa Rammer Tech -- dezvoltatori pasionati de software, specializati in solutii custom si achizitii publice SEAP/SICAP.",
+    "metaDescription": "Cunoaste echipa Rammer Tech -- dezvoltatori pasionati de software, specializati in solutii custom si transformare digitala.",
     "hero": {
       "title": "Echipa Ta de Tehnologie",
       "subtitle": "Suntem o echipa mica, agila si pasionata care transforma idei in solutii software de impact."
@@ -267,8 +233,8 @@
           "description": "Ne adaptam la nevoile si bugetul tau. Fara pachete rigide."
         },
         {
-          "title": "Expertiza de Nisa",
-          "description": "SEAP/SICAP + software custom = o combinatie rara pe piata."
+          "title": "Expertiza Tehnica",
+          "description": "Stack modern si best practices in fiecare proiect."
         }
       ]
     },
@@ -280,7 +246,7 @@
   },
   "portfolio": {
     "metaTitle": "Portofoliu -- Proiecte Software & Studii de Caz | Rammer Tech",
-    "metaDescription": "Exploreaza proiectele si studiile de caz Rammer Tech: aplicatii web, solutii enterprise si platforme SEAP/SICAP livrate cu succes.",
+    "metaDescription": "Exploreaza proiectele si studiile de caz Rammer Tech: aplicatii web si solutii enterprise livrate cu succes.",
     "hero": {
       "title": "Proiectele Noastre",
       "subtitle": "Fiecare proiect este o poveste de succes. Iata cateva dintre ele."
@@ -289,7 +255,6 @@
       "all": "Toate",
       "web": "Web & Mobile",
       "enterprise": "Enterprise",
-      "seap": "SEAP/SICAP",
       "product": "Produs Propriu"
     },
     "viewDetails": "Vezi detalii",
@@ -297,141 +262,6 @@
       "title": "Urmatorul proiect din portofoliu ar putea fi al tau.",
       "subtitle": "Spune-ne despre ideea ta si hai sa o facem realitate.",
       "cta": "Incepe un proiect"
-    }
-  },
-  "seap": {
-    "metaTitle": "Achizitii Publice SEAP/SICAP -- Asistenta si Software | Rammer Tech",
-    "metaDescription": "Servicii complete pentru achizitii publice: asistenta SEAP, conformitate SICAP, monitorizare licitatii si solutii software pentru operatori economici si autoritati contractante.",
-    "hero": {
-      "title": "Expertiza Completa in Achizitii Publice",
-      "subtitle": "Navigam complexitatea SEAP si SICAP pentru tine -- de la documentatie la castigarea licitatiilor.",
-      "cta": "Solicita asistenta SEAP"
-    },
-    "explainer": {
-      "title": "Ce este SEAP/SICAP?",
-      "seapTitle": "SEAP",
-      "seapDescription": "Sistemul Electronic de Achizitii Publice -- platforma nationala unde se desfasoara licitatiile publice din Romania.",
-      "sicapTitle": "SICAP",
-      "sicapDescription": "Sistemul Informatic Colaborativ pentru Mediul de Achizitii Publice -- componenta de conformitate si raportare.",
-      "whyMatters": "Achizitiile publice din Romania au o valoare anuala de miliarde de euro. Navigarea corecta a acestui sistem inseamna oportunitati imense pentru afacerea ta."
-    },
-    "operatorServices": {
-      "title": "Servicii pentru Operatori Economici",
-      "subtitle": "Vrei sa castigi licitatii? Te ajutam.",
-      "items": [
-        {
-          "title": "Pregatire Documentatie",
-          "description": "Propunere tehnica si financiara conforma cu cerintele."
-        },
-        {
-          "title": "Depunere Oferte",
-          "description": "Asistenta la incarcarea ofertelor in SEAP."
-        },
-        {
-          "title": "Monitorizare Oportunitati",
-          "description": "Identificam licitatii relevante pentru profilul tau."
-        },
-        {
-          "title": "Strategie de Ofertare",
-          "description": "Consultanta pentru formularea ofertelor castigatoare."
-        },
-        {
-          "title": "Contestatii",
-          "description": "Asistenta in cazul contestatiilor, in parteneriat cu avocati specialisti."
-        },
-        {
-          "title": "Training",
-          "description": "Formare profesionala pentru echipa ta."
-        }
-      ]
-    },
-    "authorityServices": {
-      "title": "Servicii pentru Autoritati Contractante",
-      "subtitle": "Simplificam procesul de achizitie publica.",
-      "items": [
-        {
-          "title": "Documentatie de Atribuire",
-          "description": "Caiet de sarcini, fisa de date."
-        },
-        {
-          "title": "Publicare Proceduri",
-          "description": "Asistenta in publicarea in SEAP."
-        },
-        {
-          "title": "Evaluare Oferte",
-          "description": "Suport tehnic in procesul de evaluare."
-        },
-        {
-          "title": "Conformitate SICAP",
-          "description": "Raportari si conformitate legala."
-        },
-        {
-          "title": "Platforma Online",
-          "description": "Dezvoltare de instrumente digitale pentru gestionarea achizitiilor."
-        }
-      ]
-    },
-    "software": {
-      "title": "Solutii Software pentru SEAP",
-      "subtitle": "Automatizam si optimizam procesul de achizitii.",
-      "items": [
-        {
-          "title": "Monitorizare Automata",
-          "description": "Software care scaneaza SEAP si alerteaza pentru licitatii relevante."
-        },
-        {
-          "title": "Generator Documente",
-          "description": "Automatizarea crearii documentatiei standard."
-        },
-        {
-          "title": "Dashboard SEAP",
-          "description": "Vizualizare si tracking al licitatiilor active."
-        },
-        {
-          "title": "Integrare API SEAP",
-          "description": "Conectare cu sisteme interne (ERP, CRM)."
-        }
-      ]
-    },
-    "stats": {
-      "tendersWon": "Licitatii Castigate",
-      "contractValue": "Valoare Contracte (mil. RON)",
-      "successRate": "Rata de Succes",
-      "clientsAssisted": "Clienti Asistati"
-    },
-    "faq": {
-      "title": "Intrebari Frecvente",
-      "items": [
-        {
-          "question": "Cat costa serviciile de asistenta SEAP?",
-          "answer": "Costurile variaza in functie de complexitatea licitatiei si serviciile solicitate. Contacteaza-ne pentru o oferta personalizata."
-        },
-        {
-          "question": "Cat dureaza pregatirea unei oferte?",
-          "answer": "In general, pregatirea dureaza intre 5 si 15 zile lucratoare, in functie de complexitate si termenele de depunere."
-        },
-        {
-          "question": "Puteti garanta castigarea licitatiei?",
-          "answer": "Nu putem garanta castigarea, dar maximizam sansele prin documentatie impecabila, strategie de pret optima si conformitate deplina."
-        },
-        {
-          "question": "Lucrati si cu microintreprinderi?",
-          "answer": "Da, lucram cu companii de orice dimensiune. Multe microintreprinderi au acces la licitatii relevante in SEAP."
-        },
-        {
-          "question": "Ce platforme monitorizati in afara de SEAP?",
-          "answer": "Ne concentram pe SEAP si SICAP, dar putem extinde monitorizarea si la TED (Tenders Electronic Daily) pentru licitatii europene."
-        },
-        {
-          "question": "Ce inseamna conformitatea SICAP?",
-          "answer": "SICAP impune raportari si documentatie specifica pe parcursul derularii contractelor publice. Asiguram conformitatea completa cu cerintele legale."
-        }
-      ]
-    },
-    "ctaBanner": {
-      "title": "Ai nevoie de asistenta SEAP/SICAP?",
-      "subtitle": "Programeaza o consultatie gratuita si descopera cum te putem ajuta.",
-      "cta": "Contacteaza-ne"
     }
   },
   "products": {
@@ -478,11 +308,11 @@
     }
   },
   "blog": {
-    "metaTitle": "Blog -- Articole despre Software si Achizitii Publice | Rammer Tech",
-    "metaDescription": "Articole, ghiduri si perspective din lumea software-ului si a achizitiilor publice de la echipa Rammer Tech.",
+    "metaTitle": "Blog -- Articole despre Software si Tehnologie | Rammer Tech",
+    "metaDescription": "Articole, ghiduri si perspective din lumea software-ului si tehnologiei de la echipa Rammer Tech.",
     "hero": {
       "title": "Blog & Resurse",
-      "subtitle": "Articole, ghiduri si perspective din lumea software-ului si a achizitiilor publice."
+      "subtitle": "Articole, ghiduri si perspective din lumea software-ului si tehnologiei."
     },
     "featured": "Articol Recomandat",
     "readArticle": "Citeste articolul",
@@ -492,7 +322,6 @@
     "categories": {
       "all": "Toate",
       "software": "Dezvoltare Software",
-      "seap": "SEAP/SICAP",
       "consulting": "Consultanta IT",
       "products": "Produse",
       "news": "Stiri Companie"
@@ -505,8 +334,8 @@
     }
   },
   "contact": {
-    "metaTitle": "Contact -- Rammer Tech | Solutii Software si SEAP",
-    "metaDescription": "Contacteaza Rammer Tech pentru solutii software personalizate si asistenta achizitii publice SEAP/SICAP. Raspundem in maximum 24 de ore.",
+    "metaTitle": "Contact -- Rammer Tech | Solutii Software",
+    "metaDescription": "Contacteaza Rammer Tech pentru solutii software personalizate. Raspundem in maximum 24 de ore.",
     "hero": {
       "title": "Hai sa Vorbim",
       "subtitle": "Avem un raspuns pentru fiecare intrebare. Scrie-ne si te contactam in cel mai scurt timp."
@@ -522,7 +351,6 @@
         { "value": "web-mobile", "label": "Dezvoltare Web & Mobile" },
         { "value": "enterprise", "label": "Solutii Enterprise" },
         { "value": "consultanta", "label": "Consultanta IT" },
-        { "value": "seap", "label": "Achizitii Publice SEAP/SICAP" },
         { "value": "produs", "label": "Produs Software" },
         { "value": "altceva", "label": "Altceva" }
       ],
@@ -687,8 +515,7 @@
         "links": [
           { "label": "Dezvoltare Web & Mobile", "href": "/servicii" },
           { "label": "Solutii Enterprise", "href": "/servicii" },
-          { "label": "Consultanta IT", "href": "/servicii" },
-          { "label": "SEAP/SICAP", "href": "/seap-sicap" }
+          { "label": "Consultanta IT", "href": "/servicii" }
         ]
       },
       "resources": {

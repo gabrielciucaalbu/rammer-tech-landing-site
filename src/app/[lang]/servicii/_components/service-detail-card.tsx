@@ -22,7 +22,6 @@ interface ServiceDetailCardProps {
   features: string[];
   cta: string;
   ctaParam: string;
-  isSeap?: boolean;
   lang: string;
   index: number;
 }
@@ -34,7 +33,6 @@ export function ServiceDetailCard({
   features,
   cta,
   ctaParam,
-  isSeap,
   lang,
   index,
 }: ServiceDetailCardProps) {
@@ -70,13 +68,7 @@ export function ServiceDetailCard({
         </ul>
 
         <Button asChild>
-          <Link
-            href={
-              isSeap
-                ? `/${lang}/seap-sicap`
-                : `/${lang}/contact?serviciu=${ctaParam}`
-            }
-          >
+          <Link href={`/${lang}/contact?serviciu=${ctaParam}`}>
             {cta}
           </Link>
         </Button>

@@ -21,7 +21,6 @@ const navLinks = [
   { key: "services", href: "/servicii" },
   { key: "about", href: "/despre-noi" },
   // { key: "portfolio", href: "/portofoliu" }, // Hidden - no public portfolio yet
-  { key: "seap", href: "/seap-sicap" },
   { key: "products", href: "/produse" },
   { key: "blog", href: "/blog" },
 ] as const;

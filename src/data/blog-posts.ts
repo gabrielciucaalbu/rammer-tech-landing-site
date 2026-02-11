@@ -1,6 +1,6 @@
 export interface BlogPost {
   slug: string;
-  category: "software" | "seap" | "consulting" | "products" | "news";
+  category: "software" | "consulting" | "products" | "news";
   date: string;
   author: string;
   readingTime: number;

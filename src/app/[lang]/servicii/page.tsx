@@ -55,7 +55,6 @@ export default async function ServicesPage({ params }: Props) {
           features={service.features}
           cta={service.cta}
           ctaParam={service.ctaParam}
-          isSeap={"isSeap" in service && Boolean(service.isSeap)}
           lang={lang}
         />
       ))}

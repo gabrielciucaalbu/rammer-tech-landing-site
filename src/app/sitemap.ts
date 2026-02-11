@@ -9,7 +9,6 @@ const staticPages = [
   "/servicii",
   "/despre-noi",
   // "/portofoliu", // Hidden - no public portfolio yet
-  "/seap-sicap",
   "/produse",
   "/blog",
   "/contact",

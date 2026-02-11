@@ -8,22 +8,20 @@
     "services": "Services",
     "about": "About Us",
     "portfolio": "Portfolio",
-    "seap": "SEAP/SICAP",
     "products": "Products",
     "blog": "Blog",
     "contact": "Contact"
   },
   "hero": {
     "title": "Digital Solutions for High-Performance Business",
-    "subtitle": "We build cutting-edge web and mobile applications, enterprise systems, and SEAP/SICAP public procurement solutions. Your trusted partner in digital transformation.",
+    "subtitle": "We build cutting-edge web and mobile applications and custom enterprise systems. Your trusted partner in digital transformation.",
     "cta": "Discover Our Services",
     "ctaSecondary": "Get in Touch"
   },
   "trustBar": {
     "projects": "Projects Delivered",
     "experience": "Years of Experience",
-    "clients": "Happy Clients",
-    "tenders": "SEAP Tenders Won"
+    "clients": "Happy Clients"
   },
   "servicesPreview": {
     "title": "Our Services",
@@ -44,24 +42,8 @@
         "title": "IT Consulting",
         "description": "Technical analysis, software architecture, and digitalization strategy.",
         "icon": "lightbulb"
-      },
-      {
-        "title": "Public Procurement (SEAP)",
-        "description": "Full expertise in Romania's Electronic Public Procurement System.",
-        "icon": "shield"
       }
     ]
-  },
-  "seapHighlight": {
-    "title": "We Navigate Public Procurement Complexity",
-    "description": "We provide full support for contracting authorities and economic operators in the SEAP/SICAP system.",
-    "features": [
-      "Tender documentation preparation and submission",
-      "Technical assistance for SICAP compliance",
-      "Public procurement opportunity monitoring",
-      "Winning bid strategy consulting"
-    ],
-    "cta": "Learn more about SEAP/SICAP"
   },
   "valueProposition": {
     "title": "Why Rammer Tech?",
@@ -98,7 +80,7 @@
     "pageTitle": "Complete Software Services for Your Business",
     "pageSubtitle": "From concept to delivery and maintenance, we offer end-to-end solutions for every digital need.",
     "metaTitle": "Software Services -- Web, Mobile, Enterprise Development | Rammer Tech",
-    "metaDescription": "Complete software development services: web and mobile applications, enterprise solutions, IT consulting, and SEAP/SICAP public procurement expertise.",
+    "metaDescription": "Complete software development services: web and mobile applications, enterprise solutions, and custom IT consulting.",
     "items": [
       {
         "title": "Web & Mobile Development",
@@ -141,22 +123,6 @@
         ],
         "cta": "Schedule a consultation",
         "ctaParam": "consultanta"
-      },
-      {
-        "title": "Public Procurement SEAP/SICAP",
-        "description": "Full expertise in Romania's Electronic Public Procurement System. Support for both contracting authorities and economic operators.",
-        "icon": "shield",
-        "features": [
-          "Tender documentation preparation",
-          "Bid submission in SEAP",
-          "Procurement opportunity monitoring",
-          "SICAP compliance",
-          "Platform development integrated with SEAP API",
-          "SEAP/SICAP training"
-        ],
-        "cta": "Learn more about SEAP/SICAP",
-        "ctaParam": "seap",
-        "isSeap": true
       }
     ],
     "workflow": {
@@ -196,7 +162,7 @@
   },
   "about": {
     "metaTitle": "About Us -- Team and Story | Rammer Tech",
-    "metaDescription": "Meet the Rammer Tech team -- passionate software developers specializing in custom solutions and SEAP/SICAP public procurement.",
+    "metaDescription": "Meet the Rammer Tech team -- passionate software developers specializing in custom solutions and digital transformation.",
     "hero": {
       "title": "Your Technology Team",
       "subtitle": "We are a small, agile, and passionate team that transforms ideas into impactful software solutions."
@@ -267,8 +233,8 @@
           "description": "We adapt to your needs and budget. No rigid packages."
         },
         {
-          "title": "Niche Expertise",
-          "description": "SEAP/SICAP + custom software = a rare combination on the market."
+          "title": "Technical Expertise",
+          "description": "Modern stack and best practices in every project."
         }
       ]
     },
@@ -280,7 +246,7 @@
   },
   "portfolio": {
     "metaTitle": "Portfolio -- Software Projects & Case Studies | Rammer Tech",
-    "metaDescription": "Explore Rammer Tech projects and case studies: web applications, enterprise solutions, and SEAP/SICAP platforms delivered successfully.",
+    "metaDescription": "Explore Rammer Tech projects and case studies: web applications and enterprise solutions delivered successfully.",
     "hero": {
       "title": "Our Projects",
       "subtitle": "Every project is a success story. Here are some of them."
@@ -289,7 +255,6 @@
       "all": "All",
       "web": "Web & Mobile",
       "enterprise": "Enterprise",
-      "seap": "SEAP/SICAP",
       "product": "Own Product"
     },
     "viewDetails": "View details",
@@ -297,141 +262,6 @@
       "title": "The next project in our portfolio could be yours.",
       "subtitle": "Tell us about your idea and let's make it happen.",
       "cta": "Start a project"
-    }
-  },
-  "seap": {
-    "metaTitle": "Public Procurement SEAP/SICAP -- Assistance & Software | Rammer Tech",
-    "metaDescription": "Complete public procurement services: SEAP assistance, SICAP compliance, tender monitoring, and software solutions for economic operators and contracting authorities.",
-    "hero": {
-      "title": "Complete Public Procurement Expertise",
-      "subtitle": "We navigate the complexity of SEAP and SICAP for you -- from documentation to winning tenders.",
-      "cta": "Request SEAP assistance"
-    },
-    "explainer": {
-      "title": "What is SEAP/SICAP?",
-      "seapTitle": "SEAP",
-      "seapDescription": "The Electronic Public Procurement System -- Romania's national platform where public tenders take place.",
-      "sicapTitle": "SICAP",
-      "sicapDescription": "The Collaborative Information System for Public Procurement -- the compliance and reporting component.",
-      "whyMatters": "Public procurement in Romania is worth billions of euros annually. Correctly navigating this system means immense opportunities for your business."
-    },
-    "operatorServices": {
-      "title": "Services for Economic Operators",
-      "subtitle": "Want to win tenders? We help you.",
-      "items": [
-        {
-          "title": "Documentation Preparation",
-          "description": "Technical and financial proposals compliant with requirements."
-        },
-        {
-          "title": "Bid Submission",
-          "description": "Assistance with uploading bids to SEAP."
-        },
-        {
-          "title": "Opportunity Monitoring",
-          "description": "We identify relevant tenders for your profile."
-        },
-        {
-          "title": "Bidding Strategy",
-          "description": "Consulting for formulating winning bids."
-        },
-        {
-          "title": "Appeals",
-          "description": "Assistance with appeals, in partnership with specialist lawyers."
-        },
-        {
-          "title": "Training",
-          "description": "Professional training for your team."
-        }
-      ]
-    },
-    "authorityServices": {
-      "title": "Services for Contracting Authorities",
-      "subtitle": "We simplify the public procurement process.",
-      "items": [
-        {
-          "title": "Award Documentation",
-          "description": "Terms of reference, data sheets."
-        },
-        {
-          "title": "Procedure Publication",
-          "description": "Assistance with publishing in SEAP."
-        },
-        {
-          "title": "Bid Evaluation",
-          "description": "Technical support in the evaluation process."
-        },
-        {
-          "title": "SICAP Compliance",
-          "description": "Reporting and legal compliance."
-        },
-        {
-          "title": "Online Platform",
-          "description": "Development of digital tools for procurement management."
-        }
-      ]
-    },
-    "software": {
-      "title": "Software Solutions for SEAP",
-      "subtitle": "We automate and optimize the procurement process.",
-      "items": [
-        {
-          "title": "Automatic Monitoring",
-          "description": "Software that scans SEAP and alerts you to relevant tenders."
-        },
-        {
-          "title": "Document Generator",
-          "description": "Automation of standard documentation creation."
-        },
-        {
-          "title": "SEAP Dashboard",
-          "description": "Visualization and tracking of active tenders."
-        },
-        {
-          "title": "SEAP API Integration",
-          "description": "Connection with internal systems (ERP, CRM)."
-        }
-      ]
-    },
-    "stats": {
-      "tendersWon": "Tenders Won",
-      "contractValue": "Contract Value (mil. RON)",
-      "successRate": "Success Rate",
-      "clientsAssisted": "Clients Assisted"
-    },
-    "faq": {
-      "title": "Frequently Asked Questions",
-      "items": [
-        {
-          "question": "How much do SEAP assistance services cost?",
-          "answer": "Costs vary depending on the complexity of the tender and requested services. Contact us for a personalized quote."
-        },
-        {
-          "question": "How long does it take to prepare a bid?",
-          "answer": "Generally, preparation takes between 5 and 15 business days, depending on complexity and submission deadlines."
-        },
-        {
-          "question": "Can you guarantee winning the tender?",
-          "answer": "We cannot guarantee winning, but we maximize chances through impeccable documentation, optimal pricing strategy, and full compliance."
-        },
-        {
-          "question": "Do you work with micro-enterprises?",
-          "answer": "Yes, we work with companies of any size. Many micro-enterprises have access to relevant tenders in SEAP."
-        },
-        {
-          "question": "What platforms do you monitor besides SEAP?",
-          "answer": "We focus on SEAP and SICAP, but can extend monitoring to TED (Tenders Electronic Daily) for European tenders."
-        },
-        {
-          "question": "What does SICAP compliance mean?",
-          "answer": "SICAP requires specific reporting and documentation throughout the execution of public contracts. We ensure full compliance with legal requirements."
-        }
-      ]
-    },
-    "ctaBanner": {
-      "title": "Need SEAP/SICAP assistance?",
-      "subtitle": "Schedule a free consultation and discover how we can help.",
-      "cta": "Contact us"
     }
   },
   "products": {
@@ -478,11 +308,11 @@
     }
   },
   "blog": {
-    "metaTitle": "Blog -- Articles about Software and Public Procurement | Rammer Tech",
-    "metaDescription": "Articles, guides, and insights from the world of software and public procurement from the Rammer Tech team.",
+    "metaTitle": "Blog -- Articles about Software and Technology | Rammer Tech",
+    "metaDescription": "Articles, guides, and insights from the world of software and technology from the Rammer Tech team.",
     "hero": {
       "title": "Blog & Resources",
-      "subtitle": "Articles, guides, and insights from the world of software and public procurement."
+      "subtitle": "Articles, guides, and insights from the world of software and technology."
     },
     "featured": "Featured Article",
     "readArticle": "Read article",
@@ -492,7 +322,6 @@
     "categories": {
       "all": "All",
       "software": "Software Development",
-      "seap": "SEAP/SICAP",
       "consulting": "IT Consulting",
       "products": "Products",
       "news": "Company News"
@@ -505,8 +334,8 @@
     }
   },
   "contact": {
-    "metaTitle": "Contact -- Rammer Tech | Software Solutions & SEAP",
-    "metaDescription": "Contact Rammer Tech for custom software solutions and SEAP/SICAP public procurement assistance. We respond within 24 hours.",
+    "metaTitle": "Contact -- Rammer Tech | Software Solutions",
+    "metaDescription": "Contact Rammer Tech for custom software solutions. We respond within 24 hours.",
     "hero": {
       "title": "Let's Talk",
       "subtitle": "We have an answer for every question. Write to us and we'll get back to you as soon as possible."
@@ -522,7 +351,6 @@
         { "value": "web-mobile", "label": "Web & Mobile Development" },
         { "value": "enterprise", "label": "Enterprise Solutions" },
         { "value": "consultanta", "label": "IT Consulting" },
-        { "value": "seap", "label": "Public Procurement SEAP/SICAP" },
         { "value": "produs", "label": "Software Product" },
         { "value": "altceva", "label": "Something else" }
       ],
@@ -687,8 +515,7 @@
         "links": [
           { "label": "Web & Mobile Development", "href": "/servicii" },
           { "label": "Enterprise Solutions", "href": "/servicii" },
-          { "label": "IT Consulting", "href": "/servicii" },
-          { "label": "SEAP/SICAP", "href": "/seap-sicap" }
+          { "label": "IT Consulting", "href": "/servicii" }
         ]
       },
       "resources": {

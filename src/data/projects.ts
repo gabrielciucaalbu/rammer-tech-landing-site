@@ -1,6 +1,6 @@
 export interface Project {
   slug: string;
-  category: "web" | "enterprise" | "seap" | "product";
+  category: "web" | "enterprise" | "product";
   technologies: string[];
   image: string;
   title: {
@@ -18,24 +18,6 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    slug: "platforma-monitorizare-seap",
-    category: "seap",
-    technologies: ["Next.js", "TypeScript", "PostgreSQL", "API SEAP"],
-    image: "/projects/seap-platform.jpg",
-    title: {
-      ro: "Platforma Monitorizare SEAP",
-      en: "SEAP Monitoring Platform",
-    },
-    client: {
-      ro: "Client din sectorul public",
-      en: "Public sector client",
-    },
-    description: {
-      ro: "Platforma web pentru monitorizarea si alertarea automata a licitatiilor relevante din SEAP, cu dashboard de analiza si raportare.",
-      en: "Web platform for automatic monitoring and alerting of relevant SEAP tenders, with analysis dashboard and reporting.",
-    },
-  },
   {
     slug: "erp-companie-logistica",
     category: "enterprise",

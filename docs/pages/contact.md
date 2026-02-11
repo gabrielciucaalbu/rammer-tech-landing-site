@@ -29,7 +29,7 @@ Formularul este centrul paginii. Campuri:
   - Dezvoltare Web & Mobile
   - Solutii Enterprise
   - Consultanta IT
-  - Achizitii Publice SEAP/SICAP
+  - Achizitii Publice SEAP/SICAP -- REMOVED
   - Produs [Nume Produs]
   - Altceva
 - **Buget estimat** (select dropdown, optional):

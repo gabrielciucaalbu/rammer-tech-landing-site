@@ -4,7 +4,6 @@ import type { Locale } from "@/i18n-config";
 import { HeroSection } from "./_components/hero-section";
 import { TrustBar } from "./_components/trust-bar";
 import { ServicesPreview } from "./_components/services-preview";
-import { SeapHighlight } from "./_components/seap-highlight";
 import { ValueProposition } from "./_components/value-proposition";
 import { CtaBanner } from "@/components/cta-banner";
 
@@ -17,7 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dict = await getDictionary(lang as Locale);
 
   return {
-    title: `Rammer Tech | ${lang === "ro" ? "Solutii Digitale & Achizitii Publice SEAP" : "Digital Solutions & SEAP Public Procurement"}`,
+    title: `Rammer Tech | ${lang === "ro" ? "Solutii Digitale pentru Afaceri" : "Digital Solutions for Business"}`,
     description: dict.hero.subtitle,
     openGraph: {
       title: "Rammer Tech",
@@ -54,14 +53,6 @@ export default async function Home({ params }: Props) {
         viewAll={dict.servicesPreview.viewAll}
         learnMore={dict.servicesPreview.learnMore}
         items={dict.servicesPreview.items}
-        lang={lang}
-      />
-
-      <SeapHighlight
-        title={dict.seapHighlight.title}
-        description={dict.seapHighlight.description}
-        features={dict.seapHighlight.features}
-        cta={dict.seapHighlight.cta}
         lang={lang}
       />
 

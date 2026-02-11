@@ -34,7 +34,7 @@ Canal de content marketing si SEO. Articolele demonstreaza expertiza, atrag traf
 - Butoane de filtru:
   - Toate
   - Dezvoltare Software
-  - SEAP/SICAP
+  - SEAP/SICAP -- REMOVED
   - Consultanta IT
   - Produse
   - Stiri companie

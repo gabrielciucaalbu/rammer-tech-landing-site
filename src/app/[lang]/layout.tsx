@@ -16,11 +16,11 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rammer Tech | Solutii Digitale & Achizitii Publice SEAP",
+    default: "Rammer Tech | Solutii Digitale pentru Afaceri",
     template: "%s | Rammer Tech",
   },
   description:
-    "Dezvoltam aplicatii web si mobile, sisteme enterprise si solutii SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
+    "Dezvoltam aplicatii web si mobile, sisteme enterprise si solutii software personalizate. Partenerul tau de incredere in transformarea digitala.",
   appleWebApp: {
     title: "Rammer Tech",
   },

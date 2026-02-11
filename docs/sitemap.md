@@ -5,7 +5,7 @@
 Site de prezentare profesional pentru **Rammer Tech**, o companie mica de software care:
 
 - Dezvolta solutii software personalizate, orientate pe client
-- Are expertiza in licitatii publice SEAP/SICAP
+- Ofera consultanta IT si solutii enterprise
 - Lucreaza la propriul produs software
 
 Scopul site-ului: **generare de lead-uri**, **credibilitate profesionala** si **vizibilitate online**.
@@ -18,8 +18,7 @@ Scopul site-ului: **generare de lead-uri**, **credibilitate profesionala** si **
 / (Home)
 ├── /servicii (Services)
 ├── /despre-noi (About Us)
-├── /portofoliu (Portfolio / Case Studies)
-├── /seap-sicap (SEAP/SICAP Expertise)
+├── /portofoliu (Portfolio / Case Studies) -- Hidden
 ├── /produse (Products -- Software propriu)
 ├── /blog (Blog / Resurse)
 ├── /contact (Contact)
@@ -38,11 +37,10 @@ Scopul site-ului: **generare de lead-uri**, **credibilitate profesionala** si **
 | 1 | **Acasa** | `/` | Critica | [home.md](./pages/home.md) |
 | 2 | **Servicii** | `/servicii` | Critica | [servicii.md](./pages/servicii.md) |
 | 3 | **Despre Noi** | `/despre-noi` | Inalta | [despre-noi.md](./pages/despre-noi.md) |
-| 4 | **Portofoliu** | `/portofoliu` | Inalta | [portofoliu.md](./pages/portofoliu.md) |
-| 5 | **SEAP/SICAP** | `/seap-sicap` | Inalta | [seap-sicap.md](./pages/seap-sicap.md) |
-| 6 | **Produse** | `/produse` | Medie | [produse.md](./pages/produse.md) |
-| 7 | **Blog** | `/blog` | Medie | [blog.md](./pages/blog.md) |
-| 8 | **Contact** | `/contact` | Critica | [contact.md](./pages/contact.md) |
+| 4 | **Portofoliu** | `/portofoliu` | Hidden | [portofoliu.md](./pages/portofoliu.md) |
+| 5 | **Produse** | `/produse` | Medie | [produse.md](./pages/produse.md) |
+| 6 | **Blog** | `/blog` | Medie | [blog.md](./pages/blog.md) |
+| 7 | **Contact** | `/contact` | Critica | [contact.md](./pages/contact.md) |
 
 ## Pagini legale
 

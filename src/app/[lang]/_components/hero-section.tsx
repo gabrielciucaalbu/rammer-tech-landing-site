@@ -67,8 +67,8 @@ export function HeroSection({
             <Button
               asChild
               size="lg"
-              variant="outline"
-              className="border-white/30 text-white hover:bg-white/10 font-semibold"
+              variant="ghost"
+              className="border border-white/30 text-white hover:bg-white/10 hover:text-white font-semibold"
             >
               <Link href={`/${lang}/contact`}>{ctaSecondary}</Link>
             </Button>

@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
   description:
     "Dezvoltam aplicatii web si mobile, sisteme enterprise si solutii SEAP/SICAP. Partenerul tau de incredere in transformarea digitala.",
+  appleWebApp: {
+    title: "Rammer Tech",
+  },
 };
 
 export async function generateStaticParams() {

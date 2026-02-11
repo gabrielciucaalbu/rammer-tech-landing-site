@@ -547,8 +547,8 @@
     },
     "info": {
       "title": "Informatii de Contact",
-      "email": "contact@rammer.tech",
-      "phone": "+40 XXX XXX XXX",
+      "email": "office@rammertech.ro",
+      "phone": "+40736459926",
       "schedule": "Luni - Vineri, 09:00 - 18:00",
       "location": "Romania",
       "scheduleLabel": "Program",
@@ -695,7 +695,6 @@
         "title": "Resurse",
         "links": [
           { "label": "Blog", "href": "/blog" },
-          { "label": "Portofoliu", "href": "/portofoliu" },
           { "label": "Produse", "href": "/produse" }
         ]
       },
@@ -708,8 +707,8 @@
       }
     },
     "contact": {
-      "email": "contact@rammer.tech",
-      "phone": "+40 XXX XXX XXX",
+      "email": "office@rammertech.ro",
+      "phone": "+40736459926",
       "location": "Romania"
     }
   }

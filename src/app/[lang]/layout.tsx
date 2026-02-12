@@ -13,9 +13,14 @@ import "../globals.css";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "latin-ext"],
+  display: "swap",
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rammertech.ro";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Rammer Tech | Solutii Digitale pentru Afaceri",
     template: "%s | Rammer Tech",
@@ -24,6 +29,13 @@ export const metadata: Metadata = {
     "Dezvoltam aplicatii web si mobile, sisteme enterprise si solutii software personalizate. Partenerul tau de incredere in transformarea digitala.",
   appleWebApp: {
     title: "Rammer Tech",
+  },
+  openGraph: {
+    images: ["/og-default.png"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["/og-default.png"],
   },
 };
 
@@ -51,8 +63,11 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased bg-background text-foreground`}
       >
+        <a href="#main-content" className="skip-link">
+          {dict.common.skipToContent}
+        </a>
         <Header lang={lang} dict={dict} />
-        <main className="min-h-screen pt-16">{children}</main>
+        <main id="main-content" className="min-h-screen pt-16">{children}</main>
         <Footer lang={lang} dict={dict} />
         <CookieBanner lang={lang} dict={dict} />
         <Toaster />

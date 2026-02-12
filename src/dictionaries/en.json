@@ -491,6 +491,7 @@
     "necessaryOnly": "Necessary only"
   },
   "common": {
+    "skipToContent": "Skip to main content",
     "home": "Home",
     "backToHome": "Back to Home",
     "loading": "Loading...",

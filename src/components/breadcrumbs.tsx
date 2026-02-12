@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rammertech.ro";
+
 interface BreadcrumbItem {
   label: string;
   href?: string;
@@ -18,7 +21,9 @@ export function Breadcrumbs({ items, lang }: BreadcrumbsProps) {
       "@type": "ListItem",
       position: idx + 1,
       name: item.label,
-      ...(item.href ? { item: `https://rammertech.ro/${lang}${item.href}` } : {}),
+      ...(item.href !== undefined
+        ? { item: `${SITE_URL}/${lang}${item.href}` }
+        : {}),
     })),
   };
 

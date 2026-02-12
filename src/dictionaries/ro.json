@@ -491,6 +491,7 @@
     "necessaryOnly": "Doar necesare"
   },
   "common": {
+    "skipToContent": "Sari la continut",
     "home": "Acasa",
     "backToHome": "Inapoi la Acasa",
     "loading": "Se incarca...",

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Badge } from "@/components/ui/badge";
 import { CategoryFilter } from "./category-filter";
 import type { BlogPost } from "@/data/blog-posts";
@@ -49,11 +50,22 @@ export function ArticleGrid({
               href={`/${lang}/blog/${post.slug}`}
               className="group rounded-xl border border-border bg-card overflow-hidden hover:shadow-lg transition-shadow"
             >
-              {/* Image placeholder */}
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground text-xs">
-                  {post.title[locale]}
-                </span>
+              <div className="aspect-video bg-muted relative overflow-hidden">
+                {post.coverImage ? (
+                  <Image
+                    src={post.coverImage}
+                    alt={post.title[locale]}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-muted-foreground text-xs">
+                      {post.title[locale]}
+                    </span>
+                  </div>
+                )}
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">

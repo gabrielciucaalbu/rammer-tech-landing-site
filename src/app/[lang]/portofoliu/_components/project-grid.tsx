@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { Badge } from "@/components/ui/badge";
 import { ProjectFilters } from "./project-filters";
@@ -48,11 +49,22 @@ export function ProjectGrid({
               transition={{ duration: 0.3 }}
               className="rounded-xl border border-border bg-card overflow-hidden group hover:shadow-lg transition-shadow"
             >
-              {/* Image placeholder */}
-              <div className="aspect-video bg-muted flex items-center justify-center">
-                <span className="text-muted-foreground text-sm">
-                  {project.title[locale]}
-                </span>
+              <div className="aspect-video bg-muted relative overflow-hidden">
+                {project.image ? (
+                  <Image
+                    src={project.image}
+                    alt={project.title[locale]}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                  />
+                ) : (
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <span className="text-muted-foreground text-sm">
+                      {project.title[locale]}
+                    </span>
+                  </div>
+                )}
               </div>
               <div className="p-5">
                 <div className="flex items-center gap-2 mb-2">

@@ -78,12 +78,19 @@ export default async function Home({ params }: Props) {
             "@type": "Organization",
             name: "Rammer Tech",
             url: "https://rammertech.ro",
+            logo: "https://rammertech.ro/Rammer%20Tech%20LOGO.png",
             description: dict.hero.subtitle,
+            address: {
+              "@type": "PostalAddress",
+              addressCountry: "RO",
+            },
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer service",
-              email: "office@mail.rammertech.ro",
+              email: "office@rammertech.ro",
+              availableLanguage: ["Romanian", "English"],
             },
+            sameAs: [],
           }),
         }}
       />

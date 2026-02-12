@@ -21,6 +21,9 @@ export async function generateStaticParams() {
   ]);
 }
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rammertech.ro";
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;
   const post = getPostBySlug(slug);
@@ -38,6 +41,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       authors: [post.author],
       locale: lang === "ro" ? "ro_RO" : "en_US",
       siteName: "Rammer Tech",
+      images: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
     },
     alternates: {
       canonical: `/${lang}/blog/${slug}`,
@@ -165,7 +169,10 @@ export default async function BlogPostPage({ params }: Props) {
             "@type": "BlogPosting",
             headline: post.title[locale],
             description: post.excerpt[locale],
+            url: `${SITE_URL}/${lang}/blog/${slug}`,
+            mainEntityOfPage: `${SITE_URL}/${lang}/blog/${slug}`,
             datePublished: post.date,
+            ...(post.coverImage && { image: `${SITE_URL}${post.coverImage}` }),
             author: {
               "@type": "Person",
               name: post.author,
@@ -173,6 +180,10 @@ export default async function BlogPostPage({ params }: Props) {
             publisher: {
               "@type": "Organization",
               name: "Rammer Tech",
+              logo: {
+                "@type": "ImageObject",
+                url: `${SITE_URL}/Rammer%20Tech%20LOGO.png`,
+              },
             },
           }),
         }}

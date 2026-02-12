@@ -208,6 +208,16 @@
   --sidebar-ring: oklch(0.704 0.191 22.216);
 }
 
+/* Skip link: hidden until focused, for keyboard accessibility */
+.skip-link {
+  @apply sr-only;
+}
+.skip-link:focus {
+  @apply fixed left-4 top-4 z-[100] w-auto h-auto p-4 m-0 overflow-visible whitespace-normal bg-primary text-primary-foreground rounded-md;
+  clip: auto;
+  clip-path: none;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

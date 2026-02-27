@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 }
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rammertech.ro";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang, slug } = await params;

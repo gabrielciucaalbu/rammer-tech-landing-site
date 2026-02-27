@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import {
@@ -168,7 +171,7 @@ export default async function AboutPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Rammer Tech",
-            url: "https://rammertech.ro",
+            url: SITE_URL,
             description: about.hero.subtitle,
           }),
         }}

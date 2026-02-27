@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { HeroSection } from "./_components/hero-section";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 import { TrustBar } from "./_components/trust-bar";
 import { ServicesPreview } from "./_components/services-preview";
 import { ValueProposition } from "./_components/value-proposition";
@@ -77,8 +80,8 @@ export default async function Home({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Rammer Tech",
-            url: "https://rammertech.ro",
-            logo: "https://rammertech.ro/Rammer%20Tech%20LOGO.png",
+            url: SITE_URL,
+            logo: `${SITE_URL}/Rammer%20Tech%20LOGO.png`,
             description: dict.hero.subtitle,
             address: {
               "@type": "PostalAddress",

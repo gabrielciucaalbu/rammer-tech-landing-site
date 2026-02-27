@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { i18n, type Locale } from "@/i18n-config";
 import { getDictionary } from "@/dictionaries/get-dictionary";
@@ -17,7 +18,7 @@ const inter = Inter({
 });
 
 const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://rammertech.ro";
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -72,6 +73,7 @@ export default async function RootLayout({
         <CookieBanner lang={lang} dict={dict} />
         <Toaster />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

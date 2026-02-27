@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { LegalPageLayout } from "@/components/legal-page-layout";
 
 interface Props {
@@ -10,16 +11,14 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates(
+    "/termeni-si-conditii",
+    lang
+  );
 
   return {
     title: dict.legal.terms.metaTitle,
-    alternates: {
-      canonical: `/${lang}/termeni-si-conditii`,
-      languages: {
-        ro: "/ro/termeni-si-conditii",
-        en: "/en/termeni-si-conditii",
-      },
-    },
+    alternates: { canonical, languages },
   };
 }
 

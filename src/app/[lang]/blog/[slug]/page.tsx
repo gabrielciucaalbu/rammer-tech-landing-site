@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import { Badge } from "@/components/ui/badge";
@@ -30,6 +31,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   const locale = lang as "ro" | "en";
+  const { canonical, languages } = buildAlternates(`/blog/${slug}`, lang);
+
   return {
     title: `${post.title[locale]} | Blog Rammer Tech`,
     description: post.excerpt[locale],
@@ -43,13 +46,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       siteName: "Rammer Tech",
       images: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
     },
-    alternates: {
-      canonical: `/${lang}/blog/${slug}`,
-      languages: {
-        ro: `/ro/blog/${slug}`,
-        en: `/en/blog/${slug}`,
-      },
-    },
+    alternates: { canonical, languages },
   };
 }
 

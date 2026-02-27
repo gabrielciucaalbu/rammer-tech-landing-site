@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { LegalPageLayout } from "@/components/legal-page-layout";
 
 interface Props {
@@ -10,16 +11,14 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates(
+    "/politica-confidentialitate",
+    lang
+  );
 
   return {
     title: dict.legal.privacy.metaTitle,
-    alternates: {
-      canonical: `/${lang}/politica-confidentialitate`,
-      languages: {
-        ro: "/ro/politica-confidentialitate",
-        en: "/en/politica-confidentialitate",
-      },
-    },
+    alternates: { canonical, languages },
   };
 }
 

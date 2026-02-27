@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Suspense } from "react";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { ContactHero } from "./_components/contact-hero";
 import { ContactForm } from "./_components/contact-form";
 import { ContactInfo } from "./_components/contact-info";
@@ -14,6 +15,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates("/contact", lang);
 
   return {
     title: dict.contact.metaTitle,
@@ -25,10 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "Rammer Tech",
     },
-    alternates: {
-      canonical: `/${lang}/contact`,
-      languages: { ro: "/ro/contact", en: "/en/contact" },
-    },
+    alternates: { canonical, languages },
   };
 }
 

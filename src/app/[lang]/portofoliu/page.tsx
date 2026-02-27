@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import { ProjectGrid } from "./_components/project-grid";
@@ -13,6 +14,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates("/portofoliu", lang);
 
   return {
     title: dict.portfolio.metaTitle,
@@ -25,10 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "Rammer Tech",
     },
-    alternates: {
-      canonical: `/${lang}/portofoliu`,
-      languages: { ro: "/ro/portofoliu", en: "/en/portofoliu" },
-    },
+    alternates: { canonical, languages },
   };
 }
 

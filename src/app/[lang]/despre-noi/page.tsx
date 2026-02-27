@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
@@ -30,6 +31,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates("/despre-noi", lang);
 
   return {
     title: dict.about.metaTitle,
@@ -41,10 +43,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "Rammer Tech",
     },
-    alternates: {
-      canonical: `/${lang}/despre-noi`,
-      languages: { ro: "/ro/despre-noi", en: "/en/despre-noi" },
-    },
+    alternates: { canonical, languages },
   };
 }
 

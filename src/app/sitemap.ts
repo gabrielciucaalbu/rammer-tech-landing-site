@@ -29,9 +29,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: page === "" ? "weekly" : "monthly",
         priority: page === "" ? 1.0 : page === "/contact" ? 0.9 : 0.8,
         alternates: {
-          languages: Object.fromEntries(
-            i18n.locales.map((l) => [l, `${BASE_URL}/${l}${page}`])
-          ),
+          languages: {
+            ...Object.fromEntries(
+              i18n.locales.map((l) => [l, `${BASE_URL}/${l}${page}`])
+            ),
+            "x-default": `${BASE_URL}/ro${page}`,
+          },
         },
       });
     }
@@ -46,12 +49,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         changeFrequency: "monthly",
         priority: 0.6,
         alternates: {
-          languages: Object.fromEntries(
-            i18n.locales.map((l) => [
-              l,
-              `${BASE_URL}/${l}/blog/${post.slug}`,
-            ])
-          ),
+          languages: {
+            ...Object.fromEntries(
+              i18n.locales.map((l) => [
+                l,
+                `${BASE_URL}/${l}/blog/${post.slug}`,
+              ])
+            ),
+            "x-default": `${BASE_URL}/ro/blog/${post.slug}`,
+          },
         },
       });
     }

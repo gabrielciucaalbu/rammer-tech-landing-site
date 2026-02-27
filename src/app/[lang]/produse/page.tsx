@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import { Badge } from "@/components/ui/badge";
@@ -21,6 +22,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates("/produse", lang);
 
   return {
     title: dict.products.metaTitle,
@@ -32,10 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "Rammer Tech",
     },
-    alternates: {
-      canonical: `/${lang}/produse`,
-      languages: { ro: "/ro/produse", en: "/en/produse" },
-    },
+    alternates: { canonical, languages },
   };
 }
 

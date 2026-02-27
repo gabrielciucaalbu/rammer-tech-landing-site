@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
+import { buildAlternates } from "@/lib/metadata-alternates";
 import { ServicesHero } from "./_components/services-hero";
 import { ServiceDetailCard } from "./_components/service-detail-card";
 import { WorkflowTimeline } from "./_components/workflow-timeline";
@@ -13,6 +14,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
+  const { canonical, languages } = buildAlternates("/servicii", lang);
 
   return {
     title: dict.services.metaTitle,
@@ -24,10 +26,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "website",
       siteName: "Rammer Tech",
     },
-    alternates: {
-      canonical: `/${lang}/servicii`,
-      languages: { ro: "/ro/servicii", en: "/en/servicii" },
-    },
+    alternates: { canonical, languages },
   };
 }
 

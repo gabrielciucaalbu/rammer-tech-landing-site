@@ -21,12 +21,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { canonical, languages } = buildAlternates("", lang);
 
   return {
-    title: `Rammer Tech | ${lang === "ro" ? "Solutii Digitale pentru Afaceri" : "Digital Solutions for Business"}`,
-    description: dict.hero.subtitle,
+    title: dict.meta.homeTitle,
+    description: dict.meta.homeDescription,
     openGraph: {
-      title: "Rammer Tech",
-      description: dict.hero.subtitle,
-      locale: lang === "ro" ? "ro_RO" : "en_US",
+      title: dict.meta.homeTitle,
+      description: dict.meta.homeDescription,
+      locale: "ro_RO",
       type: "website",
       siteName: "Rammer Tech",
     },
@@ -41,7 +41,7 @@ export default async function Home({ params }: Props) {
   return (
     <>
       <HeroSection
-        title={dict.hero.title}
+        title={dict.meta.homeH1}
         subtitle={dict.hero.subtitle}
         cta={dict.hero.cta}
         ctaSecondary={dict.hero.ctaSecondary}
@@ -54,6 +54,7 @@ export default async function Home({ params }: Props) {
         title={dict.servicesPreview.title}
         viewAll={dict.servicesPreview.viewAll}
         learnMore={dict.servicesPreview.learnMore}
+        learnMoreAbout={dict.servicesPreview.learnMoreAbout}
         items={dict.servicesPreview.items}
         lang={lang}
       />
@@ -90,7 +91,7 @@ export default async function Home({ params }: Props) {
               "@type": "ContactPoint",
               contactType: "customer service",
               email: "office@rammertech.ro",
-              availableLanguage: ["Romanian", "English"],
+              availableLanguage: ["Romanian"],
             },
             sameAs: [],
           }),

@@ -5,9 +5,9 @@ export interface BlogPost {
   author: string;
   readingTime: number;
   coverImage: string;
-  title: { ro: string; en: string };
-  excerpt: { ro: string; en: string };
-  content: { ro: string; en: string };
+  title: string;
+  excerpt: string;
+  content: string;
 }
 
 // Temporary: Articles will be added later

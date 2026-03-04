@@ -51,6 +51,9 @@ export function MobileNav({
               key={link.key}
               href={`/${lang}${link.href}`}
               onClick={onClose}
+              {...(link.key === "services" && {
+                "aria-label": dict.navigation.servicesAriaLabel,
+              })}
               className={cn(
                 "px-4 py-3 text-base font-medium rounded-lg transition-colors",
                 isActive(link.href)

@@ -3,18 +3,9 @@ export interface Project {
   category: "web" | "enterprise" | "product";
   technologies: string[];
   image: string;
-  title: {
-    ro: string;
-    en: string;
-  };
-  client: {
-    ro: string;
-    en: string;
-  };
-  description: {
-    ro: string;
-    en: string;
-  };
+  title: string;
+  client: string;
+  description: string;
 }
 
 export const projects: Project[] = [
@@ -23,35 +14,19 @@ export const projects: Project[] = [
     category: "enterprise",
     technologies: ["React", "Node.js", "MongoDB", "Docker"],
     image: "/projects/erp-logistics.jpg",
-    title: {
-      ro: "ERP Companie Logistica",
-      en: "Logistics Company ERP",
-    },
-    client: {
-      ro: "Companie de logistica, Romania",
-      en: "Logistics company, Romania",
-    },
-    description: {
-      ro: "Sistem ERP personalizat pentru gestionarea flotei, comenzilor si facturilor, cu integrare cu sisteme de contabilitate existente.",
-      en: "Custom ERP system for fleet, order, and invoice management, integrated with existing accounting systems.",
-    },
+    title: "ERP Companie Logistica",
+    client: "Companie de logistica, Romania",
+    description:
+      "Sistem ERP personalizat pentru gestionarea flotei, comenzilor si facturilor, cu integrare cu sisteme de contabilitate existente.",
   },
   {
     slug: "aplicatie-mobile-retail",
     category: "web",
     technologies: ["React Native", "Firebase", "Stripe", "TypeScript"],
     image: "/projects/retail-app.jpg",
-    title: {
-      ro: "Aplicatie Mobile Retail",
-      en: "Retail Mobile Application",
-    },
-    client: {
-      ro: "Lant de magazine, Romania",
-      en: "Retail chain, Romania",
-    },
-    description: {
-      ro: "Aplicatie mobila cross-platform pentru comenzi online, program de loialitate si notificari push personalizate.",
-      en: "Cross-platform mobile app for online orders, loyalty program, and personalized push notifications.",
-    },
+    title: "Aplicatie Mobile Retail",
+    client: "Lant de magazine, Romania",
+    description:
+      "Aplicatie mobila cross-platform pentru comenzi online, program de loialitate si notificari push personalizate.",
   },
 ];

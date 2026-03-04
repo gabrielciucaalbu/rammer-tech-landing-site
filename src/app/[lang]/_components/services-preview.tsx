@@ -28,6 +28,7 @@ interface ServicesPreviewProps {
   title: string;
   viewAll: string;
   learnMore: string;
+  learnMoreAbout: string;
   items: ServiceItem[];
   lang: string;
 }
@@ -36,6 +37,7 @@ export function ServicesPreview({
   title,
   viewAll,
   learnMore,
+  learnMoreAbout,
   items,
   lang,
 }: ServicesPreviewProps) {
@@ -73,6 +75,7 @@ export function ServicesPreview({
                 </p>
                 <Link
                   href={`/${lang}/servicii`}
+                  aria-label={learnMoreAbout.replace("{title}", item.title)}
                   className="inline-flex items-center text-sm font-medium text-primary hover:underline"
                 >
                   {learnMore}

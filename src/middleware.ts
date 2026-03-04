@@ -29,6 +29,13 @@ function getLocale(request: NextRequest): string {
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
+  // Redirect old /en/* URLs to /ro/* (site is Romanian-only)
+  if (pathname.startsWith("/en/") || pathname === "/en") {
+    const newPath = "/ro" + pathname.slice(3);
+    request.nextUrl.pathname = newPath;
+    return NextResponse.redirect(request.nextUrl, 301);
+  }
+
   // Check if the pathname already starts with a supported locale
   const pathnameHasLocale = i18n.locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`

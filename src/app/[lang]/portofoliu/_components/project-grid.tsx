@@ -27,8 +27,6 @@ export function ProjectGrid({
       ? projects
       : projects.filter((p) => p.category === activeFilter);
 
-  const locale = lang as "ro" | "en";
-
   return (
     <div className="space-y-10">
       <ProjectFilters
@@ -53,7 +51,7 @@ export function ProjectGrid({
                 {project.image ? (
                   <Image
                     src={project.image}
-                    alt={project.title[locale]}
+                    alt={project.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -61,7 +59,7 @@ export function ProjectGrid({
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-muted-foreground text-sm">
-                      {project.title[locale]}
+                      {project.title}
                     </span>
                   </div>
                 )}
@@ -73,13 +71,13 @@ export function ProjectGrid({
                   </Badge>
                 </div>
                 <h3 className="font-semibold text-lg mb-1">
-                  {project.title[locale]}
+                  {project.title}
                 </h3>
                 <p className="text-sm text-muted-foreground mb-1">
-                  {project.client[locale]}
+                  {project.client}
                 </p>
                 <p className="text-sm text-muted-foreground leading-relaxed mb-3">
-                  {project.description[locale]}
+                  {project.description}
                 </p>
                 <div className="flex flex-wrap gap-1.5">
                   {project.technologies.map((tech) => (

@@ -1,11 +1,15 @@
 {
   "meta": {
     "siteName": "Rammer Tech",
-    "titleSuffix": " | Rammer Tech"
+    "titleSuffix": " | Rammer Tech",
+    "homeTitle": "Rammer Tech | Servicii IT și Soluții Software București",
+    "homeDescription": "Rammer Tech oferă servicii IT, dezvoltare software personalizată și soluții enterprise în București. Aplicații web și mobile, consultanță și transformare digitală.",
+    "homeH1": "Soluții Tehnologice Inovatoare de la Rammer Tech"
   },
   "navigation": {
     "home": "Acasa",
     "services": "Servicii",
+    "servicesAriaLabel": "Explorează serviciile noastre IT",
     "about": "Despre Noi",
     "portfolio": "Portofoliu",
     "products": "Produse",
@@ -24,9 +28,10 @@
     "clients": "Clienti Multumiti"
   },
   "servicesPreview": {
-    "title": "Serviciile Noastre",
+    "title": "Serviciile Noastre IT și Software",
     "viewAll": "Vezi toate serviciile",
     "learnMore": "Afla mai mult",
+    "learnMoreAbout": "Află mai multe despre {title}",
     "items": [
       {
         "title": "Dezvoltare Web & Mobile",
@@ -46,7 +51,7 @@
     ]
   },
   "valueProposition": {
-    "title": "De ce Rammer Tech?",
+    "title": "De ce Rammer Tech pentru IT și Software?",
     "items": [
       {
         "title": "Orientare pe Client",
@@ -71,7 +76,7 @@
   },
   "ctaBanner": {
     "home": {
-      "title": "Ai un proiect in minte?",
+      "title": "Ai un proiect IT sau software în minte?",
       "subtitle": "Hai sa vorbim despre cum putem transforma ideea ta in realitate.",
       "cta": "Solicita o consultatie gratuita"
     }
@@ -365,7 +370,7 @@
       ],
       "message": "Mesajul tau",
       "gdpr": "Sunt de acord cu",
-      "gdprLink": "Politica de Confidentialitate",
+      "gdprLink": "Citește Politica de Confidențialitate",
       "submit": "Trimite Mesajul",
       "sending": "Se trimite...",
       "success": "Multumim! Te contactam in maximum 24 de ore.",
@@ -486,7 +491,7 @@
   },
   "cookieBanner": {
     "message": "Folosim cookies pentru a-ti imbunatati experienta pe site-ul nostru.",
-    "learnMore": "Afla mai mult",
+    "learnMore": "Citește Politica de Confidențialitate",
     "acceptAll": "Accepta toate",
     "necessaryOnly": "Doar necesare"
   },
@@ -529,7 +534,7 @@
       "legal": {
         "title": "Legal",
         "links": [
-          { "label": "Politica de Confidentialitate", "href": "/politica-confidentialitate" },
+          { "label": "Citește Politica de Confidențialitate", "href": "/politica-confidentialitate" },
           { "label": "Termeni si Conditii", "href": "/termeni-si-conditii" }
         ]
       }

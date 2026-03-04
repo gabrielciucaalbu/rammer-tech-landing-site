@@ -8,7 +8,6 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/mobile-nav";
-import { LanguageSwitcher } from "@/components/language-switcher";
 import type { Dictionary } from "@/dictionaries/get-dictionary";
 
 interface HeaderProps {
@@ -74,6 +73,9 @@ export function Header({ lang, dict }: HeaderProps) {
             <Link
               key={link.key}
               href={`/${lang}${link.href}`}
+              {...(link.key === "services" && {
+                "aria-label": dict.navigation.servicesAriaLabel,
+              })}
               className={cn(
                 "px-3 py-2 text-sm font-medium rounded-md transition-colors",
                 isActive(link.href)
@@ -88,7 +90,6 @@ export function Header({ lang, dict }: HeaderProps) {
 
         {/* Desktop Right */}
         <div className="hidden lg:flex items-center gap-3">
-          <LanguageSwitcher lang={lang} />
           <Button asChild size="sm">
             <Link href={`/${lang}/contact`}>{dict.navigation.contact}</Link>
           </Button>
@@ -96,7 +97,6 @@ export function Header({ lang, dict }: HeaderProps) {
 
         {/* Mobile Hamburger */}
         <div className="flex lg:hidden items-center gap-2">
-          <LanguageSwitcher lang={lang} />
           <Button
             variant="ghost"
             size="icon"

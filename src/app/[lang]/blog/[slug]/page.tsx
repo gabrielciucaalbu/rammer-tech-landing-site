@@ -16,10 +16,7 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.flatMap((post) => [
-    { lang: "ro", slug: post.slug },
-    { lang: "en", slug: post.slug },
-  ]);
+  return blogPosts.map((post) => ({ lang: "ro", slug: post.slug }));
 }
 
 const SITE_URL =
@@ -30,19 +27,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getPostBySlug(slug);
   if (!post) return {};
 
-  const locale = lang as "ro" | "en";
   const { canonical, languages } = buildAlternates(`/blog/${slug}`, lang);
 
   return {
-    title: `${post.title[locale]} | Blog Rammer Tech`,
-    description: post.excerpt[locale],
+    title: `${post.title} | Blog Rammer Tech`,
+    description: post.excerpt,
     openGraph: {
-      title: post.title[locale],
-      description: post.excerpt[locale],
+      title: post.title,
+      description: post.excerpt,
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
-      locale: lang === "ro" ? "ro_RO" : "en_US",
+      locale: "ro_RO",
       siteName: "Rammer Tech",
       images: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
     },
@@ -56,8 +52,6 @@ export default async function BlogPostPage({ params }: Props) {
   const post = getPostBySlug(slug);
 
   if (!post) notFound();
-
-  const locale = lang as "ro" | "en";
 
   // Simple markdown-like rendering (paragraphs and headings)
   const renderContent = (content: string) => {
@@ -99,7 +93,7 @@ export default async function BlogPostPage({ params }: Props) {
             items={[
               { label: dict.common.home, href: "" },
               { label: dict.navigation.blog, href: "/blog" },
-              { label: post.title[locale] },
+              { label: post.title },
             ]}
           />
 
@@ -109,7 +103,7 @@ export default async function BlogPostPage({ params }: Props) {
           </Badge>
 
           <h1 className="text-3xl md:text-4xl font-bold mb-4">
-            {post.title[locale]}
+            {post.title}
           </h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -119,10 +113,11 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
-              {new Date(post.date).toLocaleDateString(
-                lang === "ro" ? "ro-RO" : "en-US",
-                { year: "numeric", month: "long", day: "numeric" }
-              )}
+              {new Date(post.date).toLocaleDateString("ro-RO", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })}
             </span>
             <span className="flex items-center gap-1.5">
               <Clock className="h-4 w-4" />
@@ -135,7 +130,7 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <article className="py-12 px-6">
         <div className="container mx-auto max-w-3xl prose-headings:text-foreground">
-          {renderContent(post.content[locale])}
+          {renderContent(post.content)}
 
           <div className="mt-12 pt-8 border-t border-border">
             <Button asChild variant="outline">
@@ -164,8 +159,8 @@ export default async function BlogPostPage({ params }: Props) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BlogPosting",
-            headline: post.title[locale],
-            description: post.excerpt[locale],
+            headline: post.title,
+            description: post.excerpt,
             url: `${SITE_URL}/${lang}/blog/${slug}`,
             mainEntityOfPage: `${SITE_URL}/${lang}/blog/${slug}`,
             datePublished: post.date,

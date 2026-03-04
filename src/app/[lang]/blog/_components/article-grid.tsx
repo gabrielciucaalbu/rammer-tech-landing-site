@@ -25,7 +25,6 @@ export function ArticleGrid({
   noArticles,
 }: ArticleGridProps) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const locale = lang as "ro" | "en";
 
   const filtered =
     activeCategory === "all"
@@ -54,7 +53,7 @@ export function ArticleGrid({
                 {post.coverImage ? (
                   <Image
                     src={post.coverImage}
-                    alt={post.title[locale]}
+                    alt={post.title}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -62,7 +61,7 @@ export function ArticleGrid({
                 ) : (
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span className="text-muted-foreground text-xs">
-                      {post.title[locale]}
+                      {post.title}
                     </span>
                   </div>
                 )}
@@ -77,17 +76,18 @@ export function ArticleGrid({
                   </span>
                 </div>
                 <h3 className="font-semibold mb-2 group-hover:text-primary transition-colors line-clamp-2">
-                  {post.title[locale]}
+                  {post.title}
                 </h3>
                 <p className="text-sm text-muted-foreground line-clamp-2 mb-3">
-                  {post.excerpt[locale]}
+                  {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
                   <span className="text-xs text-muted-foreground">
-                    {new Date(post.date).toLocaleDateString(
-                      lang === "ro" ? "ro-RO" : "en-US",
-                      { year: "numeric", month: "long", day: "numeric" }
-                    )}
+                    {new Date(post.date).toLocaleDateString("ro-RO", {
+                      year: "numeric",
+                      month: "long",
+                      day: "numeric",
+                    })}
                   </span>
                   <span className="text-sm font-medium text-primary">
                     {readMore} &rarr;

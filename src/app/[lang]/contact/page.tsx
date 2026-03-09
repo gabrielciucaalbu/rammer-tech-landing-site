@@ -52,7 +52,7 @@ export default async function ContactPage({ params }: Props) {
       <section className="py-16 px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-12">
-            <Suspense>
+            <Suspense fallback={<div className="h-96 animate-pulse rounded-lg bg-muted" />}>
               <ContactForm dict={dict} lang={lang} />
             </Suspense>
             <aside>

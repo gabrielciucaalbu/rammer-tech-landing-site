@@ -8,7 +8,8 @@ export function middleware(request: NextRequest) {
   if (pathname.startsWith("/en/") || pathname === "/en") {
     const newPath = "/ro" + pathname.slice(3);
     request.nextUrl.pathname = newPath;
-    return NextResponse.redirect(request.nextUrl, 301);
+    // 302 (temporary) — will be removed when English locale is enabled
+    return NextResponse.redirect(request.nextUrl, 302);
   }
 
   // Check if the pathname already starts with a supported locale

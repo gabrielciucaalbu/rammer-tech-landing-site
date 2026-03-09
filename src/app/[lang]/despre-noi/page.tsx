@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
 
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
@@ -162,7 +163,14 @@ export default async function AboutPage({ params }: Props) {
         variant="dark"
       />
 
-      {/* Schema.org */}
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={about.metaTitle}
+        description={about.metaDescription}
+        url={`${SITE_URL}/ro/despre-noi`}
+      />
+
+      {/* Schema.org Organization JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -171,8 +179,26 @@ export default async function AboutPage({ params }: Props) {
             "@type": "Organization",
             name: "Rammer Tech",
             url: SITE_URL,
+            logo: `${SITE_URL}/Rammer_Tech_LOGO.png`,
             description: about.hero.subtitle,
-          }),
+            foundingDate: "2025",
+            address: {
+              "@type": "PostalAddress",
+              addressLocality: "București",
+              addressRegion: "București",
+              addressCountry: "RO",
+            },
+            contactPoint: {
+              "@type": "ContactPoint",
+              contactType: "customer service",
+              email: "office@mail.rammertech.ro",
+              telephone: "+40736459926",
+              availableLanguage: ["Romanian"],
+            },
+            sameAs: [
+              "https://www.linkedin.com/company/rammer-tech/",
+            ],
+          }).replace(/</g, "\\u003c"),
         }}
       />
     </>

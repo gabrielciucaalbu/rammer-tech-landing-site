@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { stripDiacritics } from "@/lib/strip-diacritics";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Clock, Calendar, User } from "lucide-react";
 import { blogPosts, getPostBySlug } from "@/data/blog-posts";
+import { getAuthorByName } from "@/data/authors";
 
 interface Props {
   params: Promise<{ lang: string; slug: string }>;
@@ -28,12 +32,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   const { canonical, languages } = buildAlternates(`/blog/${slug}`, lang);
+  const titleNoAccents = stripDiacritics(post.title);
 
   return {
-    title: `${post.title} | Blog Rammer Tech`,
+    title: `${titleNoAccents} | Blog Rammer Tech`,
     description: post.excerpt,
     openGraph: {
-      title: post.title,
+      title: titleNoAccents,
       description: post.excerpt,
       type: "article",
       publishedTime: post.date,
@@ -53,35 +58,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   if (!post) notFound();
 
-  // Simple markdown-like rendering (paragraphs and headings)
-  const renderContent = (content: string) => {
-    return content.split("\n\n").map((block, idx) => {
-      if (block.startsWith("## ")) {
-        return (
-          <h2 key={idx} className="text-2xl font-bold mt-8 mb-4">
-            {block.replace("## ", "")}
-          </h2>
-        );
-      }
-      if (block.startsWith("- ")) {
-        const items = block.split("\n").filter((l) => l.startsWith("- "));
-        return (
-          <ul key={idx} className="list-disc list-inside space-y-1 mb-4">
-            {items.map((item, i) => (
-              <li key={i} className="text-muted-foreground">
-                {item.replace("- ", "")}
-              </li>
-            ))}
-          </ul>
-        );
-      }
-      return (
-        <p key={idx} className="text-muted-foreground leading-relaxed mb-4">
-          {block}
-        </p>
-      );
-    });
-  };
+  const author = getAuthorByName(post.author);
 
   return (
     <>
@@ -130,7 +107,70 @@ export default async function BlogPostPage({ params }: Props) {
       {/* Content */}
       <article className="py-12 px-6">
         <div className="container mx-auto max-w-3xl prose-headings:text-foreground">
-          {renderContent(post.content)}
+          <Markdown
+            remarkPlugins={[remarkGfm]}
+            components={{
+              h2: ({ children }) => (
+                <h2 className="text-2xl font-bold mt-8 mb-4">{children}</h2>
+              ),
+              h3: ({ children }) => (
+                <h3 className="text-xl font-semibold mt-6 mb-3">{children}</h3>
+              ),
+              p: ({ children }) => (
+                <p className="text-muted-foreground leading-relaxed mb-4">{children}</p>
+              ),
+              ul: ({ children }) => (
+                <ul className="list-disc list-inside space-y-1 mb-4">{children}</ul>
+              ),
+              ol: ({ children }) => (
+                <ol className="list-decimal list-inside space-y-1 mb-4">{children}</ol>
+              ),
+              li: ({ children }) => (
+                <li className="text-muted-foreground">{children}</li>
+              ),
+              table: ({ children }) => (
+                <div className="overflow-x-auto mb-4">
+                  <table className="w-full border-collapse border border-border text-sm">
+                    {children}
+                  </table>
+                </div>
+              ),
+              th: ({ children }) => (
+                <th className="border border-border bg-muted px-3 py-2 text-left font-semibold">
+                  {children}
+                </th>
+              ),
+              td: ({ children }) => (
+                <td className="border border-border px-3 py-2">{children}</td>
+              ),
+              a: ({ href, children }) => (
+                <a
+                  href={href}
+                  className="text-primary underline hover:text-primary/80"
+                  target={href?.startsWith("http") ? "_blank" : undefined}
+                  rel={href?.startsWith("http") ? "noopener noreferrer" : undefined}
+                >
+                  {children}
+                </a>
+              ),
+              strong: ({ children }) => (
+                <strong className="font-semibold text-foreground">{children}</strong>
+              ),
+            }}
+          >
+            {post.content}
+          </Markdown>
+
+          {/* Author bio */}
+          {author && (
+            <div className="mt-12 pt-8 border-t border-border flex items-start gap-4">
+              <div>
+                <p className="font-semibold text-foreground">{author.name}</p>
+                <p className="text-sm text-muted-foreground">{author.jobTitle}</p>
+                <p className="text-sm text-muted-foreground mt-2">{author.bio}</p>
+              </div>
+            </div>
+          )}
 
           <div className="mt-12 pt-8 border-t border-border">
             <Button asChild variant="outline">
@@ -164,20 +204,23 @@ export default async function BlogPostPage({ params }: Props) {
             url: `${SITE_URL}/${lang}/blog/${slug}`,
             mainEntityOfPage: `${SITE_URL}/${lang}/blog/${slug}`,
             datePublished: post.date,
+            dateModified: post.date,
             ...(post.coverImage && { image: `${SITE_URL}${post.coverImage}` }),
             author: {
               "@type": "Person",
-              name: post.author,
+              name: "Gabriel Ciucă-Albu",
+              jobTitle: "Fondator & CTO",
+              sameAs: ["https://www.linkedin.com/in/gabriel-octavian-ciuca-albu-33a717160/"],
             },
             publisher: {
               "@type": "Organization",
               name: "Rammer Tech",
               logo: {
                 "@type": "ImageObject",
-                url: `${SITE_URL}/Rammer%20Tech%20LOGO.png`,
+                url: `${SITE_URL}/Rammer_Tech_LOGO.png`,
               },
             },
-          }),
+          }).replace(/</g, "\\u003c"),
         }}
       />
     </>

@@ -1,11 +1,17 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
+import { FaqAccordion } from "@/components/faq-accordion";
 import { ServicesHero } from "./_components/services-hero";
 import { ServiceDetailCard } from "./_components/service-detail-card";
 import { WorkflowTimeline } from "./_components/workflow-timeline";
 import { CtaBanner } from "@/components/cta-banner";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 interface Props {
   params: Promise<{ lang: string }>;
@@ -63,12 +69,70 @@ export default async function ServicesPage({ params }: Props) {
         steps={dict.services.workflow.steps}
       />
 
+      {/* HowTo JSON-LD for workflow */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "HowTo",
+            name: dict.services.workflow.title,
+            description: "Cum dezvoltăm software personalizat: de la descoperire la suport continuu.",
+            totalTime: "PT12W",
+            step: dict.services.workflow.steps.map(
+              (step: { title: string; description: string }, idx: number) => ({
+                "@type": "HowToStep",
+                position: idx + 1,
+                name: step.title,
+                text: step.description,
+              })
+            ),
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      {/* FAQ Section */}
+      <section className="py-16 px-6 bg-muted/50">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-2xl font-bold mb-8 text-center">
+            {dict.services.faq.title}
+          </h2>
+          <FaqAccordion items={dict.services.faq.items} schema />
+          <p className="mt-8 text-center text-muted-foreground text-sm">
+            {lang === "ro" ? (
+              <>
+                Citește mai multe pe{" "}
+                <Link href={`/${lang}/blog`} className="text-primary underline hover:text-primary/80">
+                  blogul nostru
+                </Link>{" "}
+                despre dezvoltare software și transformare digitală.
+              </>
+            ) : (
+              <>
+                Read more on our{" "}
+                <Link href={`/${lang}/blog`} className="text-primary underline hover:text-primary/80">
+                  blog
+                </Link>{" "}
+                about software development and digital transformation.
+              </>
+            )}
+          </p>
+        </div>
+      </section>
+
       <CtaBanner
         title={dict.services.ctaBanner.title}
         subtitle={dict.services.ctaBanner.subtitle}
         ctaText={dict.services.ctaBanner.cta}
         ctaHref={`/${lang}/contact`}
         variant="primary"
+      />
+
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={dict.services.metaTitle}
+        description={dict.services.metaDescription}
+        url={`${SITE_URL}/ro/servicii`}
       />
     </>
   );

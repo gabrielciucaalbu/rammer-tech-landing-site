@@ -3,10 +3,14 @@ import { Suspense } from "react";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { ContactHero } from "./_components/contact-hero";
 import { ContactForm } from "./_components/contact-form";
 import { ContactInfo } from "./_components/contact-info";
 import { FaqAccordion } from "@/components/faq-accordion";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 interface Props {
   params: Promise<{ lang: string }>;
@@ -64,11 +68,18 @@ export default async function ContactPage({ params }: Props) {
           <h2 className="text-2xl font-bold mb-8 text-center">
             {dict.contact.faq.title}
           </h2>
-          <FaqAccordion items={dict.contact.faq.items} />
+          <FaqAccordion items={dict.contact.faq.items} schema />
         </div>
       </section>
 
-      {/* Schema.org */}
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={dict.contact.metaTitle}
+        description={dict.contact.metaDescription}
+        url={`${SITE_URL}/ro/contact`}
+      />
+
+      {/* Schema.org ContactPage + LocalBusiness JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -80,12 +91,25 @@ export default async function ContactPage({ params }: Props) {
               name: "Rammer Tech",
               email: dict.contact.info.email,
               telephone: dict.contact.info.phone,
+              url: "https://www.rammertech.ro",
+              image: "https://www.rammertech.ro/Rammer_Tech_LOGO.png",
               address: {
                 "@type": "PostalAddress",
+                addressLocality: "București",
+                addressRegion: "București",
                 addressCountry: "RO",
               },
+              openingHoursSpecification: {
+                "@type": "OpeningHoursSpecification",
+                dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+                opens: "09:00",
+                closes: "18:00",
+              },
+              sameAs: [
+                "https://www.linkedin.com/company/rammer-tech/",
+              ],
             },
-          }),
+          }).replace(/</g, "\\u003c"),
         }}
       />
     </>

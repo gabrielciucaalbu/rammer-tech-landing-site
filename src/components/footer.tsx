@@ -21,7 +21,7 @@ export function Footer({ lang, dict }: FooterProps) {
           <div className="lg:col-span-1">
             <Link href={`/${lang}`} className="flex items-center gap-2 mb-4">
               <Image
-                src="/Rammer Tech LOGO.png"
+                src="/Rammer_Tech_LOGO.png"
                 alt="Rammer Tech"
                 width={36}
                 height={36}

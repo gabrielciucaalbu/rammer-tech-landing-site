@@ -55,7 +55,7 @@ export function Header({ lang, dict }: HeaderProps) {
         {/* Logo */}
         <Link href={`/${lang}`} className="flex items-center gap-2 shrink-0">
           <Image
-            src="/Rammer Tech LOGO.png"
+            src="/Rammer_Tech_LOGO.png"
             alt="Rammer Tech"
             width={40}
             height={40}

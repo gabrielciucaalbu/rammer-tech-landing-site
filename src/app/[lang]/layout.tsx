@@ -38,6 +38,11 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     images: ["/og-default.png"],
   },
+  alternates: {
+    types: {
+      "application/rss+xml": `${SITE_URL}/feed.xml`,
+    },
+  },
 };
 
 export async function generateStaticParams() {

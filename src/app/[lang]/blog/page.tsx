@@ -2,10 +2,14 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
 import { ArticleGrid } from "./_components/article-grid";
 import { blogPosts } from "@/data/blog-posts";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 interface Props {
   params: Promise<{ lang: string }>;
@@ -76,6 +80,13 @@ export default async function BlogPage({ params }: Props) {
         ctaText={dict.blog.ctaBanner.cta}
         ctaHref={`/${lang}/contact`}
         variant="primary"
+      />
+
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={dict.blog.metaTitle}
+        description={dict.blog.metaDescription}
+        url={`${SITE_URL}/ro/blog`}
       />
     </>
   );

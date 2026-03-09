@@ -2,9 +2,9 @@
   "meta": {
     "siteName": "Rammer Tech",
     "titleSuffix": " | Rammer Tech",
-    "homeTitle": "Rammer Tech | Servicii IT și Soluții Software București",
-    "homeDescription": "Rammer Tech oferă servicii IT, dezvoltare software personalizată și soluții enterprise în București. Aplicații web și mobile, consultanță și transformare digitală.",
-    "homeH1": "Soluții Tehnologice Inovatoare de la Rammer Tech"
+    "homeTitle": "Dezvoltare Software Bucuresti — Servicii IT & Solutii Custom | Rammer Tech",
+    "homeDescription": "Rammer Tech ofera dezvoltare software personalizata, aplicatii web si mobile, sisteme ERP/CRM si consultanta IT in Bucuresti. Partenerul tau de incredere pentru transformare digitala.",
+    "homeH1": "Dezvoltare Software și Soluții IT pentru Afaceri în București"
   },
   "navigation": {
     "home": "Acasa",
@@ -84,7 +84,7 @@
   "services": {
     "pageTitle": "Servicii Software Complete pentru Afacerea Ta",
     "pageSubtitle": "De la conceptie la livrare si mentenanta, oferim solutii end-to-end pentru fiecare nevoie digitala.",
-    "metaTitle": "Servicii Software -- Dezvoltare Web, Mobile, Enterprise | Rammer Tech",
+    "metaTitle": "Servicii Software Bucuresti — Dezvoltare Web, Mobile & Enterprise | Rammer Tech",
     "metaDescription": "Servicii complete de dezvoltare software: aplicatii web si mobile, solutii enterprise si consultanta IT personalizata.",
     "items": [
       {
@@ -156,6 +156,31 @@
         {
           "title": "Suport",
           "description": "Mentenanta si imbunatatiri continue."
+        }
+      ]
+    },
+    "faq": {
+      "title": "Întrebări Frecvente despre Serviciile Noastre",
+      "items": [
+        {
+          "question": "Cât costă dezvoltarea unei aplicații web personalizate?",
+          "answer": "Costul variază în funcție de complexitate: aplicațiile simple pornesc de la 3.000-5.000 EUR, cele de complexitate medie între 5.000-20.000 EUR, iar sistemele enterprise complexe pot depăși 30.000 EUR. Oferim consultanță gratuită pentru estimarea bugetului proiectului tău."
+        },
+        {
+          "question": "Cât durează un proiect de dezvoltare software?",
+          "answer": "Un MVP sau o aplicație simplă durează 4-8 săptămâni. Proiectele de complexitate medie necesită 2-4 luni, iar sistemele enterprise complexe (ERP, CRM) pot dura 4-8 luni. Folosim metodologie agilă cu livrări incrementale, astfel încât vezi progres din primele săptămâni."
+        },
+        {
+          "question": "Ce tehnologii folosiți pentru dezvoltare?",
+          "answer": "Folosim un stack modern: React și Next.js pentru frontend, Node.js și TypeScript pentru backend, PostgreSQL și MongoDB pentru baze de date, și platforme cloud precum AWS și Vercel pentru hosting. Alegem tehnologiile potrivite pentru fiecare proiect în parte."
+        },
+        {
+          "question": "Oferiți suport și mentenanță după lansare?",
+          "answer": "Da. Fiecare proiect include o perioadă de suport post-lansare. Oferim și pachete de mentenanță continuă care includ monitorizare, actualizări de securitate, optimizări de performanță și implementarea de funcționalități noi."
+        },
+        {
+          "question": "Cum funcționează procesul de colaborare?",
+          "answer": "Procesul nostru are 6 etape: descoperire (înțelegem nevoile), planificare (definim arhitectura și bugetul), dezvoltare (iterații agile cu feedback), testare (QA riguros), lansare (deployment) și suport continuu. Comunicăm transparent prin ședințe regulate de status."
         }
       ]
     },
@@ -408,6 +433,7 @@
   "legal": {
     "privacy": {
       "metaTitle": "Politica de Confidentialitate | Rammer Tech",
+      "metaDescription": "Politica de confidentialitate Rammer Tech: cum colectam, folosim si protejam datele tale personale conform GDPR.",
       "title": "Politica de Confidentialitate",
       "lastUpdated": "Ultima actualizare: Februarie 2026",
       "sections": [
@@ -451,6 +477,7 @@
     },
     "terms": {
       "metaTitle": "Termeni si Conditii | Rammer Tech",
+      "metaDescription": "Termenii si conditiile de utilizare a site-ului Rammer Tech. Informatii despre servicii, proprietate intelectuala si legislatia aplicabila.",
       "title": "Termeni si Conditii",
       "lastUpdated": "Ultima actualizare: Februarie 2026",
       "sections": [

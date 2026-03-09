@@ -2,8 +2,12 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
+
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 import { Badge } from "@/components/ui/badge";
 import {
   BarChart3,
@@ -101,6 +105,12 @@ export default async function ProductsPage({ params }: Props) {
         variant="dark"
       />
 
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={products.metaTitle}
+        description={products.metaDescription}
+        url={`${SITE_URL}/ro/produse`}
+      />
     </>
   );
 }

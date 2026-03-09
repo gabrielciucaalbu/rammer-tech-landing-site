@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { HeroSection } from "./_components/hero-section";
 
 const SITE_URL =
@@ -72,7 +73,7 @@ export default async function Home({ params }: Props) {
         variant="primary"
       />
 
-      {/* Schema.org JSON-LD */}
+      {/* Schema.org Organization JSON-LD */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -81,20 +82,51 @@ export default async function Home({ params }: Props) {
             "@type": "Organization",
             name: "Rammer Tech",
             url: SITE_URL,
-            logo: `${SITE_URL}/Rammer%20Tech%20LOGO.png`,
+            logo: `${SITE_URL}/Rammer_Tech_LOGO.png`,
             description: dict.hero.subtitle,
+            foundingDate: "2025",
             address: {
               "@type": "PostalAddress",
+              addressLocality: "București",
+              addressRegion: "București",
               addressCountry: "RO",
             },
             contactPoint: {
               "@type": "ContactPoint",
               contactType: "customer service",
-              email: "office@rammertech.ro",
+              email: "office@mail.rammertech.ro",
+              telephone: "+40736459926",
               availableLanguage: ["Romanian"],
             },
-            sameAs: [],
-          }),
+            sameAs: [
+              "https://www.linkedin.com/company/rammer-tech/",
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
+
+      {/* WebPage JSON-LD */}
+      <WebPageJsonLd
+        name={dict.meta.homeTitle}
+        description={dict.meta.homeDescription}
+        url={`${SITE_URL}/ro`}
+      />
+
+      {/* Schema.org WebSite JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Rammer Tech",
+            url: SITE_URL,
+            inLanguage: "ro",
+            publisher: {
+              "@type": "Organization",
+              name: "Rammer Tech",
+            },
+          }).replace(/</g, "\\u003c"),
         }}
       />
     </>

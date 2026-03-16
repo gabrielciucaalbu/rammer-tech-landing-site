@@ -8,7 +8,7 @@ alwaysApply: true
 
 ## Origin
 
-All brand colors are extracted from the Rammer Tech logo (`public/Rammer Tech LOGO.png`).
+All brand colors are extracted from the Rammer Tech logo (`public/Rammer_Tech_LOGO.png`).
 The logo features a ram silhouette with a crimson gradient (hue ~25 oklch):
 bright red (horn) -> deep maroon (body) -> near-black (shadows).
 

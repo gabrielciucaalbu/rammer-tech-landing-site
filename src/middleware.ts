@@ -3,25 +3,38 @@ import { i18n } from "@/i18n-config";
 
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const hostname = request.nextUrl.hostname;
 
-  // Redirect old /en/* URLs to /ro/* (site is Romanian-only)
-  if (pathname.startsWith("/en/") || pathname === "/en") {
-    const newPath = "/ro" + pathname.slice(3);
-    request.nextUrl.pathname = newPath;
-    // 302 (temporary) — will be removed when English locale is enabled
-    return NextResponse.redirect(request.nextUrl, 302);
+  let needsRedirect = false;
+  const url = request.nextUrl.clone();
+
+  // 1. www normalization
+  if (hostname === "rammertech.ro") {
+    url.hostname = "www.rammertech.ro";
+    needsRedirect = true;
   }
 
-  // Check if the pathname already starts with a supported locale
-  const pathnameHasLocale = i18n.locales.some(
-    (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
-  );
+  // 2. Legacy /en/* → /ro/*
+  if (pathname.startsWith("/en/") || pathname === "/en") {
+    url.pathname = "/ro" + pathname.slice(3);
+    needsRedirect = true;
+  }
+  // 3. Missing locale prefix → add default
+  else {
+    const pathnameHasLocale = i18n.locales.some(
+      (locale) =>
+        pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
+    );
+    if (!pathnameHasLocale) {
+      url.pathname = `/${i18n.defaultLocale}${pathname}`;
+      needsRedirect = true;
+    }
+  }
 
-  if (pathnameHasLocale) return;
-
-  // Redirect to default locale — swap with getLocale(request) when adding more locales
-  request.nextUrl.pathname = `/${i18n.defaultLocale}${pathname}`;
-  return NextResponse.redirect(request.nextUrl);
+  if (needsRedirect) {
+    const isEnLocaleRedirect = pathname.startsWith("/en/") || pathname === "/en";
+    return NextResponse.redirect(url, isEnLocaleRedirect ? 302 : 301);
+  }
 }
 
 export const config = {

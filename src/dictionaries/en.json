@@ -538,31 +538,31 @@
       "company": {
         "title": "Company",
         "links": [
-          { "label": "About Us", "href": "/despre-noi" },
-          { "label": "Team", "href": "/despre-noi#echipa" },
+          { "label": "About Us", "href": "/about" },
+          { "label": "Team", "href": "/about#echipa" },
           { "label": "Careers", "href": "#", "badge": "Soon" }
         ]
       },
       "services": {
         "title": "Services",
         "links": [
-          { "label": "Web & Mobile Development", "href": "/servicii" },
-          { "label": "Enterprise Solutions", "href": "/servicii" },
-          { "label": "IT Consulting", "href": "/servicii" }
+          { "label": "Web & Mobile Development", "href": "/services" },
+          { "label": "Enterprise Solutions", "href": "/services" },
+          { "label": "IT Consulting", "href": "/services" }
         ]
       },
       "resources": {
         "title": "Resources",
         "links": [
           { "label": "Blog", "href": "/blog" },
-          { "label": "Products", "href": "/produse" }
+          { "label": "Products", "href": "/products" }
         ]
       },
       "legal": {
         "title": "Legal",
         "links": [
-          { "label": "Privacy Policy", "href": "/politica-confidentialitate" },
-          { "label": "Terms & Conditions", "href": "/termeni-si-conditii" }
+          { "label": "Privacy Policy", "href": "/privacy-policy" },
+          { "label": "Terms & Conditions", "href": "/terms-and-conditions" }
         ]
       }
     },

@@ -28,6 +28,10 @@ i18n pattern
 - Use `getDictionary(lang)` from `src/dictionaries/get-dictionary.ts` to load translations in Server Components.
 - Always propagate the `lang` param from layout / page down to child components that need translated text.
 
+**Known intentional decisions — do NOT "fix" these:**
+
+- The `/en/*` → `/ro/*` redirect in `middleware.ts` uses **302 (temporary)**, not 301. This is deliberate: the English locale is planned but not yet live, and 302 preserves Googlebot's ability to crawl `/en/*` when it eventually launches. Do not change it to 301.
+
 Styling
 
 - **Tailwind CSS v4** utility-first approach.

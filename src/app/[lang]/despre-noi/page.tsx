@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 
 const SITE_URL =
@@ -32,7 +33,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  const { canonical, languages } = buildAlternates("/despre-noi", lang);
+  const { canonical, languages } = buildAlternates("/despre-noi", lang, getLocaleAlternates("despre-noi"));
 
   return {
     title: dict.about.metaTitle,

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { ServicesHero } from "./_components/services-hero";
@@ -20,7 +21,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  const { canonical, languages } = buildAlternates("/servicii", lang);
+  const { canonical, languages } = buildAlternates("/servicii", lang, getLocaleAlternates("servicii"));
 
   return {
     title: dict.services.metaTitle,

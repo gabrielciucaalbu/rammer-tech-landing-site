@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { LegalPageLayout } from "@/components/legal-page-layout";
 
@@ -17,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dict = await getDictionary(lang as Locale);
   const { canonical, languages } = buildAlternates(
     "/termeni-si-conditii",
-    lang
+    lang,
+    getLocaleAlternates("termeni-si-conditii")
   );
 
   return {

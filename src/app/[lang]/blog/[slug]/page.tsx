@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import Markdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { getDictionary } from "@/dictionaries/get-dictionary";
-import type { Locale } from "@/i18n-config";
+import { i18n, type Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
 import { stripDiacritics } from "@/lib/strip-diacritics";
 import { Breadcrumbs } from "@/components/breadcrumbs";
@@ -20,7 +20,9 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-  return blogPosts.map((post) => ({ lang: "ro", slug: post.slug }));
+  return i18n.locales.flatMap((lang) =>
+    blogPosts.map((post) => ({ lang, slug: post.slug }))
+  );
 }
 
 const SITE_URL =
@@ -43,7 +45,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       type: "article",
       publishedTime: post.date,
       authors: [post.author],
-      locale: "ro_RO",
+      locale: lang === "ro" ? "ro_RO" : "en_US",
       siteName: "Rammer Tech",
       images: post.coverImage ? [`${SITE_URL}${post.coverImage}`] : undefined,
     },
@@ -90,7 +92,7 @@ export default async function BlogPostPage({ params }: Props) {
             </span>
             <span className="flex items-center gap-1.5">
               <Calendar className="h-4 w-4" />
-              {new Date(post.date).toLocaleDateString("ro-RO", {
+              {new Date(post.date).toLocaleDateString(lang === "ro" ? "ro-RO" : "en-US", {
                 year: "numeric",
                 month: "long",
                 day: "numeric",

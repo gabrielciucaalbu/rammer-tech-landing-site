@@ -27,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     openGraph: {
       title: dict.meta.homeTitle,
       description: dict.meta.homeDescription,
-      locale: "ro_RO",
+      locale: lang === "ro" ? "ro_RO" : "en_US",
       type: "website",
       siteName: "Rammer Tech",
     },
@@ -96,7 +96,7 @@ export default async function Home({ params }: Props) {
               contactType: "customer service",
               email: "office@mail.rammertech.ro",
               telephone: "+40736459926",
-              availableLanguage: ["Romanian"],
+              availableLanguage: ["Romanian", "English"],
             },
             sameAs: [
               "https://www.linkedin.com/company/rammer-tech/",
@@ -109,7 +109,7 @@ export default async function Home({ params }: Props) {
       <WebPageJsonLd
         name={dict.meta.homeTitle}
         description={dict.meta.homeDescription}
-        url={`${SITE_URL}/ro`}
+        url={`${SITE_URL}/${lang}`}
       />
 
       {/* Schema.org WebSite JSON-LD */}
@@ -121,7 +121,7 @@ export default async function Home({ params }: Props) {
             "@type": "WebSite",
             name: "Rammer Tech",
             url: SITE_URL,
-            inLanguage: "ro",
+            inLanguage: ["ro", "en"],
             publisher: {
               "@type": "Organization",
               name: "Rammer Tech",

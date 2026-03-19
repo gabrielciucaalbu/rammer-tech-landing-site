@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
-import { getLocaleAlternates } from "@/lib/locale-slugs";
+import { getLocaleAlternates, getPublicPath } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { LegalPageLayout } from "@/components/legal-page-layout";
 
@@ -52,7 +52,7 @@ export default async function TermsPage({ params }: Props) {
       <WebPageJsonLd
         name={dict.legal.terms.metaTitle}
         description={dict.legal.terms.metaDescription}
-        url={`${SITE_URL}/ro/termeni-si-conditii`}
+        url={`${SITE_URL}/${lang}${getPublicPath("termeni-si-conditii", lang)}`}
       />
     </>
   );

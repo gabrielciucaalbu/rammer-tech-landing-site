@@ -8,6 +8,7 @@ import { Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "@/components/mobile-nav";
+import { getPublicPath } from "@/lib/locale-slugs";
 import type { Dictionary } from "@/dictionaries/get-dictionary";
 
 interface HeaderProps {
@@ -15,19 +16,19 @@ interface HeaderProps {
   dict: Dictionary;
 }
 
-const navLinks = [
-  { key: "home", href: "" },
-  { key: "services", href: "/servicii" },
-  { key: "about", href: "/despre-noi" },
-  // { key: "portfolio", href: "/portofoliu" }, // Hidden - no public portfolio yet
-  { key: "products", href: "/produse" },
-  { key: "blog", href: "/blog" },
-] as const;
-
 export function Header({ lang, dict }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
+
+  const navLinks = [
+    { key: "home",     href: "" },
+    { key: "services", href: getPublicPath("servicii",   lang) },
+    { key: "about",    href: getPublicPath("despre-noi", lang) },
+    // { key: "portfolio", href: getPublicPath("portofoliu", lang) }, // Hidden
+    { key: "products", href: getPublicPath("produse",    lang) },
+    { key: "blog",     href: getPublicPath("blog",       lang) },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);

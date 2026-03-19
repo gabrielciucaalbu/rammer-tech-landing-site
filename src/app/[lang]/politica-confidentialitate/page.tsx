@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates, getPublicPath } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { LegalPageLayout } from "@/components/legal-page-layout";
 
@@ -17,7 +18,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const dict = await getDictionary(lang as Locale);
   const { canonical, languages } = buildAlternates(
     "/politica-confidentialitate",
-    lang
+    lang,
+    getLocaleAlternates("politica-confidentialitate")
   );
 
   return {
@@ -50,7 +52,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
       <WebPageJsonLd
         name={dict.legal.privacy.metaTitle}
         description={dict.legal.privacy.metaDescription}
-        url={`${SITE_URL}/ro/politica-confidentialitate`}
+        url={`${SITE_URL}/${lang}${getPublicPath("politica-confidentialitate", lang)}`}
       />
     </>
   );

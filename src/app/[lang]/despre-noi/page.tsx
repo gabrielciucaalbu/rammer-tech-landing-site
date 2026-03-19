@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates, getPublicPath } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 
 const SITE_URL =
@@ -32,7 +33,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  const { canonical, languages } = buildAlternates("/despre-noi", lang);
+  const { canonical, languages } = buildAlternates("/despre-noi", lang, getLocaleAlternates("despre-noi"));
 
   return {
     title: dict.about.metaTitle,
@@ -167,7 +168,7 @@ export default async function AboutPage({ params }: Props) {
       <WebPageJsonLd
         name={about.metaTitle}
         description={about.metaDescription}
-        url={`${SITE_URL}/ro/despre-noi`}
+        url={`${SITE_URL}/${lang}${getPublicPath("despre-noi", lang)}`}
       />
 
       {/* Schema.org Organization JSON-LD */}
@@ -193,7 +194,7 @@ export default async function AboutPage({ params }: Props) {
               contactType: "customer service",
               email: "office@mail.rammertech.ro",
               telephone: "+40736459926",
-              availableLanguage: ["Romanian"],
+              availableLanguage: ["Romanian", "English"],
             },
             sameAs: [
               "https://www.linkedin.com/company/rammer-tech/",

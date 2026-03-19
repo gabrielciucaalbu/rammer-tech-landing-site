@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { getFsSlug, getPublicPath } from "@/lib/locale-slugs";
 
 interface LanguageSwitcherProps {
   lang: string;
@@ -12,9 +13,20 @@ export function LanguageSwitcher({ lang }: LanguageSwitcherProps) {
   const pathname = usePathname();
 
   const switchLocale = (newLang: string) => {
-    // Replace the current lang segment in pathname
+    // segments[0]="" segments[1]=lang segments[2]=slug segments[3+]=rest
     const segments = pathname.split("/");
-    segments[1] = newLang;
+    const currentLang = segments[1];
+    const currentSlug = segments[2]; // undefined on home
+
+    if (currentSlug) {
+      const fsSlug = getFsSlug(currentSlug, currentLang);
+      const newSlug = getPublicPath(fsSlug, newLang).slice(1); // strip leading /
+      segments[1] = newLang;
+      segments[2] = newSlug;
+    } else {
+      segments[1] = newLang;
+    }
+
     return segments.join("/");
   };
 

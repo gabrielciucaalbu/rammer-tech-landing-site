@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates, getPublicPath } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { CtaBanner } from "@/components/cta-banner";
@@ -26,7 +27,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  const { canonical, languages } = buildAlternates("/produse", lang);
+  const { canonical, languages } = buildAlternates("/produse", lang, getLocaleAlternates("produse"));
 
   return {
     title: dict.products.metaTitle,
@@ -109,7 +110,7 @@ export default async function ProductsPage({ params }: Props) {
       <WebPageJsonLd
         name={products.metaTitle}
         description={products.metaDescription}
-        url={`${SITE_URL}/ro/produse`}
+        url={`${SITE_URL}/${lang}${getPublicPath("produse", lang)}`}
       />
     </>
   );

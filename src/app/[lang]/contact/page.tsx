@@ -76,7 +76,7 @@ export default async function ContactPage({ params }: Props) {
       <WebPageJsonLd
         name={dict.contact.metaTitle}
         description={dict.contact.metaDescription}
-        url={`${SITE_URL}/ro/contact`}
+        url={`${SITE_URL}/${lang}/contact`}
       />
 
       {/* Schema.org ContactPage + LocalBusiness JSON-LD */}

@@ -86,7 +86,7 @@ export default async function BlogPage({ params }: Props) {
       <WebPageJsonLd
         name={dict.blog.metaTitle}
         description={dict.blog.metaDescription}
-        url={`${SITE_URL}/ro/blog`}
+        url={`${SITE_URL}/${lang}/blog`}
       />
     </>
   );

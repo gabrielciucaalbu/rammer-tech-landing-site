@@ -3,6 +3,7 @@ import Link from "next/link";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
 import { buildAlternates } from "@/lib/metadata-alternates";
+import { getLocaleAlternates, getPublicPath } from "@/lib/locale-slugs";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { ServicesHero } from "./_components/services-hero";
@@ -20,7 +21,7 @@ interface Props {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { lang } = await params;
   const dict = await getDictionary(lang as Locale);
-  const { canonical, languages } = buildAlternates("/servicii", lang);
+  const { canonical, languages } = buildAlternates("/servicii", lang, getLocaleAlternates("servicii"));
 
   return {
     title: dict.services.metaTitle,
@@ -77,7 +78,9 @@ export default async function ServicesPage({ params }: Props) {
             "@context": "https://schema.org",
             "@type": "HowTo",
             name: dict.services.workflow.title,
-            description: "Cum dezvoltăm software personalizat: de la descoperire la suport continuu.",
+            description: lang === "ro"
+              ? "Cum dezvoltăm software personalizat: de la descoperire la suport continuu."
+              : "How we develop custom software: from discovery to ongoing support.",
             totalTime: "PT12W",
             step: dict.services.workflow.steps.map(
               (step: { title: string; description: string }, idx: number) => ({
@@ -132,7 +135,7 @@ export default async function ServicesPage({ params }: Props) {
       <WebPageJsonLd
         name={dict.services.metaTitle}
         description={dict.services.metaDescription}
-        url={`${SITE_URL}/ro/servicii`}
+        url={`${SITE_URL}/${lang}${getPublicPath("servicii", lang)}`}
       />
     </>
   );

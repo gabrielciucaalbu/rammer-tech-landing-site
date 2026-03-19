@@ -9,6 +9,7 @@
   "navigation": {
     "home": "Home",
     "services": "Services",
+    "servicesAriaLabel": "Explore our IT services",
     "about": "About Us",
     "portfolio": "Portfolio",
     "products": "Products",
@@ -30,6 +31,7 @@
     "title": "Our Services",
     "viewAll": "View all services",
     "learnMore": "Learn more",
+    "learnMoreAbout": "Learn more about {title}",
     "items": [
       {
         "title": "Web & Mobile Development",

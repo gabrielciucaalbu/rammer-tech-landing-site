@@ -136,6 +136,7 @@ export default async function ServicesPage({ params }: Props) {
         name={dict.services.metaTitle}
         description={dict.services.metaDescription}
         url={`${SITE_URL}/${lang}${getPublicPath("servicii", lang)}`}
+        inLanguage={lang}
       />
     </>
   );

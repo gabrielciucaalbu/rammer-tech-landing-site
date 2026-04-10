@@ -169,6 +169,7 @@ export default async function AboutPage({ params }: Props) {
         name={about.metaTitle}
         description={about.metaDescription}
         url={`${SITE_URL}/${lang}${getPublicPath("despre-noi", lang)}`}
+        inLanguage={lang}
       />
 
       {/* Schema.org Organization JSON-LD */}

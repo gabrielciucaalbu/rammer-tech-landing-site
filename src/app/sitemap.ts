@@ -6,6 +6,13 @@ import { getPublicPath } from "@/lib/locale-slugs";
 const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
+/**
+ * Last time static pages were meaningfully updated.
+ * Bump this date whenever you modify page content, layout, or metadata.
+ * @see .cursor/rules/sitemap-lastmod.mdc
+ */
+const STATIC_PAGES_LAST_MOD = "2026-04-10";
+
 // FS slugs (always RO) — getPublicPath translates to the public slug per locale
 const staticFsSlugs = [
   "",
@@ -40,7 +47,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
       entries.push({
         url,
-        lastModified: new Date(),
+        lastModified: new Date(STATIC_PAGES_LAST_MOD),
         changeFrequency: fsSlug === "" ? "weekly" : "monthly",
         priority:
           fsSlug === "" ? 1.0 : fsSlug === "contact" ? 0.9 : 0.8,
@@ -49,24 +56,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }
   }
 
-  // Blog posts — slugs are the same in all locales
-  for (const locale of i18n.locales) {
-    for (const post of blogPosts) {
-      const altLanguages: Record<string, string> = {};
-      for (const l of i18n.locales) {
-        altLanguages[l] = `${BASE_URL}/${l}/blog/${post.slug}`;
-      }
-      altLanguages["x-default"] =
-        `${BASE_URL}/${i18n.defaultLocale}/blog/${post.slug}`;
-
-      entries.push({
-        url: `${BASE_URL}/${locale}/blog/${post.slug}`,
-        lastModified: new Date(post.date),
-        changeFrequency: "monthly",
-        priority: 0.6,
-        alternates: { languages: altLanguages },
-      });
-    }
+  // Blog posts — RO locale only (all blog content is currently in Romanian)
+  for (const post of blogPosts) {
+    entries.push({
+      url: `${BASE_URL}/ro/blog/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: "monthly",
+      priority: 0.6,
+    });
   }
 
   return entries;

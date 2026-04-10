@@ -111,6 +111,7 @@ export default async function ProductsPage({ params }: Props) {
         name={products.metaTitle}
         description={products.metaDescription}
         url={`${SITE_URL}/${lang}${getPublicPath("produse", lang)}`}
+        inLanguage={lang}
       />
     </>
   );

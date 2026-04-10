@@ -87,6 +87,7 @@ export default async function BlogPage({ params }: Props) {
         name={dict.blog.metaTitle}
         description={dict.blog.metaDescription}
         url={`${SITE_URL}/${lang}/blog`}
+        inLanguage={lang}
       />
     </>
   );

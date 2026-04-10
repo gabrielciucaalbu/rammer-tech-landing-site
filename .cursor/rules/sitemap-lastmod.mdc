@@ -1,0 +1,44 @@
+---
+description: Bump sitemap lastModified date when page content changes
+globs:
+  - src/app/[lang]/**/page.tsx
+  - src/dictionaries/*.json
+  - src/components/header.tsx
+  - src/components/footer.tsx
+  - src/components/cta-banner.tsx
+  - src/data/blog-posts.ts
+---
+
+# Sitemap lastModified — keep it honest
+
+## Rule
+
+When you modify **any file that affects the rendered content of a page** (layout, page components, dictionary strings, shared components like header/footer/CTA banner, blog data), you **must** also bump the `STATIC_PAGES_LAST_MOD` date in `src/app/sitemap.ts` to today's date (YYYY-MM-DD format).
+
+## Why
+
+Google uses `<lastmod>` in sitemaps to prioritize crawling. If the date never changes, or changes on every build (via `new Date()`), Google learns to ignore it — hurting crawl efficiency and re-indexing speed for genuinely updated pages.
+
+A manually maintained date is the most reliable signal: it only changes when content actually changes.
+
+## What to update
+
+```ts
+// src/app/sitemap.ts — top of file
+const STATIC_PAGES_LAST_MOD = "YYYY-MM-DD"; // ← bump to today's date
+```
+
+## When to bump
+
+- Editing page content or metadata (titles, descriptions, OG tags)
+- Changing dictionary strings that appear on pages
+- Adding/removing/reordering navigation links
+- Modifying shared layout components (header, footer, CTA banner)
+- Adding or editing blog posts (blog posts have their own per-post `date` field, but bump `STATIC_PAGES_LAST_MOD` too if the blog index page layout changed)
+
+## When NOT to bump
+
+- Pure code refactors that don't change rendered output
+- Dependency updates
+- Dev tooling / config changes
+- Changes to files outside the page rendering pipeline (API routes, scripts, etc.)

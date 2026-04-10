@@ -84,7 +84,7 @@
   "services": {
     "pageTitle": "Complete Software Services for Your Business",
     "pageSubtitle": "From concept to delivery and maintenance, we offer end-to-end solutions for every digital need.",
-    "metaTitle": "Software Services Bucharest — Web, Mobile & Enterprise Development | Rammer Tech",
+    "metaTitle": "Software Services Bucharest — Web, Mobile & Enterprise Development",
     "metaDescription": "Complete software development services: web and mobile applications, enterprise solutions, and custom IT consulting.",
     "items": [
       {
@@ -191,7 +191,7 @@
     }
   },
   "about": {
-    "metaTitle": "About Us -- Team and Story | Rammer Tech",
+    "metaTitle": "About Us -- Team and Story",
     "metaDescription": "Meet the Rammer Tech team -- passionate software developers specializing in custom solutions and digital transformation.",
     "hero": {
       "title": "Your Technology Team",
@@ -275,7 +275,7 @@
     }
   },
   "portfolio": {
-    "metaTitle": "Portfolio -- Software Projects & Case Studies | Rammer Tech",
+    "metaTitle": "Portfolio -- Software Projects & Case Studies",
     "metaDescription": "Explore Rammer Tech projects and case studies: web applications and enterprise solutions delivered successfully.",
     "hero": {
       "title": "Our Projects",
@@ -295,7 +295,7 @@
     }
   },
   "products": {
-    "metaTitle": "Software Products | Rammer Tech",
+    "metaTitle": "Software Products",
     "metaDescription": "Discover the software products developed by Rammer Tech -- innovative solutions for real problems.",
     "hero": {
       "title": "Our Software",
@@ -338,7 +338,7 @@
     }
   },
   "blog": {
-    "metaTitle": "Blog -- Articles about Software and Technology | Rammer Tech",
+    "metaTitle": "Blog -- Articles about Software and Technology",
     "metaDescription": "Articles, guides, and insights from the world of software and technology from the Rammer Tech team.",
     "hero": {
       "title": "Blog & Resources",
@@ -364,7 +364,7 @@
     }
   },
   "contact": {
-    "metaTitle": "Contact -- Rammer Tech | Software Solutions",
+    "metaTitle": "Contact -- Software Solutions",
     "metaDescription": "Contact Rammer Tech for custom software solutions. We respond within 24 hours.",
     "hero": {
       "title": "Let's Talk",
@@ -432,7 +432,7 @@
   },
   "legal": {
     "privacy": {
-      "metaTitle": "Privacy Policy | Rammer Tech",
+      "metaTitle": "Privacy Policy",
       "metaDescription": "Rammer Tech privacy policy: how we collect, use, and protect your personal data in compliance with GDPR.",
       "title": "Privacy Policy",
       "lastUpdated": "Last updated: February 2026",
@@ -476,7 +476,7 @@
       ]
     },
     "terms": {
-      "metaTitle": "Terms & Conditions | Rammer Tech",
+      "metaTitle": "Terms & Conditions",
       "metaDescription": "Terms and conditions for using the Rammer Tech website. Information about services, intellectual property, and applicable law.",
       "title": "Terms & Conditions",
       "lastUpdated": "Last updated: February 2026",
@@ -540,6 +540,7 @@
         "links": [
           { "label": "About Us", "href": "/about" },
           { "label": "Team", "href": "/about#echipa" },
+          { "label": "Contact", "href": "/contact" },
           { "label": "Careers", "href": "#", "badge": "Soon" }
         ]
       },

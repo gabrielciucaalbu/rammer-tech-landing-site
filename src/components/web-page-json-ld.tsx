@@ -5,18 +5,18 @@ interface WebPageJsonLdProps {
   name: string;
   description: string;
   url: string;
+  inLanguage: string;
   datePublished?: string;
   dateModified?: string;
-  inLanguage?: string;
 }
 
 export function WebPageJsonLd({
   name,
   description,
   url,
-  datePublished = "2025-05-30",
-  dateModified = "2026-03-04",
-  inLanguage = "ro",
+  inLanguage,
+  datePublished,
+  dateModified,
 }: WebPageJsonLdProps) {
   const jsonLd = {
     "@context": "https://schema.org",
@@ -24,9 +24,9 @@ export function WebPageJsonLd({
     name,
     description,
     url,
-    datePublished,
-    dateModified,
     inLanguage,
+    ...(datePublished && { datePublished }),
+    ...(dateModified && { dateModified }),
     isPartOf: {
       "@type": "WebSite",
       url: SITE_URL,

@@ -53,6 +53,7 @@ export default async function TermsPage({ params }: Props) {
         name={dict.legal.terms.metaTitle}
         description={dict.legal.terms.metaDescription}
         url={`${SITE_URL}/${lang}${getPublicPath("termeni-si-conditii", lang)}`}
+        inLanguage={lang}
       />
     </>
   );

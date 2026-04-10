@@ -84,7 +84,7 @@
   "services": {
     "pageTitle": "Servicii Software Complete pentru Afacerea Ta",
     "pageSubtitle": "De la conceptie la livrare si mentenanta, oferim solutii end-to-end pentru fiecare nevoie digitala.",
-    "metaTitle": "Servicii Software Bucuresti — Dezvoltare Web, Mobile & Enterprise | Rammer Tech",
+    "metaTitle": "Servicii Software Bucuresti — Dezvoltare Web, Mobile & Enterprise",
     "metaDescription": "Servicii complete de dezvoltare software: aplicatii web si mobile, solutii enterprise si consultanta IT personalizata.",
     "items": [
       {
@@ -275,7 +275,7 @@
     }
   },
   "portfolio": {
-    "metaTitle": "Portofoliu -- Proiecte Software & Studii de Caz | Rammer Tech",
+    "metaTitle": "Portofoliu -- Proiecte Software & Studii de Caz",
     "metaDescription": "Exploreaza proiectele si studiile de caz Rammer Tech: aplicatii web si solutii enterprise livrate cu succes.",
     "hero": {
       "title": "Proiectele Noastre",
@@ -295,7 +295,7 @@
     }
   },
   "products": {
-    "metaTitle": "Produse Software | Rammer Tech",
+    "metaTitle": "Produse Software",
     "metaDescription": "Descopera produsele software dezvoltate de Rammer Tech -- solutii inovatoare pentru probleme reale.",
     "hero": {
       "title": "Software-ul Nostru",
@@ -338,7 +338,7 @@
     }
   },
   "blog": {
-    "metaTitle": "Blog -- Articole despre Software si Tehnologie | Rammer Tech",
+    "metaTitle": "Blog -- Articole despre Software si Tehnologie",
     "metaDescription": "Articole, ghiduri si perspective din lumea software-ului si tehnologiei de la echipa Rammer Tech.",
     "hero": {
       "title": "Blog & Resurse",
@@ -364,7 +364,7 @@
     }
   },
   "contact": {
-    "metaTitle": "Contact -- Rammer Tech | Solutii Software",
+    "metaTitle": "Contact -- Solutii Software",
     "metaDescription": "Contacteaza Rammer Tech pentru solutii software personalizate. Raspundem in maximum 24 de ore.",
     "hero": {
       "title": "Hai sa Vorbim",
@@ -432,7 +432,7 @@
   },
   "legal": {
     "privacy": {
-      "metaTitle": "Politica de Confidentialitate | Rammer Tech",
+      "metaTitle": "Politica de Confidentialitate",
       "metaDescription": "Politica de confidentialitate Rammer Tech: cum colectam, folosim si protejam datele tale personale conform GDPR.",
       "title": "Politica de Confidentialitate",
       "lastUpdated": "Ultima actualizare: Februarie 2026",
@@ -476,7 +476,7 @@
       ]
     },
     "terms": {
-      "metaTitle": "Termeni si Conditii | Rammer Tech",
+      "metaTitle": "Termeni si Conditii",
       "metaDescription": "Termenii si conditiile de utilizare a site-ului Rammer Tech. Informatii despre servicii, proprietate intelectuala si legislatia aplicabila.",
       "title": "Termeni si Conditii",
       "lastUpdated": "Ultima actualizare: Februarie 2026",
@@ -540,6 +540,7 @@
         "links": [
           { "label": "Despre Noi", "href": "/despre-noi" },
           { "label": "Echipa", "href": "/despre-noi#echipa" },
+          { "label": "Contact", "href": "/contact" },
           { "label": "Cariere", "href": "#", "badge": "Curand" }
         ]
       },

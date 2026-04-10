@@ -53,6 +53,7 @@ export default async function PrivacyPolicyPage({ params }: Props) {
         name={dict.legal.privacy.metaTitle}
         description={dict.legal.privacy.metaDescription}
         url={`${SITE_URL}/${lang}${getPublicPath("politica-confidentialitate", lang)}`}
+        inLanguage={lang}
       />
     </>
   );

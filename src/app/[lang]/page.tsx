@@ -110,6 +110,7 @@ export default async function Home({ params }: Props) {
         name={dict.meta.homeTitle}
         description={dict.meta.homeDescription}
         url={`${SITE_URL}/${lang}`}
+        inLanguage={lang}
       />
 
       {/* Schema.org WebSite JSON-LD */}

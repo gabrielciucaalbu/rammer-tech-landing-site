@@ -170,6 +170,14 @@ export default async function BlogPostPage({ params }: Props) {
                 <p className="font-semibold text-foreground">{author.name}</p>
                 <p className="text-sm text-muted-foreground">{author.jobTitle}</p>
                 <p className="text-sm text-muted-foreground mt-2">{author.bio}</p>
+                <a
+                  href={author.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary underline hover:text-primary/80 mt-2 inline-block"
+                >
+                  LinkedIn
+                </a>
               </div>
             </div>
           )}
@@ -210,9 +218,11 @@ export default async function BlogPostPage({ params }: Props) {
             ...(post.coverImage && { image: `${SITE_URL}${post.coverImage}` }),
             author: {
               "@type": "Person",
-              name: "Gabriel Ciucă-Albu",
-              jobTitle: "Fondator & CTO",
-              sameAs: ["https://www.linkedin.com/in/gabriel-octavian-ciuca-albu-33a717160/"],
+              name: post.author,
+              ...(author && {
+                jobTitle: author.jobTitle,
+                sameAs: [author.linkedIn],
+              }),
             },
             publisher: {
               "@type": "Organization",

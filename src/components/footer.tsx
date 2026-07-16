@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import type { Dictionary } from "@/dictionaries/get-dictionary";
 
 interface FooterProps {
@@ -54,6 +54,15 @@ export function Footer({ lang, dict }: FooterProps) {
                 <MapPin className="h-4 w-4 shrink-0" />
                 {contact.location}
               </div>
+              <a
+                href="https://www.linkedin.com/company/rammer-tech/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-sm text-brand-300 hover:text-white transition-colors"
+              >
+                <Linkedin className="h-4 w-4 shrink-0" />
+                LinkedIn
+              </a>
             </div>
           </div>
 

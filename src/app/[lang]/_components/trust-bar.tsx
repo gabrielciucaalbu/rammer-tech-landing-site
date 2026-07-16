@@ -1,5 +1,3 @@
-"use client";
-
 import { StatsCounter } from "@/components/stats-counter";
 
 interface TrustBarProps {

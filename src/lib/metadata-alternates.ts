@@ -4,6 +4,14 @@ const BASE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 
 /**
+ * Default Open Graph / Twitter image. Next.js does not merge a page's
+ * `openGraph` object with the root layout's — it replaces it entirely —
+ * so every page-level `generateMetadata` that defines its own `openGraph`
+ * must include `images` explicitly or the og:image tag is dropped.
+ */
+export const DEFAULT_OG_IMAGE = "/og-default.png";
+
+/**
  * Builds canonical URL + hreflang alternates for a page.
  *
  * @param fsPath - Filesystem path without locale prefix (the RO slug), e.g. "/servicii"

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getDictionary } from "@/dictionaries/get-dictionary";
 import type { Locale } from "@/i18n-config";
-import { buildAlternates } from "@/lib/metadata-alternates";
+import { buildAlternates, DEFAULT_OG_IMAGE } from "@/lib/metadata-alternates";
 import { WebPageJsonLd } from "@/components/web-page-json-ld";
 import { HeroSection } from "./_components/hero-section";
 
@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       locale: lang === "ro" ? "ro_RO" : "en_US",
       type: "website",
       siteName: "Rammer Tech",
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: { canonical, languages },
   };

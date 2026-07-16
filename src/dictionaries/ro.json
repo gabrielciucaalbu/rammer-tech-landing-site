@@ -408,7 +408,7 @@
       "email": "office@mail.rammertech.ro",
       "phone": "+40736459926",
       "schedule": "Luni - Vineri, 09:00 - 18:00",
-      "location": "Romania",
+      "location": "Bucuresti, Romania",
       "scheduleLabel": "Program",
       "locationLabel": "Locatie"
     },
@@ -570,7 +570,7 @@
     "contact": {
       "email": "office@mail.rammertech.ro",
       "phone": "+40736459926",
-      "location": "Romania"
+      "location": "Bucuresti, Romania"
     }
   }
 }

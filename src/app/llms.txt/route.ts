@@ -27,6 +27,7 @@ Rammer Tech was founded in 2025. The company builds custom software solutions fo
 - [ERP custom vs. ERP off-the-shelf: ce alegi pentru IMM-ul tău?](${SITE_URL}/ro/blog/erp-custom-vs-off-the-shelf-imm): Comparison of custom ERP versus off-the-shelf ERP for Romanian SMEs, with costs, advantages, disadvantages, and decision criteria.
 - [Transformare digitală pentru IMM-uri: de unde să începi](${SITE_URL}/ro/blog/transformare-digitala-imm-ghid): Digital transformation guide for SMEs — where to start, costs, essential technologies, and common mistakes to avoid.
 - [Cât durează să construiești o aplicație web? Tot ce trebuie să știi](${SITE_URL}/ro/blog/cat-dureaza-dezvoltare-aplicatie-web): Web application development timelines — from 4 weeks to 12 months depending on complexity, with development stages and the factors that influence duration.
+- [Cum am construit un calculator de refinanțare care reproduce desfășurătorul băncii la leu](${SITE_URL}/ro/blog/calculator-refinantare-desfasurator-banca-la-leu): How the free mortgage refinancing calculator at calculatorrefinantare.ro models the existing loan from the bank's amortization schedule, refinancing costs, break-even point, retention threshold, and IRCC/ROBOR values from BNR (content in Romanian).
 
 ## Technology Stack
 

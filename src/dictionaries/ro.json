@@ -301,6 +301,19 @@
       "title": "Software-ul Nostru",
       "subtitle": "Nu doar construim software pentru altii -- cream si propriile solutii pentru probleme reale."
     },
+    "live": {
+      "title": "Disponibil acum",
+      "items": [
+        {
+          "name": "Calculator refinanțare",
+          "description": "Compară creditul ipotecar actual cu până la 6 oferte de refinanțare și vezi economia, costurile și punctul de echilibru.",
+          "href": "https://calculatorrefinantare.ro/",
+          "cta": "Deschide calculatorul"
+        }
+      ]
+    },
+    "comingSoonTitle": "Mai multe produse sunt în dezvoltare",
+    "comingSoonText": "Lucram la solutii software inovatoare care vor fi lansate curand. Contacteaza-ne pentru a afla mai multe.",
     "comingSoon": "In dezvoltare",
     "requestDemo": "Solicita demo",
     "earlyAccess": "Fii primul care afla",

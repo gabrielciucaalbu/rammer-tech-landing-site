@@ -11,7 +11,7 @@ const BASE_URL =
  * Bump this date whenever you modify page content, layout, or metadata.
  * @see .cursor/rules/sitemap-lastmod.mdc
  */
-const STATIC_PAGES_LAST_MOD = "2026-04-10";
+const STATIC_PAGES_LAST_MOD = "2026-11-11";
 
 // FS slugs (always RO) — getPublicPath translates to the public slug per locale
 const staticFsSlugs = [

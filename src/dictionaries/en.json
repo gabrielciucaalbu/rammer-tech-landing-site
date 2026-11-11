@@ -301,6 +301,19 @@
       "title": "Our Software",
       "subtitle": "We don't just build software for others -- we also create our own solutions for real problems."
     },
+    "live": {
+      "title": "Available now",
+      "items": [
+        {
+          "name": "Mortgage refinancing calculator",
+          "description": "Compare your current mortgage with up to 6 refinancing offers and see the savings, costs and break-even point.",
+          "href": "https://calculatorrefinantare.ro/en/",
+          "cta": "Open the calculator"
+        }
+      ]
+    },
+    "comingSoonTitle": "More products are in development",
+    "comingSoonText": "We're working on innovative software solutions that will be launched soon. Contact us to learn more.",
     "comingSoon": "In development",
     "requestDemo": "Request demo",
     "earlyAccess": "Be the first to know",

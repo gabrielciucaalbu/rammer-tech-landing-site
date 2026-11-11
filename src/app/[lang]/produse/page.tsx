@@ -11,6 +11,13 @@ const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.rammertech.ro";
 import { Badge } from "@/components/ui/badge";
 import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
   BarChart3,
   Bell,
   FileText,
@@ -78,21 +85,56 @@ export default async function ProductsPage({ params }: Props) {
         </div>
       </section>
 
+      {/* Live products */}
+      <section className="py-16 px-6">
+        <div className="container mx-auto max-w-4xl">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8">
+            {products.live.title}
+          </h2>
+          <ul className="grid gap-6 md:grid-cols-2">
+            {products.live.items.map((item) => (
+              <li key={item.href}>
+                <Card className="h-full">
+                  <CardHeader>
+                    <CardTitle>
+                      <a
+                        href={item.href}
+                        rel="noopener"
+                        className="hover:text-primary hover:underline"
+                      >
+                        {item.name}
+                      </a>
+                    </CardTitle>
+                    <CardDescription>{item.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="mt-auto">
+                    <a
+                      href={item.href}
+                      rel="noopener"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:underline"
+                    >
+                      {item.cta}
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </a>
+                  </CardContent>
+                </Card>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
       {/* Coming Soon Message */}
-      <section className="py-24 px-6">
+      <section className="py-16 px-6 bg-muted/50">
         <div className="container mx-auto max-w-3xl text-center">
           <Badge variant="secondary" className="mb-6">
             {products.comingSoon}
           </Badge>
           <h2 className="text-2xl md:text-3xl font-bold mb-4">
-            {lang === "ro"
-              ? "Produsele noastre sunt in dezvoltare"
-              : "Our products are in development"}
+            {products.comingSoonTitle}
           </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            {lang === "ro"
-              ? "Lucram la solutii software inovatoare care vor fi lansate curand. Contacteaza-ne pentru a afla mai multe."
-              : "We're working on innovative software solutions that will be launched soon. Contact us to learn more."}
+          <p className="text-lg text-muted-foreground">
+            {products.comingSoonText}
           </p>
         </div>
       </section>

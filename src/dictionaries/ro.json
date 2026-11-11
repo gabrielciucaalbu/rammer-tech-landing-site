@@ -30,6 +30,7 @@
   "servicesPreview": {
     "title": "Serviciile Noastre IT și Software",
     "viewAll": "Vezi toate serviciile",
+    "viewProducts": "Produsele noastre",
     "learnMore": "Afla mai mult",
     "learnMoreAbout": "Află mai multe despre {title}",
     "items": [
@@ -309,6 +310,18 @@
           "description": "Compară creditul ipotecar actual cu până la 6 oferte de refinanțare și vezi economia, costurile și punctul de echilibru.",
           "href": "https://calculatorrefinantare.ro/",
           "cta": "Deschide calculatorul"
+        },
+        {
+          "name": "Scribae",
+          "description": "Proofreading pentru acte notariale: verifică documentele .docx înainte de semnătură și returnează același fișier cu modificările propuse marcate prin Track Changes din Word, cu rezidență a datelor în UE.",
+          "href": "https://www.scribae.ro/",
+          "cta": "Deschide Scribae"
+        },
+        {
+          "name": "MicroTaxe",
+          "description": "Emiți facturi, le trimiți în e-Factura și vezi taxele reale ale firmei, cu formula și articolul de lege pentru fiecare cifră.",
+          "href": "https://microtaxe.ro/",
+          "cta": "Deschide MicroTaxe"
         }
       ]
     },

@@ -30,6 +30,7 @@
   "servicesPreview": {
     "title": "Our Services",
     "viewAll": "View all services",
+    "viewProducts": "Our products",
     "learnMore": "Learn more",
     "learnMoreAbout": "Learn more about {title}",
     "items": [
@@ -309,6 +310,18 @@
           "description": "Compare your current mortgage with up to 6 refinancing offers and see the savings, costs and break-even point.",
           "href": "https://calculatorrefinantare.ro/en/",
           "cta": "Open the calculator"
+        },
+        {
+          "name": "Scribae",
+          "description": "Proofreading for notarial deeds: checks .docx documents before signing and returns the same file with proposed changes marked as native Word Track Changes, with data residency in the EU.",
+          "href": "https://www.scribae.ro/",
+          "cta": "Open Scribae"
+        },
+        {
+          "name": "MicroTaxe",
+          "description": "Issue invoices, send them to e-Factura and see your company's real taxes, with the formula and the legal article for every figure.",
+          "href": "https://microtaxe.ro/",
+          "cta": "Open MicroTaxe"
         }
       ]
     },

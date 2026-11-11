@@ -6,6 +6,8 @@ export interface BlogPost {
   readingTime: number;
   coverImage: string;
   title: string;
+  /** Optional shorter SEO title (used for <title> and og:title). Falls back to title. */
+  metaTitle?: string;
   excerpt: string;
   content: string;
 }
@@ -598,6 +600,91 @@ Mentenanța e continuă. Planifică 5-15% din costul inițial pe an pentru mente
 Durata unui proiect software e direct proporțională cu claritatea cerințelor și calitatea comunicării. Investește timp în discovery, definește cerințele complet și asigură-te că ai un proces de aprobare rapid.
 
 Dacă vrei o estimare pentru proiectul tău, [contactează-ne](/ro/contact). Îți oferim o estimare detaliată după o sesiune de discovery gratuită — și îți explicăm exact ce influențează timeline-ul în cazul tău specific.`,
+  },
+  {
+    slug: "calculator-refinantare-desfasurator-banca-la-leu",
+    category: "products",
+    date: "2026-11-11",
+    author: "Gabriel Ciucă-Albu",
+    readingTime: 6,
+    coverImage: "/og-default.png",
+    title: "Cum am construit un calculator de refinanțare care reproduce desfășurătorul băncii la leu",
+    metaTitle: "Calculator de refinanțare care reproduce desfășurătorul băncii",
+    excerpt:
+      "Cum modelăm creditul existent din desfășurător, costurile refinanțării, punctul de echilibru și pragul de retenție, cu IRCC și ROBOR de la BNR. Limitele unui instrument orientativ.",
+    content: `Oferta de refinanțare pe care o primești de la o bancă începe de regulă cu o dobândă fixă mai mică decât cea de acum. Ce nu se vede dintr-o privire: cât costă mutarea (notar, taxe OCPI, analiză, evaluare), ce marjă se aplică după perioada fixă și în ce lună se recuperează de fapt cheltuiala. Fără un calcul, compari două cifre scoase din două documente diferite.
+
+La Rammer Tech am construit [calculatorul de refinanțare](https://calculatorrefinantare.ro/) tocmai pentru această comparație. E gratuit, nu cere cont, iar calculul rulează în browserul tău. În articol explicăm cum e făcut, ce modelăm și unde se oprește. Ținta a fost ca rata, dobânda și soldul să iasă ca în desfășurătorul băncii, nu aproximativ.
+
+## Problema ofertelor de refinanțare
+
+Două oferte de refinanțare diferă aproape întotdeauna pe mai multe axe deodată: lungimea perioadei de dobândă fixă, marja de după ea, costurile unice și costurile lunare. O ofertă cu dobândă fixă mică pe 3 ani și aceeași marjă după aceea câștigă doar din perioada fixă. O ofertă cu marjă mai mică câștigă pe tot parcursul creditului. Din dobânda afișată în reclamă nu poți deduce care dintre ele e mai bună pentru tine.
+
+Calculatorul pune creditul actual și până la 6 oferte una lângă alta, în RON, pe aceleași ipoteze. Pentru răspunsul scurt la întrebarea „merită sau nu”, avem și un ghid separat despre [când merită să refinanțezi un credit ipotecar](https://calculatorrefinantare.ro/cand-merita-refinantarea/). Aici vorbim despre cum se ajunge la cifre.
+
+## Modelăm creditul real, nu o anuitate teoretică
+
+O anuitate teoretică se calculează din sold, dobândă și perioadă. Un credit care rulează de ani de zile are însă o istorie: a avut dobândă fixă un număr de luni, apoi a trecut pe indice plus marjă, iar rata a fost recalculată de bancă la fiecare schimbare. Dacă ignori asta, pornești de la o rată care nu e a ta.
+
+De aceea calculatorul modelează creditul existent din datele din desfășurător:
+
+- plata lunară așa cum o vezi în aplicația băncii, cu asigurarea de viață inclusă (în desfășurător apare ca „Suma de plată”);
+- dobânda fixă și numărul de luni de dobândă fixă, dedus din data primei rate plătite;
+- indicele din contract (IRCC, ROBOR 3M sau ROBOR 6M) și marja peste el, pentru perioada variabilă;
+- asigurarea, în RON sau ca procent lunar din sold.
+
+Dacă lași dobânda fixă goală, calculatorul o deduce din sold, perioadă și plată. În perioada variabilă, rata se recalculează pe lunile rămase la fiecare schimbare a dobânzii.
+
+Am verificat motorul de calcul pe desfășurătorul unui credit BRD: îl reproduce la leu. Menționăm explicit că e un singur desfășurător testat. Alte bănci pot rotunji sau număra zilele altfel, de aceea nu promitem aceeași potrivire exactă peste tot.
+
+## Costurile pe care le uită lumea
+
+Economia unei refinanțări nu e diferența dintre două rate. E diferența dintre două traiectorii de plată, după ce scazi tot ce ai cheltuit ca să te muți. Calculatorul separă costurile în trei grupe:
+
+- **costuri unice comune tuturor ofertelor**: comisionul de rambursare anticipată la banca veche, dacă ți se cere unul, plus notarul și taxele OCPI (radierea ipotecii vechi, înscrierea celei noi, onorariu, TVA);
+- **costuri unice ale băncii, pe fiecare ofertă**: analiză dosar, evaluare, comision de acordare;
+- **costuri lunare în plus față de dobândă**: administrare, cont, asigurare imobil. Dacă o ofertă nu are o valoare completată, se presupune „ca acum”.
+
+În privința comisionului de rambursare anticipată, calculatorul spune ce prevede OUG 52/2016, art. 41 alin. (3): la creditele ipotecare ale consumatorilor, banca nu poate percepe un astfel de comision. Câmpul rămâne în calculator doar pentru situația în care ți s-a cerut totuși o sumă, caz în care merită să verifici contractul. O listă completă a costurilor, cu explicații, găsești în ghidul despre [costurile unei refinanțări de credit ipotecar](https://calculatorrefinantare.ro/costuri-refinantare-credit-ipotecar/).
+
+Toate aceste costuri intră în economia totală, în punctul de echilibru, în grafice și în exporturi.
+
+## Punctul de echilibru și pragul de retenție
+
+Punctul de echilibru este luna de la care economiile cumulate, inclusiv costurile unice ale refinanțării, rămân pozitive. Dacă ai de gând să te muți din nou sau să rambursezi creditul înainte de acea lună, nu ai apucat să recuperezi costurile.
+
+Pragul de retenție răspunde la altă întrebare: la ce dobândă fixă ar costa banca actuală cât oferta nouă? Dacă banca ta îți propune o dobândă sub prag, rămâi fără să refinanțezi. Peste prag, oferta nouă rămâne mai avantajoasă. Cifra e utilă ca argument într-o negociere.
+
+Rezultatul depinde și de ce urmărești. Calculatorul are două obiective:
+
+- „Scad rata”: perioada creditului rămâne aceeași și se schimbă plata lunară;
+- „Păstrez rata”: plata lunară totală, cu asigurare, rămâne la fel, iar creditul se închide mai repede.
+
+În ambele cazuri vezi plata lunară, economia totală după costuri, graficele de economii cumulate și tabelul de amortizare pe ani. Totul se poate exporta în Excel (.xlsx) sau CSV.
+
+## IRCC și ROBOR, preluate de la BNR
+
+Partea variabilă a unui credit depinde de un indice, iar indicele se schimbă. De aceea valorile IRCC și ROBOR 3M/6M se completează automat din datele BNR, cu sursa și data afișate lângă câmp. Citim valorile de mai multe ori pe zi și le servim calculatorului. Ce modifici tu rămâne al tău până apeși „Folosește valorile BNR”. Dacă valorile nu se pot încărca sau sunt prea vechi, pagina te anunță și rămâne pe valorile introduse de tine.
+
+Pentru situațiile în care vrei să vezi cum se schimbă rezultatul, există scenarii pentru indice: constant, în scădere, în creștere sau personalizat. Rata se recalculează trimestrial, ca în realitate. Valorile curente le poți vedea și separat, pe paginile despre [valorile ROBOR 3M și 6M de la BNR](https://calculatorrefinantare.ro/robor-azi/) și despre [valoarea IRCC în vigoare](https://calculatorrefinantare.ro/ircc-azi/).
+
+## Ce nu am construit și limitele instrumentului
+
+Calculatorul este un instrument orientativ. Îl folosim ca să înțelegem o ofertă, nu ca să o înlocuim:
+
+- rezultatele pot diferi de cele ale băncii cu câțiva lei, din cauza rotunjirilor și a modului de calcul al zilelor;
+- nu ține cont de impozite sau de alte condiții ale băncii;
+- penalizările de rambursare anticipată nu sunt modelate separat; dacă există, se trec la costurile unice;
+- cifrele finale depind de oferta scrisă a băncii;
+- nu este ofertă, consultanță financiară sau juridică.
+
+Exemplul calculat de pe pagina calculatorului (un credit de 250.000 RON cu 20 de ani rămași și două oferte) folosește același motor ca în calculator. Cifrele nu sunt scrise de mână.
+
+## Pe scurt
+
+Dacă ai un credit ipotecar în lei și o ofertă pe masă, pune-le în [calculatorul de refinanțare](https://calculatorrefinantare.ro/) și vezi economia reală după costuri, luna de echilibru și pragul de retenție. Datele rămân în browserul tău, iar pagina există și în engleză. Dacă ai nevoie de un instrument de calcul făcut la comandă pentru afacerea ta, [scrie-ne](/ro/contact).
+
+*Instrument orientativ: rezultatele pot diferi de cele ale băncii cu câțiva lei.*`,
   },
 ];
 

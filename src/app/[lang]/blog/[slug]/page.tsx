@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!post) return {};
 
   const { canonical, languages } = buildAlternates(`/blog/${slug}`, lang);
-  const titleNoAccents = stripDiacritics(post.title);
+  const titleNoAccents = stripDiacritics(post.metaTitle ?? post.title);
 
   return {
     title: `${titleNoAccents} | Blog Rammer Tech`,

@@ -10,6 +10,7 @@ import {
   ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { getPublicPath } from "@/lib/locale-slugs";
 
 const iconMap: Record<string, React.ElementType> = {
   code: Code,
@@ -27,6 +28,7 @@ interface ServiceItem {
 interface ServicesPreviewProps {
   title: string;
   viewAll: string;
+  viewProducts: string;
   learnMore: string;
   learnMoreAbout: string;
   items: ServiceItem[];
@@ -36,6 +38,7 @@ interface ServicesPreviewProps {
 export function ServicesPreview({
   title,
   viewAll,
+  viewProducts,
   learnMore,
   learnMoreAbout,
   items,
@@ -91,11 +94,17 @@ export function ServicesPreview({
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="text-center mt-10"
+          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <Button asChild variant="outline" size="lg">
             <Link href={`/${lang}/servicii`}>
               {viewAll}
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button asChild variant="outline" size="lg">
+            <Link href={`/${lang}${getPublicPath("produse", lang)}`}>
+              {viewProducts}
               <ArrowRight className="ml-2 h-4 w-4" />
             </Link>
           </Button>

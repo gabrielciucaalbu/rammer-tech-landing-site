@@ -54,6 +54,7 @@ export default async function Home({ params }: Props) {
       <ServicesPreview
         title={dict.servicesPreview.title}
         viewAll={dict.servicesPreview.viewAll}
+        viewProducts={dict.servicesPreview.viewProducts}
         learnMore={dict.servicesPreview.learnMore}
         learnMoreAbout={dict.servicesPreview.learnMoreAbout}
         items={dict.servicesPreview.items}

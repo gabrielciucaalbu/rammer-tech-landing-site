@@ -29,5 +29,7 @@ Imaginile anterioare rămân pe server (`docker images rammertech-web`). Fișier
 * Redirect apex → `www` (301) se face în Caddy (`APEX`), cum făcea Vercel la nivel de domeniu.
 * Caddy elimină `X-Powered-By` și înlocuiește `Cache-Control: s-maxage=31536000` (valoarea implicită Next pentru pagini statice) cu
   `public, max-age=0, must-revalidate`, ca pe Vercel; antetele setate explicit de aplicație rămân.
-* Vercel Analytics și Speed Insights (`@vercel/analytics`, `@vercel/speed-insights`) nu produc date în afara Vercel.
+* `@vercel/analytics` și `@vercel/speed-insights` au fost scoase din layout și din dependențe: cer `/_vercel/*`, care există doar pe Vercel.
+* Caddy răspunde 204 la `OPTIONS` (ca Vercel) și pune `Cache-Control` și HSTS implicite pe răspunsurile fără ele (redirecturi Next).
+* Diferență cunoscută: Vercel servește rutele fără distincție între majuscule și minuscule (`/ro/Contact`); Next autohostat e case-sensitive.
 * Nu există crons: ruta `/api/indexnow` (POST, protejată cu `CRON_SECRET`) se apelează din exterior, la fel ca înainte.

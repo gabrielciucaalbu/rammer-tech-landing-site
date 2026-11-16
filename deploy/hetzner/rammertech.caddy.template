@@ -13,14 +13,23 @@ __HOSTS__ {
 	}
 	encode zstd gzip
 
+	# Vercel răspunde 204 la OPTIONS; Next întoarce 400/405/500 pe aceleași căi.
+	@options method OPTIONS
+	handle @options {
+		header Allow "GET, HEAD, OPTIONS"
+		respond 204
+	}
+
 	# Fișierele cu hash din build își păstrează cache-ul imuabil trimis de Next.
 	handle /_next/static/* {
+		header ?Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 		reverse_proxy rammertech-web:3000 {
 			header_down -X-Powered-By
 		}
 	}
 	# Rutele API rămân cu antetele Next (nu se forțează cache public pe răspunsuri dinamice).
 	handle /api/* {
+		header ?Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
 		reverse_proxy rammertech-web:3000 {
 			header_down -X-Powered-By
 		}
@@ -28,6 +37,9 @@ __HOSTS__ {
 	# Restul se aliniază cu Vercel: fără X-Powered-By și revalidare la fiecare cerere. Se înlocuiește doar valoarea implicită
 	# Next (s-maxage=31536000); antetele setate explicit de aplicație (ex. /llms.txt) rămân neatinse.
 	handle {
+		# Valori implicite doar dacă aplicația nu le-a setat (redirecturile Next nu au Cache-Control/HSTS).
+		header ?Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+		header ?Cache-Control "public, max-age=0, must-revalidate"
 		reverse_proxy rammertech-web:3000 {
 			health_uri /ro
 			health_interval 15s

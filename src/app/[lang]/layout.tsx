@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { notFound } from "next/navigation";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Toaster } from "@/components/ui/sonner";
 import { i18n, type Locale } from "@/i18n-config";
 import { getDictionary } from "@/dictionaries/get-dictionary";
@@ -77,8 +75,6 @@ export default async function RootLayout({
         <Footer lang={lang} dict={dict} />
         <CookieBanner lang={lang} dict={dict} />
         <Toaster />
-        <Analytics />
-        <SpeedInsights />
       </body>
     </html>
   );

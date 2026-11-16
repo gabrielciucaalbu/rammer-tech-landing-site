@@ -18,12 +18,17 @@ export function middleware(request: NextRequest) {
     return NextResponse.redirect(url, 301);
   }
 
-  // Vercel servește rutele fără distincție între majuscule și minuscule (/ro/Contact = /ro/contact, fără redirect);
-  // Next autohostat e case-sensitive. Rescriem la varianta cu litere mici (matcher-ul sare peste fișierele cu punct).
-  const lower = pathname.toLowerCase();
-  if (lower !== pathname) {
+  // Vercel potrivește fără distincție de majuscule segmentele statice ale rutei (/ro/Contact = /ro/contact, fără redirect),
+  // dar nu și parametrul dinamic (slug-ul din /ro/blog/<slug> rămâne exact: cu majuscule dă 404 pe Vercel).
+  // Next autohostat e case-sensitive peste tot, deci punem litere mici doar pe primele două segmente (limbă și secțiune).
+  // Matcher-ul sare peste fișierele cu punct.
+  const folded = pathname
+    .split("/")
+    .map((segment, index) => (index <= 2 ? segment.toLowerCase() : segment))
+    .join("/");
+  if (folded !== pathname) {
     const url = request.nextUrl.clone();
-    url.pathname = lower;
+    url.pathname = folded;
     return NextResponse.rewrite(url);
   }
 }

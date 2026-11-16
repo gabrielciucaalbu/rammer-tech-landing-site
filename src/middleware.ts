@@ -17,6 +17,15 @@ export function middleware(request: NextRequest) {
     url.pathname = `/${i18n.defaultLocale}${pathname}`;
     return NextResponse.redirect(url, 301);
   }
+
+  // Vercel servește rutele fără distincție între majuscule și minuscule (/ro/Contact = /ro/contact, fără redirect);
+  // Next autohostat e case-sensitive. Rescriem la varianta cu litere mici (matcher-ul sare peste fișierele cu punct).
+  const lower = pathname.toLowerCase();
+  if (lower !== pathname) {
+    const url = request.nextUrl.clone();
+    url.pathname = lower;
+    return NextResponse.rewrite(url);
+  }
 }
 
 export const config = {

@@ -13,8 +13,9 @@ __HOSTS__ {
 	}
 	encode zstd gzip
 
-	# Vercel răspunde 204 la OPTIONS; Next întoarce 400/405/500 pe aceleași căi.
-	@options method OPTIONS
+	# Vercel răspunde 204 la OPTIONS pe pagini (/ro, /en) și pe fișiere statice; Next întoarce 400/405/500 pe aceleași căi.
+	# Rutele API și redirecturile (/, /services...) rămân la aplicație, care le tratează ca pe Vercel.
+	@options expression `method('OPTIONS') && (path_regexp('^/(ro|en)(/.*)?$') || path_regexp('^/(.*/)?[^/]+[.][^/]+$')) && !path('/api/*', '/_next/*')`
 	handle @options {
 		header Allow "GET, HEAD, OPTIONS"
 		respond 204
@@ -45,6 +46,11 @@ __HOSTS__ {
 			health_interval 15s
 			header_down -X-Powered-By
 			header_down Cache-Control "^s-maxage=31536000$" "public, max-age=0, must-revalidate"
+			# Vercel elimină s-maxage/stale-while-revalidate din răspunsul către client și servește fișierele publice cu must-revalidate.
+			header_down Cache-Control "^(public, max-age=[0-9]+), s-maxage=[0-9]+, stale-while-revalidate=[0-9]+$" "$1"
+			header_down Cache-Control "^public, max-age=0$" "public, max-age=0, must-revalidate"
+			header_down Cache-Control "^public, max-age=14400, must-revalidate$" "public, max-age=0, must-revalidate"
+			header_down Cache-Control "^private, no-cache, no-store, max-age=0, must-revalidate$" "public, max-age=0, must-revalidate"
 		}
 	}
 }

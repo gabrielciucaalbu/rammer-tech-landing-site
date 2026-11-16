@@ -1,0 +1,38 @@
+# rammertech.ro pe Caddy-ul partajat (/opt/edge/sites/rammertech.caddy). deploy.sh înlocuiește __HOSTS__ și __APEX_REDIRECT__.
+# `rammertech-web` este aliasul containerului pe rețeaua externă `edge`.
+__APEX_REDIRECT__
+__HOSTS__ {
+	# Un rând JSON per cerere în jurnalul edge-caddy-1; query string-ul e redactat.
+	log {
+		format filter {
+			wrap json
+			fields {
+				request>uri regexp \?.*$ ?[redacted]
+			}
+		}
+	}
+	encode zstd gzip
+
+	# Fișierele cu hash din build își păstrează cache-ul imuabil trimis de Next.
+	handle /_next/static/* {
+		reverse_proxy rammertech-web:3000 {
+			header_down -X-Powered-By
+		}
+	}
+	# Rutele API rămân cu antetele Next (nu se forțează cache public pe răspunsuri dinamice).
+	handle /api/* {
+		reverse_proxy rammertech-web:3000 {
+			header_down -X-Powered-By
+		}
+	}
+	# Restul se aliniază cu Vercel: fără X-Powered-By și revalidare la fiecare cerere. Se înlocuiește doar valoarea implicită
+	# Next (s-maxage=31536000); antetele setate explicit de aplicație (ex. /llms.txt) rămân neatinse.
+	handle {
+		reverse_proxy rammertech-web:3000 {
+			health_uri /ro
+			health_interval 15s
+			header_down -X-Powered-By
+			header_down Cache-Control "^s-maxage=31536000$" "public, max-age=0, must-revalidate"
+		}
+	}
+}

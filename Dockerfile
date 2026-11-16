@@ -31,6 +31,8 @@ RUN addgroup -S app && adduser -S app -G app
 COPY --from=build --chown=app:app /app/.next/standalone ./
 COPY --from=build --chown=app:app /app/.next/static ./.next/static
 COPY --from=build --chown=app:app /app/public ./public
+# Cache-ul de imagini optimizate (next/image) stă într-un volum (vezi deploy/hetzner/docker-compose.yml), ca să supraviețuiască deploy-urilor.
+RUN mkdir -p /app/.next/cache && chown -R app:app /app/.next/cache
 USER app
 EXPOSE 3000
 HEALTHCHECK --interval=15s --timeout=4s --start-period=10s --retries=5 \

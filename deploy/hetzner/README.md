@@ -32,4 +32,8 @@ Imaginile anterioare rămân pe server (`docker images rammertech-web`). Fișier
 * `@vercel/analytics` și `@vercel/speed-insights` au fost scoase din layout și din dependențe: cer `/_vercel/*`, care există doar pe Vercel.
 * Caddy răspunde 204 la `OPTIONS` (ca Vercel) și pune `Cache-Control` și HSTS implicite pe răspunsurile fără ele (redirecturi Next).
 * Diferență cunoscută: Vercel servește rutele fără distincție între majuscule și minuscule (`/ro/Contact`); Next autohostat e case-sensitive.
+* Cache-ul de imagini optimizate (`/_next/image`) stă în volumul `next-cache`, deci nu se golește la deploy; fără el, primele cereri după fiecare
+  repornire sunt lente (se vede în Lighthouse).
+* `docs/` și `*.md` rămân în contextul de build: Tailwind le scanează (ca pe Vercel), iar CSS-ul generat are același hash ca pe Vercel.
+* Diferență cunoscută: cereri cu URL peste ~16 KB nu primesc răspuns prin HTTP/2 la Caddy (12 KB merg); în producție le tratează Cloudflare în fața originii.
 * Nu există crons: ruta `/api/indexnow` (POST, protejată cu `CRON_SECRET`) se apelează din exterior, la fel ca înainte.

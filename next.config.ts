@@ -1,6 +1,8 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // Imagine Docker minimă pentru Hetzner (vezi Dockerfile și deploy/hetzner). Pe Vercel nu schimbă comportamentul.
+  output: "standalone",
   trailingSlash: false,
   async redirects() {
     return [

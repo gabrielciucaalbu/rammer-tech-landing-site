@@ -1,0 +1,9 @@
+node_modules
+.next
+.git
+.github
+.env*
+deploy
+Dockerfile
+.dockerignore
+# docs/ și *.md rămân în context: Tailwind le scanează la build (ca pe Vercel), deci CSS-ul generat e același.

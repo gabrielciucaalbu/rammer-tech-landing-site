@@ -1,0 +1,36 @@
+# rammertech.ro pe un server Hetzner: un singur container Next.js (standalone) pe rețeaua externă `edge`.
+# Porturile 80/443 și TLS aparțin Caddy-ului partajat din /opt/edge (la fel ca MicroTaxe, Scribae, refinance-calculator).
+# Fișiere în /opt/rammertech: docker-compose.yml, .env (chmod 600), iar imaginea ajunge ca tarball (docker load), fără registry.
+name: rammertech
+
+x-logging: &journald
+  driver: journald
+  options:
+    tag: "{{.Name}}"
+
+services:
+  web:
+    image: rammertech-web:${RAMMERTECH_TAG:-latest}
+    restart: unless-stopped
+    logging: *journald
+    env_file: .env
+    mem_limit: 384m
+    volumes:
+      - next-cache:/app/.next/cache
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1:3000/ro || exit 1"]
+      interval: 15s
+      timeout: 4s
+      retries: 5
+      start_period: 10s
+    networks:
+      edge:
+        aliases:
+          - rammertech-web
+
+networks:
+  edge:
+    external: true
+
+volumes:
+  next-cache:

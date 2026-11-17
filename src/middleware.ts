@@ -17,6 +17,20 @@ export function middleware(request: NextRequest) {
     url.pathname = `/${i18n.defaultLocale}${pathname}`;
     return NextResponse.redirect(url, 301);
   }
+
+  // Vercel potrivește fără distincție de majuscule segmentele statice ale rutei (/ro/Contact = /ro/contact, fără redirect),
+  // dar nu și parametrul dinamic (slug-ul din /ro/blog/<slug> rămâne exact: cu majuscule dă 404 pe Vercel).
+  // Next autohostat e case-sensitive peste tot, deci punem litere mici doar pe primele două segmente (limbă și secțiune).
+  // Matcher-ul sare peste fișierele cu punct.
+  const folded = pathname
+    .split("/")
+    .map((segment, index) => (index <= 2 ? segment.toLowerCase() : segment))
+    .join("/");
+  if (folded !== pathname) {
+    const url = request.nextUrl.clone();
+    url.pathname = folded;
+    return NextResponse.rewrite(url);
+  }
 }
 
 export const config = {

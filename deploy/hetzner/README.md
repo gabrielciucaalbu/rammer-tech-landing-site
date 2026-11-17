@@ -10,6 +10,19 @@ Next.js (`output: standalone`) într-un container, în spatele Caddy-ului comun 
 ENV_FILE=/cale/rammer-tech-landing-site.env HOSTS="www.rammertech.ro" APEX="rammertech.ro" PUSH_ENV=1 deploy/hetzner/deploy.sh [tag]
 ```
 
+Producție (Cloudflare în față, certificat Origin CA în Caddy, host de test cu Let's Encrypt):
+
+```bash
+ENV_FILE=... HOSTS="www.rammertech.ro" APEX="rammertech.ro" TEST_HOST="rammertech-test.scribae.ro" \
+  ORIGIN_CERT=~/.config/migration/certs/rammertech-origin.pem ORIGIN_KEY=~/.config/migration/certs/rammertech-origin.key \
+  deploy/hetzner/deploy.sh [tag]
+# doar Caddy și certificatul (fără build, fără containere): CADDY_ONLY=1 HOSTS=... APEX=... TEST_HOST=... ORIGIN_CERT=... ORIGIN_KEY=... deploy/hetzner/deploy.sh
+```
+
+Certificatul Origin CA (ECC, valabil 15 ani, `rammertech.ro` + `*.rammertech.ro`) se emite din Cloudflare (SSL/TLS > Origin Server) sau prin API
+(`POST /certificates`) și se pune în `/opt/edge/sites/certs/` (în afara glob-ului `*.caddy`). Cu el, Caddy nu face ACME pentru hosturile
+proxiate, deci nu există nicio fereastră fără certificat la schimbarea DNS. Cloudflare rămâne pe SSL „Full (strict)".
+
 `ENV_FILE` conține `NEXT_PUBLIC_SITE_URL`, `INDEXNOW_KEY` (necesare la build), `RESEND_API_KEY`, `CONTACT_EMAIL_TO`, `CRON_SECRET`.
 Nu se commit-uiește. `PUSH_ENV=1` îl copiază ca `/opt/rammertech/.env` (chmod 600) doar când se schimbă variabilele.
 
@@ -38,4 +51,5 @@ Imaginile anterioare rămân pe server (`docker images rammertech-web`). Fișier
   repornire sunt lente (se vede în Lighthouse).
 * `docs/` și `*.md` rămân în contextul de build: Tailwind le scanează (ca pe Vercel), iar CSS-ul generat are același hash ca pe Vercel.
 * Diferență cunoscută: cereri cu URL peste ~16 KB nu primesc răspuns prin HTTP/2 la Caddy (12 KB merg); în producție le tratează Cloudflare în fața originii.
+* Caddy răspunde 400 la căile cu segmente `..` codificate (`/%2e%2e/ro`), cum face platforma Vercel înaintea aplicației.
 * Nu există crons: ruta `/api/indexnow` (POST, protejată cu `CRON_SECRET`) se apelează din exterior, la fel ca înainte.

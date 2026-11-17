@@ -1,7 +1,8 @@
-# rammertech.ro pe Caddy-ul partajat (/opt/edge/sites/rammertech.caddy). deploy.sh înlocuiește __HOSTS__ și __APEX_REDIRECT__.
-# `rammertech-web` este aliasul containerului pe rețeaua externă `edge`.
-__APEX_REDIRECT__
-__HOSTS__ {
+# rammertech.ro pe Caddy-ul partajat (/opt/edge/sites/rammertech.caddy). deploy.sh adaugă după acest snippet blocurile de site:
+# apex -> redirect către www, hosturile de producție și (opțional) hostul de test. `rammertech-web` este aliasul containerului
+# pe rețeaua externă `edge`.
+(rammertech_app) {
+
 	# Un rând JSON per cerere în jurnalul edge-caddy-1; query string-ul e redactat.
 	log {
 		format filter {
@@ -12,6 +13,12 @@ __HOSTS__ {
 		}
 	}
 	encode zstd gzip
+
+	# Vercel respinge cu 400 căile cu segmente `..` codificate (/%2e%2e/ro) înainte să ajungă la aplicație; Next le-ar da 404.
+	@traversal expression `{http.request.uri}.matches('(?i)/(%2e|[.]){2}(/|[?]|$)')`
+	handle @traversal {
+		respond "Bad Request" 400
+	}
 
 	# Vercel răspunde 204 la OPTIONS pe pagini (/ro, /en) și pe fișiere statice; Next întoarce 400/405/500 pe aceleași căi.
 	# Rutele API și redirecturile (/, /services...) rămân la aplicație, care le tratează ca pe Vercel.
